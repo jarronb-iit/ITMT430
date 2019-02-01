@@ -7,8 +7,61 @@ For GitHub, we should all fork the team repository and set the primary repo as a
 
 -Antoine
 
+#### Forking Tutorial
 
-### Introductions
+First, Fork the team repository so that you have a personal copy. It is the button labeled fork on the upper right hand corner.
+
+![Image of Where to Fork](images/fork.png)
+
+Next, in the newly forked Repo, copy the clone text and clone your personal repository.
+
+![Image of Where to clone](images/clone.png)
+
+After cloning the repository, enter the following commands so that you can set up your remote repository and team one.
+
+
+```
+git remote add origin https://github.com/user/repo.git //This is your repository
+git remote set team https://github.com/user/repo.git //This is the group repository
+git remote -v //Verify your Repository
+```
+
+Your output should look something like this.
+
+```
+origin	git@github.com:AFoggs/2019-team-09f.git (fetch)
+origin	git@github.com:AFoggs/2019-team-09f.git (push)
+team	git@github.com:illinoistech-itm/2019-team-09f.git (fetch)
+team	git@github.com:illinoistech-itm/2019-team-09f.git (push)
+```
+
+## Project Idea & Outline
+
+We are the *Slayers*, and our idea is to create a modern real estate application that uses a modern UI to easily connect potential buyers/tenants with sellers/landlords and other roommates.
+
+### Overall idea
+
+The overall idea is to enable everyday users on the application to be able to rent and buy real estate of all sorts. *i.e. Apartments, Condos, Homes, Etc.*
+
+This particular real estate app will be focused on using a 'Tinder' swipe and match concept. Instead of 2 individual people matching however, it is the user (you) matching with a listing property that you **like,** essentially being able to swipe until you find your perfect new home with a more user friendly and holistic experience.
+
+Filtering is going to be our focal point. Showcasing a concrete step by step process is going to differentiate us from other platforms. Furthermore, adding a **ROOMMATE** feature will help differentiate us even more. This can be under the RENT selection of which the user will choose.
+
+```
+E.G. MASTER ------------> SPECIFIC
+
+RENT or BUY
+    |            |
+    |       Specific filters (Beds, baths, sqft, price range , etc.)
+    |
+Roommate (Y/N)?
+    |
+Specific filters
+```
+
+
+
+### Team Member Introductions
 
 #### Antoine Foggs
 
