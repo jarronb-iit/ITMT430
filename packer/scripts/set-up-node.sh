@@ -15,7 +15,7 @@ sudo apt-get install git
 
 # Add derver to hostname
 sudo chown vagrant /etc/hosts
-echo "192.168.50.2  application-server" >> /etc/hosts
+echo "192.168.50.12  application-server" >> /etc/hosts
 
 # Install the NodeSource PPA in order to get access to its contents into the home directory
 cd ~
@@ -37,8 +37,8 @@ http
     res.writeHead(200, { "Content-Type": "text/plain" });
     res.end("Hello World\n");
   })
-  .listen(8080, "192.168.50.2");
-console.log("Server running at http://192.168.50.2:8080/");
+  .listen(8080, "192.168.50.12");
+console.log("Server running at http://192.168.50.12:8080/");
 EOT
 
 # Installing PM2 which is a process manager for node applications
