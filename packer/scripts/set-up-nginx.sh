@@ -25,7 +25,7 @@ sudo apt-get install nginx -y
 
 # Add derver to hostname
 sudo chown vagrant /etc/hosts
-echo "192.168.50.11  web-server" >> /etc/hosts
+echo "192.168.50.11  nginx-web-server" >> /etc/hosts
 
 
 # # Accessing http://10.0.2.15:5000 via a web browser would send the request to 
