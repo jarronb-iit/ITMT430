@@ -1,4 +1,5 @@
 # 2019-team-09f
+
 Private team repo for ITMT 430
 
 ## Github Guidelines
@@ -19,7 +20,6 @@ Next, in the newly forked Repo, copy the clone text and clone your personal repo
 
 After cloning the repository, enter the following commands so that you can set up your remote repository and team one.
 
-
 ```
 git remote add origin https://github.com/user/repo.git //This is your repository
 git remote set team https://github.com/user/repo.git //This is the group repository
@@ -37,11 +37,12 @@ team	git@github.com:illinoistech-itm/2019-team-09f.git (push)
 
 After this, your environment is set up properly.
 
-***Before*** you do work, run this command:
+**_Before_** you do work, run this command:
 
 ```
 git pull team master
 ```
+
 This ensures that you have the most up to date repository that you're doing work on.
 
 Once you have finished doing work for the day, push your code to your private repository. Once you are ready to combine your code, go to your personal repository, go to pull request, and hit new pull request.
@@ -61,11 +62,11 @@ Lastly, let your teammates know. Once at least 2 people have commented and saw t
 
 ## Project Idea & Outline
 
-We are the *Slayers*, and our idea is to create a modern real estate application that uses a modern UI to easily connect potential buyers/tenants with sellers/landlords and other roommates.
+We are the _Slayers_, and our idea is to create a modern real estate application that uses a modern UI to easily connect potential buyers/tenants with sellers/landlords and other roommates.
 
 ### Overall idea
 
-The overall idea is to enable everyday users on the application to be able to rent and buy real estate of all sorts. *i.e. Apartments, Condos, Homes, Etc.*
+The overall idea is to enable everyday users on the application to be able to rent and buy real estate of all sorts. _i.e. Apartments, Condos, Homes, Etc._
 
 This particular real estate app will be focused on using a 'Tinder' swipe and match concept. Instead of 2 individual people matching however, it is the user (you) matching with a listing property that you **like,** essentially being able to swipe until you find your perfect new home with a more user friendly and holistic experience.
 
@@ -83,7 +84,15 @@ Roommate (Y/N)?
 Specific filters
 ```
 
+### Building project
 
+1. clone this repo
+2. cd into the project
+3. Run build script
+
+```
+bash bulid.sh
+```
 
 ### Team Member Introductions
 
