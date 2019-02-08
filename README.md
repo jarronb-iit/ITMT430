@@ -84,6 +84,16 @@ Roommate (Y/N)?
 Specific filters
 ```
 
+### Building project
+
+1. clone this repo
+2. cd into the project
+3. Run build script
+
+```
+bash bulid.sh
+```
+
 ### Team Member Introductions
 
 #### Antoine Foggs
@@ -101,39 +111,3 @@ Feel free to visit my [Github](http://www.github.com/Afoggs) to see some of the 
 #### Johnathan Garcia
 
 #### Giancarlo Barillas
-
-Run packer -v
-
-cd packer/vanilla-install
-
-packer validate nginx-web-server.json
-
-packer validate node-application-server.json
-
-packer build nginx-web-server.json
-
-packer build node-application-server.json
-
-vagrant box add ../build/node-application-server.box --name node-application-server
-
-vagrant box add ../build/nginx-web-server.box --name nginx-web-server
-
-cd ../
-
-mkdir node
-
-cd node
-
-vagrant init node-server
-
-vagrant up
-
-cd ../
-
-mkdir nginx-web-server
-
-cd nginx-web-server
-
-vagrant init nginx-web-server
-
-vagrant up
