@@ -45,6 +45,3 @@ EOT
 sudo npm install pm2 -g
 pm2 startup ubuntu
 sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup ubuntu -u vagrant --hp /home/vagrant
-
-#Start app
-pm2 start ~/hello.js

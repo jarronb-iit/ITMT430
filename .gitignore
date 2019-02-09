@@ -1,3 +1,5 @@
 app/node_modules
 packer/vanilla-install/packer_cache
 packer/build
+packer/vms/nginx-web-server/.vagrant/
+packer/vms/node-application-server/.vagrant/
