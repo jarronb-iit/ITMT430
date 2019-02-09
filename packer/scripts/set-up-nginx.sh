@@ -63,9 +63,3 @@ echo "Nginx reverse-proxy config done..."
 # Copy the configuration from /etc/nginx/sites-available to /etc/nginx/sites-enabled using a symbolic link.
 sudo ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/reverse-proxy.conf
 echo "Symbolic link created..."
-
-# Start nginx web server
-sudo systemctl restart nginx
-
-echo "Nginx server running..."
-
