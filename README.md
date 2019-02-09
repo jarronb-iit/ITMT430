@@ -84,7 +84,7 @@ Roommate (Y/N)?
 Specific filters
 ```
 
-### Building project
+## Building project
 
 1. clone this repo
 2. cd into the project
@@ -92,6 +92,12 @@ Specific filters
 
 ```
 bash bulid.sh
+```
+
+4. Run Start script
+
+```
+bash start-script.sh
 ```
 
 ### Team Member Introductions
