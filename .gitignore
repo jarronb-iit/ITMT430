@@ -1,3 +1,4 @@
 app/node_modules
-packer/vanilla-install/packer_cache
-packer/build
+*.box
+.vagrant
+*.iso

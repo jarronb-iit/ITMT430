@@ -1,6 +1,6 @@
 #/bin/bash
 
-cd packer/vms/node-application-server/
+cd ../vms/node-application-server/
 
 vagrant up --provision
 

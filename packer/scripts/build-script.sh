@@ -1,6 +1,6 @@
 #/bin/bash
 
-cd packer/vms/node-application-server/ || exit 1
+cd ../vms/node-application-server/ || exit 1
 
 echo y | vagrant destroy
 
