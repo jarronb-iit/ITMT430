@@ -1,3 +1,5 @@
 app/node_modules
-packer/vanilla-install/packer_cache
-packer/build
+id_rsa_github_deploy_key
+*.box
+.vagrant
+*.iso
