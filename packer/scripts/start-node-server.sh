@@ -4,7 +4,7 @@
 cd /home/vagrant
 mkdir repo
 cd repo
-git clone git@github.com:illinoistech-itm/2019-team-09f.git
+git clone git@github.com:illinoistech-itm/2019-team-09f.git .
 
 
 #Start app
