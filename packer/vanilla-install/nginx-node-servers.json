@@ -115,6 +115,12 @@
       "script": "../scripts/set-up-nginx.sh"
     },
     {
+      "type": "file",
+      "only": ["node-application-server"],
+      "source": "../vms/node-application-server/id_rsa_github_deploy_key",
+      "destination": "/home/vagrant/"
+    },
+    {
       "type": "shell",
       "only": ["node-application-server"],
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
