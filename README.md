@@ -86,18 +86,22 @@ Specific filters
 
 ## Building project
 
-1. clone this repo
+### First generate an rsa key
+
+1. [Generate a new ssh key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-linux)
+
+2. Add your deploy key to your to this repo's settings by coping your \*.pub file
+
+### Build vms
+
+1. Make sure your have already forked and clones this repo
 2. cd into the project
-3. Run build script
+3. Add you rsa private key in the node-application-server directory
+   ![Node directory screenshot](images/node-directory.PNG)
+4. Run build script
 
 ```
-bash bulid.sh
-```
-
-4. Run Start script
-
-```
-bash start-script.sh
+bash bulid-everything.sh
 ```
 
 ### Team Member Introductions
