@@ -1,7 +1,7 @@
 #/bin/bash
 
 # Start nginx web server
-sudo systemctl restart nginx
+sudo nginx
 
 echo "Nginx server running..."
 
