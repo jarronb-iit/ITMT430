@@ -10,6 +10,8 @@ sudo apt-get update
 sudo apt install net-tools
 
 # Install Nginx
+# https://askubuntu.com/questions/394746/apt-get-purge-install-nginx-reports-success-but-not-installed-12-04
+sudo apt-get purge nginx-common -y
 sudo apt-get install nginx -y
 
 # This profile opens only port 80 (normal, unencrypted web traffic)
