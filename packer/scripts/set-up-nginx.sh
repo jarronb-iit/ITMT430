@@ -28,6 +28,7 @@ sudo apt-get install nginx -y
 # Add derver to hostname
 sudo chown vagrant /etc/hosts
 echo "192.168.50.11  nginx-web-server" >> /etc/hosts
+echo "192.168.50.12  node-application-server" >> /etc/hosts
 
 
 # # Accessing http://10.0.2.15:5000 via a web browser would send the request to 
@@ -48,12 +49,12 @@ sudo chown vagrant /etc/nginx/sites-available/reverse-proxy.conf
 # Create reverse proxy config
 cat <<EOT > /etc/nginx/sites-available/reverse-proxy.conf
 server {
-    listen 192.168.50.11:80;
+    listen nginx-web-server:80;
 
-    server_name 192.168.50.11;
+    server_name nginx-web-server;
 
     location / {
-        proxy_pass http://192.168.50.12:8080;
+        proxy_pass http://node-application-server:8080;
         proxy_http_version 1.1;
         proxy_set_header Connection 'upgrade';
     }

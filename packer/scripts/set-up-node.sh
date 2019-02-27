@@ -16,6 +16,7 @@ sudo apt-get install git
 # Add derver to hostname
 sudo chown vagrant /etc/hosts
 echo "192.168.50.12  node-application-server" >> /etc/hosts
+echo "192.168.50.11  nginx-web-server" >> /etc/hosts
 
 # Install the NodeSource PPA in order to get access to its contents into the home directory
 cd ~
