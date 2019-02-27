@@ -3,3 +3,4 @@ id_rsa_github_deploy_key
 *.box
 .vagrant
 *.iso
+packer/vms/node-application-server/repo
