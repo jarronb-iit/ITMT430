@@ -16,7 +16,7 @@ mongoose
     var Sample = mongoose.model("Words", schema);
 
     let entry = new Sample({ word: "DONE" });
-    entry.save().then(console.log("done"));
+    entry.save().then(console.log("Entry saved..."));
   })
   .catch(error => {
     console.log(error);
@@ -30,5 +30,7 @@ http
   })
   .listen(8080, keys.devLocalHost || "192.168.50.12");
 console.log(
-  "Server running at " + keys.devLocalHost || "http://192.168.50.12:8080/"
+  process.env.NODE_ENV === "development"
+    ? `Server running at: ${keys.devLocalHost}:80`
+    : "Server running at http://192.168.50.12:8080/"
 );
