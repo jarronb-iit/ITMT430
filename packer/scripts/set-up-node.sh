@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 # Steps captured from https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-14-04
 # Steps for downloading node captured from https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-18-04
@@ -17,6 +17,7 @@ sudo apt-get install git
 sudo chown vagrant /etc/hosts
 echo "192.168.50.12  node-application-server" >> /etc/hosts
 echo "192.168.50.11  nginx-web-server" >> /etc/hosts
+echo "192.168.50.13  mongodb-server" >> /etc/hosts
 
 # Install the NodeSource PPA in order to get access to its contents into the home directory
 cd ~

@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 # Steps captured from https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-16-04vagr
 # https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-14-04
@@ -29,7 +29,7 @@ sudo apt-get install nginx -y
 sudo chown vagrant /etc/hosts
 echo "192.168.50.11  nginx-web-server" >> /etc/hosts
 echo "192.168.50.12  node-application-server" >> /etc/hosts
-
+echo "192.168.50.13  mongodb-server" >> /etc/hosts
 
 # # Accessing http://10.0.2.15:5000 via a web browser would send the request to 
 # # the application server's private IP address on port 8080, which would be 
