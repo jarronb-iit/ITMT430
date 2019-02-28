@@ -97,8 +97,16 @@ Specific filters
 1. Make sure your have already forked and clones this repo
 2. cd into the project
 3. Add you rsa private key in the node-application-server directory
+
    ![Node directory screenshot](images/node-directory.PNG)
-4. Run build script
+
+4. Install Vagrant Plugin:
+
+```
+vagrant plugin install vagrant-vbguest
+```
+
+5. Run build script:
 
 ```
 bash bulid-everything.sh

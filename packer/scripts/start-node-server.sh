@@ -1,11 +1,9 @@
 #/bin/bash
 
 # Git clone
-cd /vagrant
-rm -rf repo
-mkdir repo
-cd repo
-git clone git@github.com:illinoistech-itm/2019-team-09f.git .
+rm -rf /vagrant/repo
+mkdir /vagrant/repo
+git clone git@github.com:illinoistech-itm/2019-team-09f.git /vagrant/repo/
 
 
 #Start app
