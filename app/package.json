@@ -4,6 +4,7 @@
   "description": "Private team repo for ITMT 430",
   "main": "index.js",
   "scripts": {
+    "npm-install": "sudo npm config set bin-links false; sudo npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/jarronb/2019-team-09f/issues"
   },
-  "homepage": "https://github.com/jarronb/2019-team-09f#readme"
+  "homepage": "https://github.com/jarronb/2019-team-09f#readme",
+  "dependencies": {
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.16"
+  }
 }
