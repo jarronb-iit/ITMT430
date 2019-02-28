@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jarronb/2019-team-09f#readme",
   "dependencies": {
+    "dotenv-json": "^1.0.0",
     "mongodb": "^3.1.13",
     "mongoose": "^5.4.16"
   }
