@@ -1,8 +1,8 @@
 {
   "builders": [
     {
-      "name": "node-application-server",
-      "vm_name": "node-application-server",
+      "name": "nginx-web-server",
+      "vm_name": "nginx-web-server",
       "type": "virtualbox-iso",
       "boot_command": [
         "<esc><wait>",
@@ -56,29 +56,19 @@
     {
       "type": "shell",
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
-      "script": "../scripts/post_install_vagrant.sh"
-    },
-    {
-      "type": "file",
-      "source": "../vms/node-application-server/id_rsa_github_deploy_key",
-      "destination": "/home/vagrant/"
+      "script": "../../scripts/post_install_vagrant.sh"
     },
     {
       "type": "shell",
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
-      "script": "../scripts/set-up-node.sh"
-    },
-    {
-      "type": "shell",
-      "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
-      "script": "../scripts/set-up-ssh.sh"
+      "script": "../../scripts/set-up-nginx.sh"
     }
   ],
   "post-processors": [
     {
       "type": "vagrant",
       "keep_input_artifact": false,
-      "output": "../build/node-application-server.box"
+      "output": "../../build/nginx-web-server.box"
     }
   ]
 }

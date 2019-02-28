@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mv id_rsa_github_deploy_key /home/vagrant/.ssh/
 cd .ssh
 chmod 400 /home/vagrant/.ssh/id_rsa_github_deploy_key

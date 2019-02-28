@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 # Start nginx web server
 sudo systemctl stop nginx.service
