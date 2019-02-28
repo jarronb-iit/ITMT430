@@ -2,6 +2,7 @@
   "nginx-web-server-ip": "192.168.50.11",
   "node-app-ip": "192.168.50.12",
   "database-ip": "192.168.50.13",
+  "port": "8080",
   "database-name": "production-db",
   "database-root-name": "production-password",
   "database-root-password": "production-user",
