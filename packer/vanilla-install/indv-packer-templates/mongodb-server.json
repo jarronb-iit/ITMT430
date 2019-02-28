@@ -1,8 +1,8 @@
 {
   "builders": [
     {
-      "name": "nginx-web-server",
-      "vm_name": "nginx-web-server",
+      "name": "mongodb-server",
+      "vm_name": "mongodb-server",
       "type": "virtualbox-iso",
       "boot_command": [
         "<esc><wait>",
@@ -56,19 +56,19 @@
     {
       "type": "shell",
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
-      "script": "../scripts/post_install_vagrant.sh"
+      "script": "../../scripts/post_install_vagrant.sh"
     },
     {
       "type": "shell",
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
-      "script": "../scripts/set-up-nginx.sh"
+      "script": "../../scripts/set-up-mongodb.sh"
     }
   ],
   "post-processors": [
     {
       "type": "vagrant",
       "keep_input_artifact": false,
-      "output": "../build/nginx-web-server.box"
+      "output": "../../build/mongodb-server.box"
     }
   ]
 }
