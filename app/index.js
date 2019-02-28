@@ -16,21 +16,21 @@ mongoose
     var Sample = mongoose.model("Words", schema);
 
     let entry = new Sample({ word: "DONE" });
-    entry.save().then(console.log("Entry saved..."));
+    entry.save().then(console.log("done"));
   })
   .catch(error => {
     console.log(error);
   });
 
 var http = require("http");
+let webAddress = "";
+process.env.NODE_ENV === "development"
+  ? (webAddress = keys.devLocalHost)
+  : (webAddress = keys.nodeIP);
 http
   .createServer(function(req, res) {
     res.writeHead(200, { "Content-Type": "text/plain" });
     res.end("Bye World\n");
   })
-  .listen(8080, keys.devLocalHost || "192.168.50.12");
-console.log(
-  process.env.NODE_ENV === "development"
-    ? `Server running at: ${keys.devLocalHost}:80`
-    : "Server running at http://192.168.50.12:8080/"
-);
+  .listen(keys.port, webAddress);
+console.log("Server running at: " + webAddress);
