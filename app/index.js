@@ -1,12 +1,12 @@
 const mongo = require("mongodb");
 const mongoose = require("mongoose");
 
+//LOAD KEYS
+const keys = require("./config/keys");
+
 //CONNECT TO MOGODB
 mongoose
-  .connect(
-    "mongodb://production-user:production-password@192.168.50.13:27017/production-db",
-    { useNewUrlParser: true }
-  )
+  .connect(keys.mongoURI, { useNewUrlParser: true })
   .then(() => {
     console.log("MONGODB Connected");
     // Models
@@ -28,5 +28,7 @@ http
     res.writeHead(200, { "Content-Type": "text/plain" });
     res.end("Bye World\n");
   })
-  .listen(8080, "192.168.50.12");
-console.log("Server running at http://192.168.50.12:8080/");
+  .listen(8080, keys.devLocalHost || "192.168.50.12");
+console.log(
+  "Server running at " + keys.devLocalHost || "http://192.168.50.12:8080/"
+);
