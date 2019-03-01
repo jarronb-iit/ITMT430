@@ -7,7 +7,3 @@ bash ./remove-vms.sh
 cd ../vanilla-install/ || exit 1
 
 packer build all-servers.json || exit 1 
-
-# Add all vms to Vagrant
-bash ./add-all-vms.sh
-
