@@ -16,7 +16,7 @@ mongoose
     var Sample = mongoose.model("Words", schema);
 
     let entry = new Sample({ word: "DONE" });
-    entry.save().then(console.log("done"));
+    entry.save().then(console.log("Entry created..."));
   })
   .catch(error => {
     console.log(error);
@@ -24,6 +24,8 @@ mongoose
 
 var http = require("http");
 let webAddress = "";
+let port = keys.port;
+
 process.env.NODE_ENV === "development"
   ? (webAddress = keys.devLocalHost)
   : (webAddress = keys.nodeIP);
@@ -32,5 +34,5 @@ http
     res.writeHead(200, { "Content-Type": "text/plain" });
     res.end("Bye World\n");
   })
-  .listen(keys.port, webAddress);
-console.log("Server running at: " + webAddress);
+  .listen(port, webAddress);
+console.log("Server running at: " + webAddress + ":" + port);
