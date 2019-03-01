@@ -4,3 +4,4 @@ id_rsa_github_deploy_key
 .vagrant
 *.iso
 packer/vms/node-application-server/repo
+packer/vms/node-application-server/id_rsa_github_deploy_key.pub
