@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Add servers
 cd ../build/ || exit 1
 
