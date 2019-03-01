@@ -8,3 +8,5 @@ module.exports = {
   port: process.env.port,
   mongodbIP: process.env["database-ip"]
 };
+
+console.log("ENV = PRODUCTION");
