@@ -24,7 +24,7 @@ Our goal for sprint two was to finalize the core design for the application, as 
 
 ## Completed Goals
 
-- Mockup designs for web application <sub>*included below*<sub/>
+- Mockup designs for web application <sub>_included below_<sub/>
 - Built Fundamental Infrastructure
   - Nginx reverse proxy web server
   - Node application server
@@ -42,26 +42,25 @@ This sprint, the sum of our goals alleviated the bulk of issues that we would po
 
 ## Current Designs
 
-![Design tile](../../images/sprint2/designs-title.PNG)
+![Design tile](https://github.com/illinoistech-itm/2019-team-09f/tree/master/images/sprint2/designs-title.PNG)
 
-![Design-1](../../images/sprint2/design1.PNG)
+![Design-1](https://github.com/illinoistech-itm/2019-team-09f/tree/master/images/sprint2/design1.PNG)
 
-![Design-2](../../images/sprint2/design2.PNG)
+![Design-2](https://github.com/illinoistech-itm/2019-team-09f/tree/master/images/sprint2/design2.PNG)
 
-![Design-3](../../images/sprint2/design3.PNG)
+![Design-3](https://github.com/illinoistech-itm/2019-team-09f/tree/master/images/sprint2/design3.PNG)
 
-![Design-4](../../images/sprint2/design4.PNG)
+![Design-4](https://github.com/illinoistech-itm/2019-team-09f/tree/master/images/sprint2/design4.PNG)
 
 ## Current Architecture
 
-![Architecture](../../images/sprint2/arc1.PNG)
-
+![Architecture](https://github.com/illinoistech-itm/2019-team-09f/tree/master/images/sprint2/arc1.PNG)
 
 ## Sprint 3 To-Do
 
 - Configure Node environment with [pm2](http://pm2.keymetrics.io/)
   - pm2 is an advanced process manger for Node.js with a built in load balance. It allows you to keep applications alive forever, to reload them without downtime and facilitate common Devops tasks.  
-    ![pm2 screenshot](../../images/sprint2/pm2.PNG)
+    ![pm2 screenshot](https://github.com/illinoistech-itm/2019-team-09f/tree/master/images/sprint2/pm2.PNG)
 - Database Schema Creation
   - Decide on database Schema and input types
 - Login authentication with [Passport.js](http://www.passportjs.org/)
