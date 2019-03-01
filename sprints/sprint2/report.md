@@ -6,6 +6,9 @@
 - Lead Developer - [Giancarlo Barillas](https://github.com/giancarlobarillas)
 - Junior Developer - [Johnathan Garcia](https://github.com/)
 - UI/UX - [Theo Economos](https://github.com/teconomo), [Erick Cabrera](https://github.com/ecabrera796)
+
+We have spent the majority of this sprint focusing on building tangible designs and artboards through Adobe XD. We also have utilized our user tree flow to implement our designs in a workable prototype to showcase a demo type of our app. 
+
 - IT Operations - [Antoine Foggs](https://github.com/AFoggs)
 
 ## Sprint 2 Goals
