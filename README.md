@@ -19,6 +19,7 @@ For GitHub, we should all fork the team repository and set the primary repo as a
 - ES Lint Global Install Version 5.12.0
 - MongoDB For Local Machine Test
 - Git Latest version
+- pm2 Latest version Local Test
 
 ### Communication tools on Client needed
 - Slack, Desktop Version (Alerts you to changes)
