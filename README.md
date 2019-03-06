@@ -8,6 +8,26 @@ For GitHub, we should all fork the team repository and set the primary repo as a
 
 -Antoine
 
+### Developmental Tools on Client needed
+- Latest version of Node
+- Latest version of Virtual Box (Recent Version not available via Linux Package Manager. Must be manually installed)
+- Latest version of Packer
+- Latest version of Vagrant
+- Text Editor of Choice (Atom/Visual Studio Code Recommended)
+- HTML Lint Global Install Latest Version
+- CSS Lint Global Install Latest Version
+- ES Lint Global Install Version 5.12.0
+- MongoDB For Local Machine Test
+- Git Latest version
+
+### Communication tools on Client needed
+- Slack, Desktop Version (Alerts you to changes)
+- Trello, Desktop Version (Unavailable on Linux)
+
+### Additional Optional Developmental Tools
+- HTTP-Server for any local test.
+- Package Manager (Chocolaty Recommended)
+
 #### Forking Tutorial
 
 First, Fork the team repository so that you have a personal copy. It is the button labeled fork on the upper right hand corner.
@@ -59,6 +79,10 @@ And Then create the title and comment.
 Lastly, let your teammates know. Once at least 2 people have commented and saw that the code looks good, anyone may merge the pull request.
 
 ![Image of Where to merge pull request](images/merge.png)
+
+## Home System File install
+
+(Add Linting, Vagrant, Etc.)
 
 ## Project Idea & Outline
 
