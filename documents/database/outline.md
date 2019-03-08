@@ -3,7 +3,7 @@ Entities
     *Buyer*
       Owner
       Renter
-    *Seller* Secondary Focus
+    *Seller* Secondary Focus *Provide MLS Number*, if not that, they need to provide proof of owning the
   **Real Estate** SuperClass
     *Apartment*
     *House*
@@ -14,7 +14,7 @@ Entities
 Simplified
 
 Users
-  Name, Email, (Profile Data)
+  Name, Email, (Profile Data), phone number, password, MLS If licensed Agent, Deed # (Proof of ownership)
 
 Listing
 
@@ -30,4 +30,3 @@ Listing
 
   * Seller Comes Later
   * Apartment Score
-  *
