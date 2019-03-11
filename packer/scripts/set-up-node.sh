@@ -47,3 +47,12 @@ EOT
 sudo npm install pm2 -g
 pm2 startup ubuntu
 sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup ubuntu -u vagrant --hp /home/vagrant
+
+# Installing Passport.js, middleware for authentication.
+npm install passport -g
+# Installing oauth for 3rd Party Sign ins. Will Utilize Google and Facebook
+npm install passport-oauth -g
+# Installing Oauth for Facebook. Note, dev account needs to be created still
+npm install passport-facebook -g
+# Installing Oauth for Google. Note, dev account needs to be created still
+npm install passport-google-oauth -g
