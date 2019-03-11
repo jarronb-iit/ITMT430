@@ -1,5 +1,5 @@
 const dotenvJSON = require("dotenv-json");
-dotenvJSON({ path: "../packer/vanilla-install/variables.json" });
+dotenvJSON({ path: "../../packer/vanilla-install/variables.json" });
 
 module.exports = {
   mongoURI: process.env["database-production-connection"],

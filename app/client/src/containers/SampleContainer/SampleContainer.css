@@ -1,0 +1,46 @@
+.SampleContainer {
+  background: coral;
+  border-radius: 15px;
+  width: 75%;
+  margin: 0 auto;
+  padding: 2% 5%;
+  position: relative;
+}
+
+.SampleContainer h1 {
+  text-align: center;
+  border-radius: 15px;
+  transition: all 1s;
+  width: 100%;
+}
+
+.SampleContainer:hover h1 {
+  color: black;
+  transform: rotate(-10deg) scale(1.4);
+}
+
+.btn {
+  padding: 20px;
+  background: #808080; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3fada8,
+    #808080
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #3fada8,
+    #808080
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border-radius: 15px;
+  margin: 15px auto;
+  display: block;
+  width: 50%;
+  min-width: 150px;
+  font-size: 22px;
+  color: black;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-decoration: none;
+}
