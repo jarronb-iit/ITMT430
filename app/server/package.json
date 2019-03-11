@@ -4,8 +4,10 @@
   "description": "Private team repo for ITMT 430",
   "main": "index.js",
   "scripts": {
+    "npm-install-linux": "sudo npm config set bin-links false; sudo npm install; cd ../client; sudo npm install",
     "npm-install-windows": "npm install && (cd ../client && npm install)",
     "start": "node server.js",
+    "production-server": "NODE_ENV=production exec npm start",
     "dev-server": "set NODE_ENV=development&& npx nodemon server.js",
     "client": "npm start --prefix ../client",
     "dev": "concurrently \"npm run dev-server\" \"npm run client\"",
