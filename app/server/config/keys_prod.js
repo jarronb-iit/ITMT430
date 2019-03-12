@@ -6,7 +6,7 @@ module.exports = {
   nginxIP: process.env["nginx-web-server-ip"],
   nodeIP: process.env["node-app-ip"],
   port: process.env.port,
-  mongodbIP: process.env["database-ip"]
+  webAddress: process.env["database-ip"]
 };
 
 console.log("ENV = PRODUCTION");
