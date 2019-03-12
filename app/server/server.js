@@ -1,8 +1,19 @@
 const mongo = require("mongodb");
 const mongoose = require("mongoose");
+const express = require("express"),
+  http = require("http"),
+  app = express(),
+  server = http.createServer(app);
 
 //LOAD KEYS
 const keys = require("./config/keys");
+
+let webAddress = "";
+let port = keys.port;
+
+process.env.NODE_ENV === "development"
+  ? (webAddress = keys.devLocalHost)
+  : (webAddress = keys.nodeIP);
 
 //CONNECT TO MOGODB
 mongoose
@@ -22,17 +33,10 @@ mongoose
     console.log(error);
   });
 
-var http = require("http");
-let webAddress = "";
-let port = keys.port;
+app.get("/", (req, res) => {
+  res.json("{msg:Bye World}");
+});
 
-process.env.NODE_ENV === "development"
-  ? (webAddress = keys.devLocalHost)
-  : (webAddress = keys.nodeIP);
-http
-  .createServer(function(req, res) {
-    res.writeHead(200, { "Content-Type": "text/plain" });
-    res.end("Bye World\n");
-  })
-  .listen(port, webAddress);
-console.log("Server running at: " + webAddress + ":" + port);
+server.listen(port, webAddress, () => {
+  console.log("Server running at: " + webAddress + ":" + port);
+});
