@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const keys = require("../../config/keys");
 
 // const passport = require("passport");
 
@@ -23,6 +25,9 @@ router.get("/test", (req, res) => {
 // @desc    Tests user route
 // @access  Private
 router.post("/", (req, res) => {
+  User.findOne({ email: req.body.email }).then(user => {
+    if (user) return res.status(400).json({ error: "User already exits" });
+  });
   newUser = new User({
     email: req.body.email,
     password: req.body.password,
@@ -34,11 +39,37 @@ router.post("/", (req, res) => {
   // Hash Password with Bcryptjs
   bcrypt.genSalt(10, (error, salt) => {
     bcrypt.hash(newUser.password, salt, (error, hash) => {
-      if (error) throw error;
+      if (error) {
+        throw error;
+      }
       newUser.password = hash;
+
+      // Save New User with Hashed Password
       newUser
         .save()
-        .then(user => res.json(user))
+        .then(user => {
+          // Takes password out of user object
+          user = {
+            id: user.id,
+            email: user.email,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            phoneNumber: user.phoneNumber,
+            dateCreated: user.date
+          };
+
+          // Create json web token: payload is new user
+          jwt.sign(
+            user,
+            keys.jwtSecret,
+            { expiresIn: "3d" },
+            (error, token) => {
+              // Once jwt is signed, run code
+              if (error) throw error;
+              res.json({ token: token, user });
+            }
+          );
+        })
         .catch(error => console.log(error));
     });
   });

@@ -11,6 +11,7 @@ const buyer = require("./routes/api/buyer");
 const property = require("./routes/api/property");
 const seller = require("./routes/api/seller");
 const user = require("./routes/api/user");
+const auth = require("./routes/api/auth");
 
 // Load Keys
 const keys = require("./config/keys");
@@ -45,6 +46,7 @@ app.use("/api/buyer", buyer);
 app.use("/api/property", property);
 app.use("/api/seller", seller);
 app.use("/api/user", user);
+app.use("/api/auth", auth);
 
 app.get("/", (req, res) => {
   res.json({ msg: "Bye world" });
