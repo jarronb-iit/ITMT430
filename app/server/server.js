@@ -1,5 +1,5 @@
-const mongo = require("mongodb");
 const mongoose = require("mongoose");
+const path = require("path");
 const express = require("express"),
   http = require("http"),
   app = express(),
@@ -34,8 +34,18 @@ mongoose
   });
 
 app.get("/", (req, res) => {
-  res.json("{msg:Bye World}");
+  res.json({ msg: "Bye world" });
 });
+
+// Server Static Assets if in production
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static("../client/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
+  });
+}
 
 server.listen(port, webAddress, () => {
   console.log("Server running at: " + webAddress + ":" + port);
