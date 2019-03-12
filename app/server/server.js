@@ -28,13 +28,13 @@ mongoose
   .then(() => {
     console.log("MONGODB Connected");
     // Models
-    var Schema = mongoose.Schema;
+    // var Schema = mongoose.Schema;
 
-    var schema = new Schema({ word: String });
-    var Sample = mongoose.model("Words", schema);
+    // var schema = new Schema({ word: String });
+    // var Sample = mongoose.model("Words", schema);
 
-    let entry = new Sample({ word: "DONE" });
-    entry.save().then(console.log("Entry created..."));
+    // let entry = new Sample({ word: "DONE" });
+    // entry.save().then(console.log("Entry created..."));
   })
   .catch(error => {
     console.log(error);
