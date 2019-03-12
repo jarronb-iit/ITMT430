@@ -8,12 +8,8 @@ const express = require("express"),
 //LOAD KEYS
 const keys = require("./config/keys");
 
-let webAddress = "";
 let port = keys.port;
-
-process.env.NODE_ENV === "development"
-  ? (webAddress = keys.devLocalHost)
-  : (webAddress = keys.nodeIP);
+let webAddress = keys.webAddress;
 
 //CONNECT TO MOGODB
 mongoose
