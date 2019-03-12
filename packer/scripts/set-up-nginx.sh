@@ -71,14 +71,14 @@ echo "Symbolic link created..."
 sudo add-apt-repository ppa:certbot/certbot
 
 #Install certbot silentlt
-sudo apt install python-certbot-nginx --non-interactive --agree-tos -m sp19.itmd430.capstone@gmail.com
+sudo apt install python-certbot-nginx
 
 #Allow HTTPS traffic
 sudo ufw allow 'Nginx Full'
 sudo ufw delete allow 'Nginx HTTP'
 
 #Certify server_name
-sudo certbot --nginx -d nginx-web-server -2
+sudo certbot --nginx -d nginx-web-server -d www.nginx-web-server.com --non-interactive --agree-tos -m sp19.itmd430.capstone@gmail.com
 
 #Test renewal process
 sudo certbot renew --dry-run
