@@ -13,10 +13,6 @@ const SellerSchema = new Schema({
   mls: {
     type: String
   },
-  lastName: {
-    type: String,
-    required: true
-  },
   date: { type: Date, default: Date.now }
 });
 

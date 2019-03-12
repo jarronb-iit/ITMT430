@@ -18,16 +18,27 @@ const PropertySchema = new Schema({
       required: true
     }
   },
-  name: {
-    type: String
-  },
   price: {
     type: String,
     required: true
   },
-  lastName: {
+  squareFootage: {
+    type: Number,
+    required: true
+  },
+  bath: {
+    type: Number,
+    required: true
+  },
+  propertyType: {
     type: String,
     required: true
+  },
+  name: {
+    type: String
+  },
+  photo: {
+    type: String
   },
   date: { type: Date, default: Date.now }
 });
