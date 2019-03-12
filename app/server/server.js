@@ -5,13 +5,13 @@ const express = require("express"),
   app = express(),
   server = http.createServer(app);
 
-//LOAD KEYS
+// Load Keys
 const keys = require("./config/keys");
 
-let port = keys.port;
+let port = keys.port || 5000;
 let webAddress = keys.webAddress;
 
-//CONNECT TO MOGODB
+// MongoDB connection
 mongoose
   .connect(keys.mongoURI, { useNewUrlParser: true })
   .then(() => {
