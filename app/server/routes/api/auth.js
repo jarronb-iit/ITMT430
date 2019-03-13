@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
+const auth = require("../../middleware/auth");
 
 // const passport = require("passport");
 
@@ -39,6 +40,7 @@ router.post("/", (req, res) => {
 
       // Remove user password from user object
       user = {
+        id: user.id,
         email: user.email,
         firstName: user.firstName,
         lastName: user.lastName,
@@ -53,6 +55,19 @@ router.post("/", (req, res) => {
       });
     });
   });
+});
+
+// @route   GET api/auth/user
+// @desc    Get User route
+// @access  Private
+router.get("/user", auth, (req, res) => {
+  console.log(req.user);
+  User.findById(req.user.id)
+    .select("-password")
+    .then(user => {
+      res.json(user);
+    })
+    .catch(error => res.json({ error: "Email and/or password is incorrect." }));
 });
 
 module.exports = router;
