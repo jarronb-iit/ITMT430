@@ -41,6 +41,17 @@ mongoose
     console.log(error);
   });
 
+if (process.env.NODE_ENV === "development") {
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+  });
+}
+
 // Use Routes
 app.use("/api/buyer", buyer);
 app.use("/api/property", property);
