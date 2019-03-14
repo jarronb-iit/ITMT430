@@ -1,10 +1,13 @@
 import { put } from "redux-saga/effects";
 import axios from "axios";
+import axiosConfig from "../../axiosConfig";
 import * as actions from "../actions";
 
 export function* getPostsSaga(action) {
   console.log(action);
   try {
+    let test = yield axiosConfig.get("/api/user/test");
+    console.log(test);
     let response = yield axios.get(
       "https://my-json-server.typicode.com/typicode/demo/posts"
     );
