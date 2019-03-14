@@ -26,6 +26,11 @@ router.get("/test", (req, res) => {
 // @desc    Tests user route
 // @access  Private
 router.post("/", (req, res) => {
+  User.findOne({ email: req.body.email }).then(user => {
+    if (!user) return;
+    res.status(400).json({ errors: [{ message: "User already exits" }] });
+  });
+
   newUser = new User({
     email: req.body.email,
     password: req.body.password,
@@ -66,7 +71,7 @@ router.post("/", (req, res) => {
         .catch(err => {
           if (err.errors) {
             errors = errorFormatter(err);
-            res.status(400).json({ error: errors });
+            res.status(400).json({ errors: errors });
           } else {
             console.log(err);
           }

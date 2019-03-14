@@ -30,13 +30,15 @@ router.post("/", (req, res) => {
     if (!user)
       return res
         .status(400)
-        .json({ error: "Email and/or password is incorrect." });
+        .json({ errors: [{ message: "Email and/or password is incorrect." }] });
     // Compare Password with Bcryptjs Hashed
     bcrypt.compare(req.body.password, user.password).then(isMatch => {
       if (!isMatch)
         return res
           .status(400)
-          .json({ error: "Email and/or password is incorrect." });
+          .json({
+            errors: [{ message: "Email and/or password is incorrect." }]
+          });
 
       // Remove user password from user object
       user = {
@@ -67,7 +69,9 @@ router.get("/user", auth, (req, res) => {
     .then(user => {
       res.json(user);
     })
-    .catch(error => res.json({ error: "Email and/or password is incorrect." }));
+    .catch(error =>
+      res.json({ errors: [{ message: "Email and/or password is incorrect." }] })
+    );
 });
 
 module.exports = router;
