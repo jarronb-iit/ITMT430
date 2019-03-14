@@ -31,8 +31,8 @@ echo "192.168.50.11  nginx-web-server" >> /etc/hosts
 echo "192.168.50.12  node-application-server" >> /etc/hosts
 echo "192.168.50.13  mongodb-server" >> /etc/hosts
 
-# # Accessing http://10.0.2.15:5000 via a web browser would send the request to 
-# # the application server's private IP address on port 8080, which would be 
+# # Accessing http://10.0.2.15:5000 via a web browser would send the request to
+# # the application server's private IP address on port 8080, which would be
 # # received and replied to by the Node.js application.
 
 # https://www.scaleway.com/docs/how-to-configure-nginx-reverse-proxy/
@@ -66,3 +66,19 @@ echo "Nginx reverse-proxy config done..."
 # Copy the configuration from /etc/nginx/sites-available to /etc/nginx/sites-enabled using a symbolic link.
 sudo ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/reverse-proxy.conf
 echo "Symbolic link created..."
+
+#Add repository for certbot
+sudo add-apt-repository ppa:certbot/certbot
+
+#Install certbot
+sudo apt install python-certbot-nginx
+
+#Allow HTTPS traffic
+sudo ufw allow 'Nginx Full'
+sudo ufw delete allow 'Nginx HTTP'
+
+#Certify server_name silently with https redirect
+sudo certbot --nginx -d nginx-web-server -d www.nginx-web-server.com --non-interactive --agree-tos -m sp19.itmd430.capstone@gmail.com -2
+
+#Test renewal process
+sudo certbot renew --dry-run
