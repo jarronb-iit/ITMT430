@@ -8,7 +8,7 @@ const getErrors = (state, action) => {
   console.log("HERE", action);
   state = {
     ...state,
-    errors: action.errors
+    errors: action.payload.errors
   };
   return state;
 };
