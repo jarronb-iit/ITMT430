@@ -39,7 +39,7 @@ Our goal for Sprint 3 was to finalize all that we need to start making our artbo
 - Self Signed certs for Nginx Web server
 - Improved designs
   - Last week we received feedback on making a type of side swipe option button when it came to selecting the number of beds, baths, etc. However, we decided it was best to keep it this way because we will offer the choice for a user to select multiple options so that those options come up in their search. For example, if I want to look for an apartment with 2 baths, but I would also be open to finding one with 1 bath, then I have the option to select both the 2 and the 1 option so my search will be populated by both.
-    ![Bed and Bath Filter](../../design-files/snippet-pictures/filter-bedbathprice.JPG)
+  ![Bed and Bath Filter](../../design-files/snippet-pictures/filter-bedbathprice.JPG)
 
 For this Sprint we focused heavily on the remaining components we need to finally be able to set up our web pages and begin populating our database. After countless attempts and numerous debugging, We were finally able to get the product environment up and running on all of our machines. When it came down to setting up our database schema, it took a while to make sure we were making the database entries as clear as possible. We wanted to avoid doing extra work by having multiple entries that basically stored the same information for different users. Instead, we made it so an entry would have information that multiple users can access.
 
