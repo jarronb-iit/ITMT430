@@ -3,10 +3,9 @@
 ## Roles
 
 - Junior Developer - [Jarron Bailey](https://github.com/jarronb), [Theo Economos](https://github.com/teconomo)
-- Lead Developer - [Giancarlo Barillas](https://github.com/giancarlobarillas)
+- Lead Developer - [Giancarlo Barillas](https://github.com/giancarlobarillas), [Antoine Foggs](https://github.com/AFoggs)
 - UI/UX - [Johnathan Garcia](https://github.com/)
 - Project Manager - [Erick Cabrera](https://github.com/ecabrera796)
-- Lead Developer - [Antoine Foggs](https://github.com/AFoggs)
 
 ## Sprint 3 Goals
 
