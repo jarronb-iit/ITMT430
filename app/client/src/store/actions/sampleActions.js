@@ -9,6 +9,6 @@ export const getPostsInit = () => {
 export const getPostsSuccess = posts => {
   return {
     type: actionTypes.GET_POSTS_SUCCESS,
-    posts: posts
+    payload: { posts: posts }
   };
 };
