@@ -49,7 +49,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getPosts: () => dispatch(actions.getPostsInit()),
+    getPosts: () => dispatch(actions.loadUserInit()),
     getError: () => dispatch(actions.getErrors({ error: "Error" }))
   };
 };
