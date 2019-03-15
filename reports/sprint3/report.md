@@ -33,6 +33,7 @@ Our goal for Sprint 3 was to finalize all that we need to start making our artbo
   - We took a closer look at how we are going to set up our database and seeing which types of entries we would need. We carefully came up with our schema making sure to keep the database clean, organized, and have little to no redundancy so that we could start building out our database as we are creating the web pages.
 - Security
   - We decided to utilize Passport.js to help us set up our login authentication. We are going with both local authentication as well as Facebook authentication. We also created accounts with Facebook for Developers to help with our Facebook authentication.
+  ![Facebok for Developers](../../images/sprint3/fbdev.png)
 - Slave database
   - We set up our slave database to have it ready for when we populate our master database.
 - Self Signed certs for Nginx Web server
