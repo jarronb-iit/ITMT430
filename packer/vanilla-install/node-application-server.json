@@ -66,19 +66,19 @@
     {
       "type": "shell",
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
-      "script": "../../scripts/set-up-node.sh"
+      "script": "../scripts/set-up-node.sh"
     },
     {
       "type": "shell",
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
-      "script": "../../scripts/set-up-ssh.sh"
+      "script": "../scripts/set-up-ssh.sh"
     }
   ],
   "post-processors": [
     {
       "type": "vagrant",
       "keep_input_artifact": false,
-      "output": "../../build/node-application-server.box"
+      "output": "../build/node-application-server.box"
     }
   ]
 }
