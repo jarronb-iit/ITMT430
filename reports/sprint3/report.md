@@ -51,8 +51,9 @@ For this Sprint we focused heavily on the remaining components we need to finall
   - JS Files
 - Populate database and begin to run test users
 - Implement login authentications
+- Create list of roommate compatibility questions
 
-Now that we are done with getting everything ready for our web pages, for the next sprint we will be heavily focusing on creating and deploying our web pages. At the same time, we will be setting up test users and populating our database to make sure everything is connecting properly. Also, we will be testing out our login authentications and ensuring the Facebook authentication is functioning correctly.
+Now that we are done with getting everything ready for our web pages, for the next sprint we will be heavily focusing on creating and deploying our web pages. At the same time, we will be setting up test users and populating our database to make sure everything is connecting properly. Also, we will be testing out our login authentications and ensuring the Facebook authentication is functioning correctly. On the side, we are starting to think about how the roommate part of our product will have the most success. We came up with the idea to have a quick compatibility questionnaire to ensure you are being matched with good candidates to be your roommate. We hope this would attract more people to give our product a try.
 
 
 #### Team Members
