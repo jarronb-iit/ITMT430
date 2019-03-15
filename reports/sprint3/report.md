@@ -35,7 +35,7 @@ Our goal for Sprint 3 was to finalize all that we need to start making our artbo
   - We decided to utilize Passport.js to help us set up our login authentication. We are going with both local authentication as well as Facebook authentication. We also created accounts with Facebook for Developers to help with our Facebook authentication.
   ![Facebok for Developers](../../images/sprint3/fbdev.png)
 - Slave database
-  - With utilizing MongoDB, we learned that they disabled traditional Master/Slave relationships as of their 3.4 Versions. Instead, it has been replaced with replica sets. We are finalizing the last test before adding it live, utilizing one DB as the primary(master) and two others as secondary (the slaves) We set up our slave database to have it ready for when we populate our master database.
+  - With utilizing MongoDB, we learned that they disabled traditional Master/Slave relationships as of their 3.4 Versions. Instead, it has been replaced with replica sets. We are finalizing the last test before adding it live, utilizing one DB as the primary(master) and two others as secondary (the slaves).
 - Self Signed certs for Nginx Web server
   - We utilized CertBot to generate a self-signed certificate for our project. In addition, we also changed the permissions of our web server to redirect all http traffic to https, and are working to force https traffic only.
 - Improved designs
