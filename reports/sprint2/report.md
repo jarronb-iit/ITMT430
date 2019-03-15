@@ -36,7 +36,7 @@ Our goal for sprint two was to finalize the core design for the application, as 
   - Application can run in development environment or production environment
 - Port forwarding from host to virtual machine to allow access
 - Created MongoDB Atlas account
-  - Online database is used when Node environment is in "development mode, makes running the web app locally easier for hot reloading purposes. The changes between development or production environment is the MongoDB connection string and the host IP address which is is the environment variables.
+  - Online database is used when Node environment is in "development mode, makes running the web app locally easier for hot reloading purposes. The changes between development or production environment is the MongoDB connection string and the host IP address which is the environment variables.
 - Implemented database functionality
   - MongoDB sever has been implements and communicating with node application for saving of documents
 - Created logic for switching node application environments
