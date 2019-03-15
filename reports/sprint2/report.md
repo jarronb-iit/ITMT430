@@ -7,7 +7,7 @@
 - Junior Developer - [Johnathan Garcia](https://github.com/)
 - UI/UX - [Theo Economos](https://github.com/teconomo), [Erick Cabrera](https://github.com/ecabrera796)
 
-We have spent the majority of this sprint focusing on building tangible designs and artboards through Adobe XD. We also have utilized our user tree flow to implement our designs in a workable prototype to showcase a demo type of our app. 
+We have spent the majority of this sprint focusing on building tangible designs and artboards through Adobe XD. We also have utilized our user tree flow to implement our designs in a workable prototype to showcase a demo type of our app.
 
 - IT Operations - [Antoine Foggs](https://github.com/AFoggs)
 
@@ -34,7 +34,7 @@ Our goal for sprint two was to finalize the core design for the application, as 
   - MongoDB database server
 - Configured build process to successfully build out servers
   - Application can run in development environment or production environment
-- Port forwarding forwarding from host to virtual machine to allow access
+- Port forwarding from host to virtual machine to allow access
 - Created MongoDB Atlas account
   - Online database is used when Node environment is in "development mode, makes running the web app locally easier for hot reloading purposes. The changes between development or production environment is the MongoDB connection string and the host IP address which is is the environment variables.
 - Implemented database functionality
@@ -77,7 +77,7 @@ This sprint, the sum of our goals alleviated the bulk of issues that we would po
   - CSS Files
   - JS Files
 
-In the next sprint, we will focus on implementing security and ensuring data integrity in our project. With a now stable production environment, we want to ensure that is is secure as early as possible so that there is no need to compromise security in order to implement features. By implementing the important features early, we can reduce our production time for implementing new changes.
+In the next sprint, we will focus on implementing security and ensuring data integrity in our project. With a now stable production environment, we want to ensure that is secure as early as possible so that there is no need to compromise security in order to implement features. By implementing the important features early, we can reduce our production time for implementing new changes.
 
 Since the hardest part of the design element was creating the UI, we decided against implementing the front end originally. Now that our front end has been designed, and the majority of the back end deployed, in this sprint we will create the front end with the core design elements. We will decide on our ids and classes that will be mapped to the front-end and back-end.
 
