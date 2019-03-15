@@ -14,16 +14,7 @@ sudo apt install net-tools
 sudo apt-get purge nginx-common -y
 sudo apt-get install nginx -y
 
-# This profile opens only port 80 (normal, unencrypted web traffic)
-# sudo ufw allow 'Nginx Full'
 
-# # Enable firewall
-# echo y | sudo ufw enable
-
-# echo | sudo ufw status
-
-# command to retuen ip address
-# ip addr show enp0s8 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
 
 # Add derver to hostname
 sudo chown vagrant /etc/hosts
@@ -31,37 +22,6 @@ echo "192.168.50.11  nginx-web-server" >> /etc/hosts
 echo "192.168.50.12  node-application-server" >> /etc/hosts
 echo "192.168.50.13  mongodb-server" >> /etc/hosts
 
-# # Accessing http://10.0.2.15:5000 via a web browser would send the request to 
-# # the application server's private IP address on port 8080, which would be 
-# # received and replied to by the Node.js application.
-
-# https://www.scaleway.com/docs/how-to-configure-nginx-reverse-proxy/
-
-sudo chown vagrant /etc/nginx/sites-available/
-sudo unlink /etc/nginx/sites-enabled/default
-
-cd /etc/nginx/sites-available
-sudo touch reverse-proxy.conf
-
-# Give ownership over file
-sudo chown vagrant /etc/nginx/sites-available/reverse-proxy.conf
-
-# Create reverse proxy config
-cat <<EOT > /etc/nginx/sites-available/reverse-proxy.conf
-server {
-    listen nginx-web-server:80;
-
-    server_name nginx-web-server;
-
-    location / {
-        proxy_pass http://node-application-server:8080;
-        proxy_http_version 1.1;
-        proxy_set_header Connection 'upgrade';
-    }
-}
-EOT
-
-echo "Nginx reverse-proxy config done..."
 
 # Copy the configuration from /etc/nginx/sites-available to /etc/nginx/sites-enabled using a symbolic link.
 sudo ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/reverse-proxy.conf
