@@ -1,6 +1,6 @@
 const dotenvJSON = require("dotenv-json");
 dotenvJSON({ path: "../../packer/vanilla-install/variables.json" });
-console.log(process.env);
+
 module.exports = {
   mongoURI: process.env["database-development-connection"],
   nginxIP: process.env["nginx-web-server-ip"],
@@ -12,4 +12,4 @@ module.exports = {
   redisPort: process.env["redis-server-port"]
 };
 
-console.log("ENV = DEVELOPMENT");
+console.log("[NODE_ENV] = Development");

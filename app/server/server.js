@@ -28,36 +28,30 @@ app.use(bodyParser.json());
 mongoose
   .connect(keys.mongoURI, { useNewUrlParser: true })
   .then(() => {
-    console.log("MONGODB Connected");
-    // Models
-    // var Schema = mongoose.Schema;
-
-    // var schema = new Schema({ word: String });
-    // var Sample = mongoose.model("Words", schema);
-
-    // let entry = new Sample({ word: "DONE" });
-    // entry.save().then(console.log("Entry created..."));
+    console.log("[MONGODB]: MongoDB Connected");
   })
   .catch(error => {
-    console.log(error);
+    console.log("[MONGODB]:", error);
   });
 
 // Redis caching server connection
 const redisClient = redis.createClient({
-  host: "192.168.50.15",
+  host: keys.redisIp,
   port: keys.port
 });
-redisClient.auth(keys.redisPassword, function(err, reply) {
+
+redisClient.auth(keys.redisPassword, (error, reply) => {
+  if (error) console.log(error);
   reply === "OK"
     ? console.log("[REDIS]: Redis connection authenticated")
     : console.log("[REDIS]: Redis connection not authenticated");
 });
 
-redisClient.on("ready", function() {
+redisClient.on("ready", () => {
   console.log("[REDIS]: Redis is ready");
 });
 
-redisClient.on("error", function() {
+redisClient.on("error", () => {
   console.log("[REDIS]: Error in Redis");
 });
 
@@ -94,5 +88,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 server.listen(webServerPort, webAddress, () => {
-  console.log("Server running at: " + webAddress + ":" + webServerPort);
+  console.log(
+    "[EXPRESS]: Server running at: " + webAddress + ":" + webServerPort
+  );
 });

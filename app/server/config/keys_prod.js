@@ -13,4 +13,4 @@ module.exports = {
   redisPort: process.env["redis-server-port"]
 };
 
-console.log("ENV = PRODUCTION");
+console.log("NODE_ENV = Production");
