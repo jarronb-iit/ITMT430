@@ -5,6 +5,7 @@ const express = require("express"),
   http = require("http"),
   app = express(),
   server = http.createServer(app);
+const redis = require("redis");
 
 // Load routes files
 const buyer = require("./routes/api/buyer");
@@ -16,7 +17,7 @@ const auth = require("./routes/api/auth");
 // Load Keys
 const keys = require("./config/keys");
 
-let port = keys.port || 5000;
+let webServerPort = keys.webServerPort || 5000;
 let webAddress = keys.webAddress;
 
 // Body-Parser Middleware
@@ -40,6 +41,25 @@ mongoose
   .catch(error => {
     console.log(error);
   });
+
+// Redis caching server connection
+const redisClient = redis.createClient({
+  host: "192.168.50.15",
+  port: keys.port
+});
+redisClient.auth(keys.redisPassword, function(err, reply) {
+  reply === "OK"
+    ? console.log("[REDIS]: Redis connection authenticated")
+    : console.log("[REDIS]: Redis connection not authenticated");
+});
+
+redisClient.on("ready", function() {
+  console.log("[REDIS]: Redis is ready");
+});
+
+redisClient.on("error", function() {
+  console.log("[REDIS]: Error in Redis");
+});
 
 if (process.env.NODE_ENV === "development") {
   app.use(function(req, res, next) {
@@ -73,6 +93,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-server.listen(port, webAddress, () => {
-  console.log("Server running at: " + webAddress + ":" + port);
+server.listen(webServerPort, webAddress, () => {
+  console.log("Server running at: " + webAddress + ":" + webServerPort);
 });
