@@ -13,6 +13,7 @@
     "build": "npm run-script build --prefix ../client",
     "dev": "concurrently \"npm run dev-server\" \"npm run client\"",
     "setup-dev": "npm run npm-install-windows && npm run dev",
+    "setup-dev-linux": "sudo npm run npm-install-linux; sudo npm run dev-server",
     "postbuild-script": "npm run build --prefix ../client",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
