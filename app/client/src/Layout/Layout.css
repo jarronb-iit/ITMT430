@@ -1,0 +1,10 @@
+.Layout {
+  height: 100vh;
+
+  text-align: center;
+}
+
+h1 {
+  padding: 5% 0;
+  color: white;
+}

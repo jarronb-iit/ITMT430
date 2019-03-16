@@ -3,6 +3,7 @@
 
 # Create mongodb config
 sudo chown vagrant /etc/mongod.conf
+
 sudo cat <<EOT > /etc/mongod.conf
 # mongod.conf
 
@@ -70,6 +71,8 @@ db.createUser({
 db.createCollection("sample");
 db.sample.insert({ word: "hi" });
 EOT
+
+sudo mv ~/mongofile.js /home/vagrant/
 
 mongod --fork --logpath /var/log/mongodb.log --config /etc/mongod.conf 
 
