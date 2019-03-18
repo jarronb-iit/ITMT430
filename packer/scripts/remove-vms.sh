@@ -22,9 +22,25 @@ cd ../mongodb-server/ || exit 1
 echo y | vagrant destroy
 echo "Mongodb-server destroyed"
 
-# Remove servers if exist then add them again
+# Destroy & rebuild mongodb rep1 server
+cd ../mongodb-rep1-server/ || exit 1
+
+echo y | vagrant destroy
+echo "Mongodb-rep1-server destroyed"
+
+# Destroy & rebuild redis server
+cd ../redis-caching-server/ || exit 1
+
+echo y | vagrant destroy
+echo "Redis-caching-server destroyed"
+
+# Remove servers if exist
 vagrant box remove nginx-web-server
 
 vagrant box remove node-application-server
 
 vagrant box remove mongodb-server
+
+vagrant box remove mongodb-rep1-server
+
+vagrant box remove redis-caching-server

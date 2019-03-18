@@ -11,4 +11,4 @@ vagrant box add ./mongodb-server-virtualbox.box --name mongodb-server || exit 1
 
 vagrant box add ./mongodb-server-virtualbox.box --name mongodb-rep1-server || exit 1
 
-vagrant box add ./redis-web-server-virtualbox.box --name redis-caching-server || exit 1
+vagrant box add ./redis-caching-server-virtualbox.box --name redis-caching-server || exit 1

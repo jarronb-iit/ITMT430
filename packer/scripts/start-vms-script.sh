@@ -6,9 +6,13 @@ vagrant up --provision
 
 cd ../mongodb-server/
 
-vagrant up --provision
+vagrant up
 
 cd ../mongodb-rep1-server/
+
+vagrant up
+
+cd ../redis-caching-server/
 
 vagrant up --provision
 
@@ -16,8 +20,4 @@ cd ../node-application-server/
 
 vagrant up --provision
 
-cd ../redis-caching-server/
-
-vagrant up --provision
-
-echo "Web application can be viewed here: http://localhost:8080"
+echo "Web application can be viewed here: https://localhost:8080"
