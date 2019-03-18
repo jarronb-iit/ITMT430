@@ -17,3 +17,4 @@ sudo pm2 stop 0
 sudo NODE_ENV=production pm2 start /vagrant/repo/app/server/server.js
 
 # sudo npm run production-server
+echo "[NODE] server running..."
