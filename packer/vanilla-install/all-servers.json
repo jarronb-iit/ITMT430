@@ -4,6 +4,7 @@
       "name": "nginx-web-server",
       "vm_name": "nginx-web-server",
       "type": "virtualbox-iso",
+      "headless": "true",
       "boot_command": [
         "<esc><wait>",
         "<esc><wait>",
@@ -54,6 +55,7 @@
       "name": "node-application-server",
       "vm_name": "node-application-server",
       "type": "virtualbox-iso",
+      "headless": "true",
       "boot_command": [
         "<esc><wait>",
         "<esc><wait>",
@@ -104,6 +106,7 @@
       "name": "mongodb-server",
       "vm_name": "mongodb-server",
       "type": "virtualbox-iso",
+      "headless": "true",
       "boot_command": [
         "<esc><wait>",
         "<esc><wait>",
@@ -154,6 +157,7 @@
       "name": "redis-caching-server",
       "vm_name": "redis-caching-server",
       "type": "virtualbox-iso",
+      "headless": "true",
       "boot_command": [
         "<esc><wait>",
         "<esc><wait>",
