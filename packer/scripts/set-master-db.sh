@@ -89,4 +89,4 @@ sudo mongo --host mongodb-server ~/rsInit.js
 sudo mongo --host mongodb-server ~/addUsers.js
 
 sudo kill -9 $(pidof mongod)
-
+echo "[MOGODB] Set master database..."

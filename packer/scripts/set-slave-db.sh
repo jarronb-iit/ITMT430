@@ -68,3 +68,4 @@ sudo mongo --host mongodb-rep1-server ~/rsInit.js
 sudo mongo --host mongodb-rep1-server < ~/setSlave.js
 
 sudo kill -9 $(pidof mongod)
+echo "[MONGODB REP1] Set slave database..."
