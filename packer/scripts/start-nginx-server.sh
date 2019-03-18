@@ -88,4 +88,4 @@ sudo ufw delete allow 'Nginx HTTP'
 sudo systemctl stop nginx.service
 sudo nginx
 
-echo "Nginx server running..."
+echo "[NGINX] server running..."
