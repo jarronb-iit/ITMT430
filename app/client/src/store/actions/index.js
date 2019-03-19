@@ -1,2 +1,3 @@
-export { getPostsInit, getPostsSuccess } from "./sample";
-export { getErrors } from "./errors";
+export { getPostsInit, getPostsSuccess } from "./sampleActions";
+export { getErrors, clearErrors } from "./errorActions";
+export { loadUserInit, loadUserSuccess, loginSuccess } from "./authActions";

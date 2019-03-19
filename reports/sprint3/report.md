@@ -3,10 +3,9 @@
 ## Roles
 
 - Junior Developer - [Jarron Bailey](https://github.com/jarronb), [Theo Economos](https://github.com/teconomo)
-- Lead Developer - [Giancarlo Barillas](https://github.com/giancarlobarillas)
+- Lead Developer - [Giancarlo Barillas](https://github.com/giancarlobarillas), [Antoine Foggs](https://github.com/AFoggs)
 - UI/UX - [Johnathan Garcia](https://github.com/)
 - Project Manager - [Erick Cabrera](https://github.com/ecabrera796)
-- Lead Developer - [Antoine Foggs](https://github.com/AFoggs)
 
 ## Sprint 3 Goals
 
@@ -31,6 +30,8 @@ Our goal for Sprint 3 was to finalize all that we need to start making our artbo
   - We decided to use pm2 to help us manage our node environment and facilitate our DevOps tasks.
 - Database Schema
   - We took a closer look at how we are going to set up our database and seeing which types of entries we would need. We carefully came up with our schema making sure to keep the database clean, organized, and have little to no redundancy so that we could start building out our database as we are creating the web pages.
+  ![DB Schema](../../images/sprint3/ERD_roomie.JPG)
+  ![Preference List](../../images/sprint3/preferences.JPG)
 - Security
   - We decided to utilize Passport.js to help us set up our login authentication. We are going with both local authentication as well as Facebook authentication. We also created accounts with Facebook for Developers to help with our Facebook authentication.
   ![Facebok for Developers](../../images/sprint3/fbdev.png)
@@ -43,6 +44,8 @@ Our goal for Sprint 3 was to finalize all that we need to start making our artbo
   ![Bed and Bath Filter](../../design-files/snippet-pictures/filter-bedbathprice.JPG)
 
 For this Sprint we focused heavily on the remaining components we need to finally be able to set up our web pages and begin populating our database. After countless attempts and numerous debugging, We were finally able to get the product environment up and running on all of our machines. When it came down to setting up our database schema, it took a while to make sure we were making the database entries as clear as possible. We wanted to avoid doing extra work by having multiple entries that basically stored the same information for different users. Instead, we made it so an entry would have information that multiple users can access.
+
+![Trello](../../images/sprint3/Trello.png)
 
 ## Sprint 4 To-Do
 
