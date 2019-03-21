@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 # Halt VMS
 cd ../vms/node-application-server/
