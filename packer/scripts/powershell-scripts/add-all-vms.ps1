@@ -1,7 +1,5 @@
-#!/bin/bash
-
 # Add servers
-cd ../build/ || exit 1
+cd ../../build/ || exit 1
 
 vagrant box add ./nginx-web-server-virtualbox.box --name nginx-web-server || exit 1
 echo "[NGINX] vagrant box added..."
