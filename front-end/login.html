@@ -6,3 +6,24 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
     <link rel="stylesheet" media="screen" href="css/screen.css" />
   </head>
+  <body>
+    <main id="content">
+      <form method="get" action="#null" autocomplete="on">
+        <h1>Roomie</h1>
+        <ol>
+          <li id="regemail">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" pattern="^.+@.+$"/>
+          </li>
+          <li id="regpass">
+            <label for="pass">Password</label>
+            <input type="text" name="pass" id="pass"/>
+          </li>
+          <li id="reg">
+            <input type="button" name="submit" id="submit" value="Login" />
+          </li>
+        </ol>
+      </form>
+    </main>
+  </body>
+</html>
