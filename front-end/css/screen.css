@@ -226,3 +226,14 @@ h1{
 .h1{
   font-family: 'Vonique'
 }
+
+label{
+  display: block;
+  margin-bottom: 10px;
+}
+
+input{
+  border-radius: 60px;
+  border: solid 2px black ;
+  padding: 5px 20px;
+}
