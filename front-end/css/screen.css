@@ -215,3 +215,14 @@ body{
   margin-right: auto;
   width: 25%;
 }
+
+h1{
+  font-size: 100px;
+  font-weight: bold;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.h1{
+  font-family: 'Vonique'
+}
