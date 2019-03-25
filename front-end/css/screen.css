@@ -266,6 +266,7 @@ img, audio, video {
     border-radius: 60px;
     border: solid 5px #00C6FF ;
     padding: 5px 20px;
+    background: #ffffff;
   }
 
   #regemail{
