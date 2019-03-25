@@ -262,14 +262,9 @@ img, audio, video {
     font-family: 'Vonique'
   }
 
-  label{
-    display: block;
-    margin-bottom: 10px;
-  }
-
   input{
     border-radius: 60px;
-    border: solid 2px black ;
+    border: solid 5px #00C6FF ;
     padding: 5px 20px;
   }
 
