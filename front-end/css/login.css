@@ -209,7 +209,7 @@ img, audio, video {
     color: #00C6FF;
     padding-left: 40px;
     padding-right: 40px;
-    margin-top: 6em;
+    margin-top: 6.5em;
   }
 
   /*svg{
@@ -276,11 +276,10 @@ img, audio, video {
 
   #logemail{
     margin-top: 10px;
-    margin-bottom: 20px;
   }
 
   #logpass{
-    margin-top: 10px;
+    margin-top: -20px;
     margin-bottom: 30px;
   }
 
