@@ -282,9 +282,14 @@ img, audio, video {
   }
 
   #forgotpass{
+    cursor: pointer;
     margin-top: -10px;
     font-size: 25px;
     color: #000000
+  }
+
+  #forgotpass:hover{
+    color: #00f7ff;
   }
 }
 
