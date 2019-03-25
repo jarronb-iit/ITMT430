@@ -188,6 +188,7 @@ img, audio, video {
 
 @media (min-width: 600px){
 
+  /* Cannot get font to work yet */
   @font-face {
     font-family: 'Vonique64';
     src:url(../fonts/vonique-64/Vonique64.tff);
@@ -202,14 +203,15 @@ img, audio, video {
   }
 
   body{
-    /* Theo add login page image here and delete the background color
-    background-image: url("../images/") */
+    /* Theo replace background-color with background-image and add login page image */
     background-color: #ffffff;
+    /*background-image: url(../../images/);*/
     font-family: 'Montserrat', sans-serif;
     color: #00C6FF;
     padding-left: 40px;
     padding-right: 40px;
     margin-top: 6.5em;
+
   }
 
   /*svg{
