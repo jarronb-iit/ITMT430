@@ -248,3 +248,12 @@ img, audio, video {
     margin-bottom: 30px;
   }
 }
+
+/* START MOBILE CSS */
+
+@media screen and (max-width: 480px){
+  body{
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #e9ff00;
+    color: #000000;
+  }
