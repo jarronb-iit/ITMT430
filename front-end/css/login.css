@@ -202,6 +202,8 @@ img, audio, video {
   }
 
   body{
+    /* Theo add login page image here and delete the background color
+    background-image: url("../images/") */
     background-color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     color: #00C6FF;
