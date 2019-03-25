@@ -264,3 +264,12 @@ img, audio, video {
     margin-right: auto;
     width: 25%;
   }
+
+  h1{
+    font-size: 30px;
+    margin-top: -25px;
+    margin-bottom: 20px;
+    margin-left: -30px;
+    margin-right: -30px;
+    text-align: center;
+  }
