@@ -253,7 +253,7 @@ img, audio, video {
 
 @media screen and (max-width: 480px){
   body{
-    font-family: 'Ubuntu', sans-serif;
-    background-color: #e9ff00;
-    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #00C6FF;
   }
