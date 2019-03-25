@@ -273,3 +273,23 @@ img, audio, video {
     margin-right: -30px;
     text-align: center;
   }
+
+  li{
+    font-size: 23px;
+    text-align: center;
+  }
+
+  input{
+    max-width: 80%
+  }
+
+
+  #regemail{
+    margin-top: 10px;
+  }
+
+  #regpass{
+    margin-top: 10px;
+  }
+
+  /* END MOBILE CSS */
