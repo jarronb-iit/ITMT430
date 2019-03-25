@@ -200,3 +200,11 @@ html{
   padding: 26px;
   text-rendering: optimizeLegibility;
 }
+
+body{
+  background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  color: #00C6FF;
+  padding-left: 40px;
+  padding-right: 40px;
+}
