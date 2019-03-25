@@ -209,6 +209,42 @@ img, audio, video {
     padding-right: 40px;
   }
 
+  /*svg{
+    transform: scale(0.9);
+    transform: rotate(180deg);
+    cursor: pointer;
+    background: #00C6FF
+  }
+
+  svg:hover{
+    background: #00f7ff;
+  }*/
+
+  .left-arrow{
+    width: 50px;
+    height: 50px;
+    background: #00C6FF;
+    position: relative;
+    transform: rotate(-45deg);
+    margin-left: 29.8em;
+    margin-top: 100px;
+    cursor: pointer;
+  }
+
+  .left-arrow:after{
+    content: '';
+    position:absolute;
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    top: 10px;
+    left: 10px;
+  }
+
+  .left-arrow:hover{
+    background: #00f7ff;
+  }
+
   .center{
     display: block;
     margin-left: auto;
@@ -219,7 +255,7 @@ img, audio, video {
   h1{
     font-size: 100px;
     font-weight: bold;
-    margin-top: 60px;
+    margin-top: 150px;
     margin-bottom: 40px;
   }
 
