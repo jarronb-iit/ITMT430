@@ -188,10 +188,15 @@ img, audio, video {
 
 @media (min-width: 600px){
 
-  html{
-    font-size: 40px;
-    text-align: center;
-    line-height: 26px;
-    padding: 26px;
-    text-rendering: optimizeLegibility;
-  }
+@font-face {
+  font-family: 'Vonique';
+  src:url(../fonts/vonique-64/Vonique64.tff);
+}
+
+html{
+  font-size: 40px;
+  text-align: center;
+  line-height: 26px;
+  padding: 26px;
+  text-rendering: optimizeLegibility;
+}
