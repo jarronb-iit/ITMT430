@@ -189,7 +189,7 @@ img, audio, video {
 @media (min-width: 600px){
 
   @font-face {
-    font-family: 'Vonique';
+    font-family: 'Vonique64';
     src:url(../fonts/vonique-64/Vonique64.tff);
   }
 
@@ -227,7 +227,7 @@ img, audio, video {
     position: relative;
     transform: rotate(-45deg);
     margin-left: 29.8em;
-    margin-top: 100px;
+    margin-top: 3em;
     cursor: pointer;
   }
 
@@ -258,25 +258,33 @@ img, audio, video {
     margin-bottom: 40px;
   }
 
-  .h1{
-    font-family: 'Vonique'
-  }
-
   input{
     border-radius: 60px;
     border: solid 5px #00C6FF ;
     padding: 5px 20px;
     background: #ffffff;
+    margin-top: 2.5em;
+    text-align: center;
   }
 
-  #regemail{
+  .submit{
+    background: #00C6FF;
+  }
+
+  #logemail{
     margin-top: 10px;
     margin-bottom: 20px;
   }
 
-  #regpass{
+  #logpass{
     margin-top: 10px;
     margin-bottom: 30px;
+  }
+
+  #forgotpass{
+    margin-top: -10px;
+    font-size: 25px;
+    color: #000000
   }
 }
 
@@ -315,11 +323,11 @@ img, audio, video {
   }
 
 
-  #regemail{
+  #logemail{
     margin-top: 10px;
   }
 
-  #regpass{
+  #logpass{
     margin-top: 10px;
   }
 
