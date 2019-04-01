@@ -7,7 +7,7 @@ import { loadUserInit } from "./store/actions/authActions";
 import store from "./store";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class App extends Component {
+class Home extends Component {
   componentDidMount() {
     store.dispatch(loadUserInit());
   }
@@ -30,7 +30,9 @@ class App extends Component {
   render() {
     return (
             //Replace header with new logo image of roomie.
-      <div id="loginPage">
+      <div id="homePage">
+
+      <header> Roomie </header>
 
 
       <form method = "get" action = "@null" autocomplete = "on" onSubmit = {this.handleLogIn}>
@@ -64,4 +66,4 @@ class App extends Component {
 
 
 
-export default App;
+export default Home;
