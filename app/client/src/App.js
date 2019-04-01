@@ -20,25 +20,36 @@ class App extends Component {
     }
   }
 
+//HomePage To do
+// Add OAuth Logins
+// Add Sign Up
+// Add background Image
+
 
   render() {
     return (
+            //Replace header with new logo image of roomie.
       <div id="loginPage">
 
-      <div className="1">
-      <h1>Where</h1>
+
+      <div className="Welcome">
+      <h1>Welcome to Roomie</h1>
       </div>
+
       <form onSubmit= {this.handleLogIn}>
-      <label className="login">
-        UserName
-          <input type = "text" name = "username" value = {this.state.userName} placeholder = "Enter username"/>
+      <label className="usernameBox">
+        Username
+          <input type = "text" name = "username" /*value = {this.state.userName}*/ placeholder = "Enter username"/>
       </label>
-      <label className = "login">
+      <br/>
+      <label className = "passwordBox">
         Password
-        <input type = "password" name = "password" value = {this.state.password} placeholder="Enter password"/>
+        <input type = "password" name = "password" /*value = {this.state.password}*/ placeholder="Enter password"/>
       </label>
       <input type="submit" value= "Submit"/>
       </form>
+      <br/>
+       <button type="button" id="signUp">Sign Up</button> 
 
 
 
