@@ -203,6 +203,7 @@ img, audio, video {
     text-rendering: optimizeLegibility;
   }
 
+/*Replace with page specific background image once possible.*/
   body{
     /* Theo replace background-color with background-image and add login page image */
     background-color: #ffffff;
@@ -212,6 +213,10 @@ img, audio, video {
     padding-left: 40px;
     padding-right: 40px;
     margin-top: 6.5em;
+
+    background-image: url(./assets/images/bedroom.jpg);
+    background-size: cover;
+    min-height: 100%;
 
   }
 
@@ -274,6 +279,12 @@ img, audio, video {
     margin-top: 2.5em;
     text-align: center;
   }
+
+/* #loginPage{
+  background-image: url(./assets/images/bedroom.jpg);
+  background-size: cover;
+  min-height: 100%;
+} */
 
   #submit{
     background: #00C6FF;
