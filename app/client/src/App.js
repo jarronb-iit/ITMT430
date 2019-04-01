@@ -20,24 +20,6 @@ class App extends Component {
     }
   }
 
-//Password Visibility thanks to codePen https://codepen.io/Don-m/pen/mmgyQG
-  constructor(props){
-   super(props);
-   this.state = {
-     type: 'input',
-     score: 'null'
-   }
-   this.showHide = this.showHide.bind(this);
- }
-
- showHide(e){
-   e.preventDefault();
-   e.stopPropagation();
-   this.setState({
-     type: this.state.type === 'input' ? 'password' : 'input'
-   })
- }
-
 
   render() {
     return (
@@ -53,8 +35,7 @@ class App extends Component {
       </label>
       <label className = "login">
         Password
-        <input type = "text" name = "password" value = {this.state.password} placeholder="Enter password"/>
-        <span className = "password_show" onClick={this.showHide}>{this.state.type === 'input' ? 'Hide' : 'Show'}</span>
+        <input type = "password" name = "password" value = {this.state.password} placeholder="Enter password"/>
       </label>
       <input type="submit" value= "Submit"/>
       </form>
