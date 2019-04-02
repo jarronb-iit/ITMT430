@@ -287,6 +287,11 @@ img, audio, video {
   min-height: 100%;
 } */
 
+  #header{
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+
   #submit{
     background: #00C6FF;
   }
@@ -299,6 +304,7 @@ img, audio, video {
     margin-top: -20px;
     margin-bottom: 30px;
   }
+
 
 
   #forgotpass{
