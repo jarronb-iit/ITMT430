@@ -1,35 +1,35 @@
-# Halt VMS
+<# Halt VMS #>
 cd ../../vms/node-application-server/
 
 vagrant halt
 
-echo "[NODE] server shutdown..."
+Write-Host "[NODE] server shutdown..."
 
 
-# Halt nginx server
+<# Halt nginx server #>
 cd ../../nginx-web-server/
 
 vagrant halt
 
-echo "[NGINX] server shutdown..."
+Write-Host "[NGINX] server shutdown..."
 
-# Halt mongodb server
+<# Halt mongodb server #>
 cd ../../mongodb-server/
 
 vagrant halt
 
-echo "[MONGODB] server shutdown..."
+Write-Host "[MONGODB] server shutdown..."
 
 # Halt mongodb rep1 server
 cd ../../mongodb-rep1-server/
 
 vagrant halt
 
-echo "[MONGODB REP1] server shutdown..."
+Write-Host "[MONGODB REP1] server shutdown..."
 
-# Halt redis caching server
+<# Halt redis caching server #>
 cd ../../redis-caching-server/
 
 vagrant halt
 
-echo "[REDIS] server shutdown..."
+Write-Host "[REDIS] server shutdown..."
