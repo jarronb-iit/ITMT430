@@ -32,7 +32,7 @@ class Home extends React.Component {
       </div>
 
       <div id="startSearch">
-      <button type="button" className="submit" /*onclick="location.href = /signup"*/> Start Search </button>
+      <button type="button"  className="startSearchButton" /*onclick="location.href = /signup"*/> Start Search </button>
       </div>
 
       <div id="pastSearch">

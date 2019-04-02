@@ -287,6 +287,16 @@ img, audio, video {
   min-height: 100%;
 } */
 
+  .startSearchButton{
+    border-radius: 60px;
+    border: solid 5px #ffffff; /* Replace with proper shade of blue */
+    padding: 5px 20px;
+    background: #00C6FF;
+    margin-top: 2.5em;
+    text-align: center;
+    color: #ffffff;
+  }
+
   #header{
     margin-top: 50px;
     margin-bottom: 100px;
