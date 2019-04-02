@@ -1,33 +1,33 @@
 <# Destroy VMS if exist #>
 
 <# Destroy & rebuild node server #>
-cd ../../vms/node-application-server/ -or
+cd ../../vms/node-application-server/
 
 Write-Host y | vagrant destroy
 Write-Host "[NODE] Server destroyed..."
 
 
 <# Destroy & rebuild nginx server #>
-cd ../../nginx-web-server/ -or
+cd ../../nginx-web-server/
 
 Write-Host y | vagrant destroy
 Write-Host "[NGINX] Server destroyed..."
 
 
 <# Destroy & rebuild mongodb server #>
-cd ../../mongodb-server/ -or
+cd ../../mongodb-server/
 
 Write-Host y | vagrant destroy
 Write-Host "[MONGODB] Server destroyed..."
 
 <# Destroy & rebuild mongodb rep1 server #>
-cd ../../mongodb-rep1-server/ -or
+cd ../../mongodb-rep1-server/
 
 Write-Host y | vagrant destroy
 Write-Host "[MONGODB REP1] Server destroyed..."
 
 <# Destroy & rebuild redis server #>
-cd ../../redis-caching-server/ -or
+cd ../../redis-caching-server/
 
 Write-Host y | vagrant destroy
 Write-Host "[REDIS] Server destroyed..."

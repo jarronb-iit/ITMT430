@@ -2,7 +2,7 @@
 ./remove-vms.ps1
 
 <# Build each Server #>
-cd ../../vanilla-install/ -or
+cd ../../vanilla-install/
 
-packer build -force all-servers.json -or
+packer build -force all-servers.json
 Write-Host "[PACKER] build finished..."
