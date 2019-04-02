@@ -28,7 +28,7 @@ class Home extends React.Component {
 
 
       <div id ="welcomeUser">
-        <p> Welcome back, User! </p>
+        <h1> Welcome back, User! </h1>
       </div>
 
       <div id="startSearch">
@@ -36,7 +36,7 @@ class Home extends React.Component {
       </div>
 
       <div id="pastSearch">
-
+        <h2> Past Searches </h2>
       </div>
 
       </div>

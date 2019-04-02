@@ -272,6 +272,14 @@ img, audio, video {
     color: #00C6FF;
   }
 
+  h2{
+    font-size: 40px;
+    margin-top: 150px;
+    margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
+    color: #00C6FF;
+  }
+
   input, button{
     border-radius: 60px;
     border: solid 5px #00C6FF ;
