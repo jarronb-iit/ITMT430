@@ -186,14 +186,13 @@ img, audio, video {
 
 /* ===== BASE STYLES ===== */
 
-/* @media (min-width: 600px){
+@media (min-width: 600px){
 
-/*Revisit and import font later*/
   /* Cannot get font to work yet */
-  /*@font-face {
+  @font-face {
     font-family: 'Vonique64';
-    src:url(./assets/fonts/vonique-64/Vonique64.tff);
-  } */
+    src:url(../fonts/vonique-64/Vonique64.tff);
+  }
 
   html{
     font-size: 40px;
@@ -203,7 +202,6 @@ img, audio, video {
     text-rendering: optimizeLegibility;
   }
 
-/*Replace with page specific background image once possible.*/
   body{
     /* Theo replace background-color with background-image and add login page image */
     background-color: #ffffff;
@@ -213,11 +211,6 @@ img, audio, video {
     padding-left: 40px;
     padding-right: 40px;
     margin-top: 6.5em;
-
-    /*Photo by Buenosia Carol from Pexels*/
-    background-image: url(./assets/images/bedroom.jpg);
-    background-size: cover;
-    min-height: 100%;
 
   }
 
@@ -268,11 +261,9 @@ img, audio, video {
     font-size: 100px;
     margin-top: 150px;
     margin-bottom: 40px;
-    font-family: 'Montserrat', sans-serif;
-    color: #00C6FF;
   }
 
-  input, button{
+  input{
     border-radius: 60px;
     border: solid 5px #00C6FF ;
     padding: 5px 20px;
@@ -281,13 +272,7 @@ img, audio, video {
     text-align: center;
   }
 
-/* #loginPage{
-  background-image: url(./assets/images/bedroom.jpg);
-  background-size: cover;
-  min-height: 100%;
-} */
-
-  #submit{
+  .submit{
     background: #00C6FF;
   }
 
@@ -300,7 +285,6 @@ img, audio, video {
     margin-bottom: 30px;
   }
 
-
   #forgotpass{
     cursor: pointer;
     margin-top: -10px;
@@ -311,7 +295,7 @@ img, audio, video {
   #forgotpass:hover{
     color: #00f7ff;
   }
-
+}
 
 /* START MOBILE CSS */
 
@@ -321,7 +305,6 @@ img, audio, video {
     background-color: #ffffff;
     color: #00C6FF;
   }
-}
 
   .center{
     display: block;
