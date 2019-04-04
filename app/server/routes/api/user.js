@@ -1,24 +1,17 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const keys = require("../../config/keys");
-const errorFormatter = require("../../helperFunctions/errorsFormatter");
-
-// const passport = require("passport");
+const auth = require('../../middleware/auth');
 
 // Load Model
-const User = require("../../models/User");
-
-// // Load Validation
-// const validatePostInput = require("../../validation/post";
+const User = require('../../models/User');
+const Listing = require('../../models/Listing');
 
 // @route   GET api/user/test
 // @desc    Tests user route
 // @access  Public
-router.get("/test", (req, res) => {
+router.get('/test', (req, res) => {
   res.json({
-    msg: "User works"
+    msg: 'User works',
   });
 });
 
