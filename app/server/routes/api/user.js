@@ -57,7 +57,7 @@ router.get('/:id/listings', auth, (req, res) => {
     })
     .catch((error) =>
       res.status(400).json({
-        errors: [{ message: 'Error retrieving listings.' }],
+        errors: [{ message: "User don't exist" }]
       })
     );
 });
