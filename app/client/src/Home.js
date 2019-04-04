@@ -7,24 +7,16 @@ import { loadUserInit } from "./store/actions/authActions";
 import store from "./store";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class Home extends Component {
+class Home extends React.Component {
   componentDidMount() {
     store.dispatch(loadUserInit());
   }
 
-
-//Change this to handle cases where it is simply false.
-  handleLogIn(event){
-    if (this.state.value != 'Antoine'); {
-      alert('Your username or password is incorrect');
-      event.preventDefault();
-    }
-  }
-
 //To do
-// Add OAuth Logins
-// Add Sign Up redirect functionality
-// Add Routes for navigation.
+// Add function to get user's first name and set as Display for welcomeUser
+// Add functionality to to Start Search button
+// Add function to inject pastSearch div with most roulette image of top 5 most recent searches.
+// Implement Hamburger menu, utilize the following example: https://codepen.io/naturalclar/pen/zEwvbg
 
 
   render() {
@@ -32,30 +24,21 @@ class Home extends Component {
             //Replace header with new logo image of roomie.
       <div id="homePage">
 
-      <header> Roomie </header>
+      <header id="header"> Roomie </header>
 
 
-      <form method = "get" action = "@null" autocomplete = "on" onSubmit = {this.handleLogIn}>
-        <p>Welcome to Roomie</p>
-        <div class = "left-arrow"></div>
-      <ol>
-        <li id = "logemail">
-            <input type = "email" name = "email" id ="email" /*value = {this.state.userName}*/ placeholder = "Enter username"/>
-        </li>
-        <li id = "logpass">
-          <input type = "password" name = "password" id="pass" /*value = {this.state.password}*/ placeholder="Enter password"/>
-        </li>
-        <li id = "forgotpass">
-          <a href="#"> Forgot Password?</a>
-        </li>
-        <li id = "login">
-          <input type="submit" className="submit" value= "Login"/>
-          </li>
-        <li id = "signup">
-        <button type="button" className="submit" onclick="location.href = /signup"> Sign Up </button>
-        </li>
-        </ol>
-      </form>
+      <div id ="welcomeUser">
+        <h1> Welcome back, User! </h1>
+      </div>
+
+      <div id="startSearch">
+      <button type="button"  className="startSearchButton" /*onclick="location.href = /signup"*/> Start Search </button>
+      </div>
+
+      <div id="pastSearch">
+        <h2> Past Searches </h2>
+      </div>
+
       </div>
 
 
