@@ -15,6 +15,21 @@ router.get("/test", (req, res) => {
   });
 });
 
+// @route   GET api/listings/
+// @desc    Get all listing by every user
+// @access  Private
+router.get("/", auth, (req, res) => {
+  Listing.find()
+    .then(listings => {
+      return res.json(listings);
+    })
+    .catch(error =>
+      res.json({
+        errors: [{ message: "Error retrieving listings." }]
+      })
+    );
+});
+
 // @route   POST api/listing/
 // @desc    Create new listing
 // @access  Private
