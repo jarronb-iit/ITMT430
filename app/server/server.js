@@ -8,11 +8,7 @@ const express = require("express"),
 const redis = require("redis");
 
 // Load routes files
-const buyer = require("./routes/api/buyer");
-const property = require("./routes/api/property");
-const seller = require("./routes/api/seller");
-const user = require("./routes/api/user");
-const auth = require("./routes/api/auth");
+const listings = require('./routes/api/listings');
 
 // Load Keys
 const keys = require("./config/keys");
@@ -67,11 +63,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // Use Routes
-app.use("/api/buyer", buyer);
-app.use("/api/property", property);
-app.use("/api/seller", seller);
-app.use("/api/user", user);
-app.use("/api/auth", auth);
+app.use('/api/listings', listings);
 
 app.get("/", (req, res) => {
   res.json({ msg: "Bye world" });
