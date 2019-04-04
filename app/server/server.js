@@ -9,7 +9,7 @@ const redis = require("redis");
 
 // Load routes files
 const buyer = require("./routes/api/buyer");
-const property = require("./routes/api/property");
+const listings = require("./routes/api/listings");
 const seller = require("./routes/api/seller");
 const user = require("./routes/api/user");
 const auth = require("./routes/api/auth");
@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 
 // MongoDB connection
 mongoose
-  .connect(keys.mongoURI, { useNewUrlParser: true })
+  .connect(keys.mongoURI, { useNewUrlParser: true, useFindAndModify: false })
   .then(() => {
     console.log("[MONGODB]: MongoDB Connected");
   })
@@ -34,26 +34,26 @@ mongoose
     console.log("[MONGODB]:", error);
   });
 
-// Redis caching server connection
-const redisClient = redis.createClient({
-  host: keys.redisIp,
-  port: keys.port
-});
+// // Redis caching server connection
+// const redisClient = redis.createClient({
+//   host: keys.redisIp,
+//   port: keys.port
+// });
 
-redisClient.auth(keys.redisPassword, (error, reply) => {
-  if (error) console.log(error);
-  reply === "OK"
-    ? console.log("[REDIS]: Redis connection authenticated")
-    : console.log("[REDIS]: Redis connection not authenticated");
-});
+// redisClient.auth(keys.redisPassword, (error, reply) => {
+//   if (error) console.log(error);
+//   reply === "OK"
+//     ? console.log("[REDIS]: Redis connection authenticated")
+//     : console.log("[REDIS]: Redis connection not authenticated");
+// });
 
-redisClient.on("ready", () => {
-  console.log("[REDIS]: Redis is ready");
-});
+// redisClient.on("ready", () => {
+//   console.log("[REDIS]: Redis is ready");
+// });
 
-redisClient.on("error", () => {
-  console.log("[REDIS]: Error in Redis");
-});
+// redisClient.on("error", () => {
+//   console.log("[REDIS]: Error in Redis");
+// });
 
 if (process.env.NODE_ENV === "development") {
   app.use(function(req, res, next) {
@@ -68,7 +68,7 @@ if (process.env.NODE_ENV === "development") {
 
 // Use Routes
 app.use("/api/buyer", buyer);
-app.use("/api/property", property);
+app.use("/api/listings", listings);
 app.use("/api/seller", seller);
 app.use("/api/user", user);
 app.use("/api/auth", auth);
