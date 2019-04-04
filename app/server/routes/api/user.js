@@ -11,7 +11,7 @@ const Listing = require('../../models/Listing');
 // @access  Public
 router.get('/test', (req, res) => {
   res.json({
-    msg: 'User works',
+    msg: 'User works'
   });
 });
 
@@ -22,11 +22,11 @@ router.put('/:id', auth, (req, res) => {
   // Check User param id versus user logged in
   if (req.user.id != req.params.id) {
     return res.status(401).json({
-      errors: [{ message: 'Not authorized' }],
+      errors: [{ message: 'Not authorized' }]
     });
   }
 
-  User.findByIdAndUpdate(req.params.id, { $set: req.body }).then((user) =>
+  User.findByIdAndUpdate(req.params.id, { $set: req.body }).then(user =>
     res.status(200).json(user)
   );
 });
@@ -38,13 +38,11 @@ router.delete('/:id', auth, (req, res) => {
   // Check User param id versus user logged in
   if (req.user.id != req.params.id) {
     return res.status(401).json({
-      errors: [{ message: 'Not authorized' }],
+      errors: [{ message: 'Not authorized' }]
     });
   }
 
-  User.findByIdAndRemove(req.user.id).then((user) =>
-    res.status(200).json(user)
-  );
+  User.findByIdAndRemove(req.user.id).then(user => res.status(200).json(user));
 });
 
 // @route   GET api/user/listings
@@ -52,10 +50,10 @@ router.delete('/:id', auth, (req, res) => {
 // @access  Private
 router.get('/:id/listings', auth, (req, res) => {
   Listing.find({ seller: req.params.id })
-    .then((listing) => {
+    .then(listing => {
       return res.status(200).json(listing);
     })
-    .catch((error) =>
+    .catch(error =>
       res.status(400).json({
         errors: [{ message: "User don't exist" }]
       })
