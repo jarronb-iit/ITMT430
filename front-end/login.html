@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" class="hasjs">
+  <head>
+    <title>Roomie</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+    <link rel="stylesheet" media="screen" href="css/login.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/login.js"></script>
+  </head>
+  <body>
+    <main id="content">
+      <form method="get" action="#null" autocomplete="on">
+        <h1>Roomie</h1>
+        <div class = "left-arrow"></div>
+        <!-- <svg width="60" height="60">
+          <path d="M 10 0 L 30 0 L 60 30 L 30 60 L 10 60 L 40 30 L 10 0"></path>
+        </svg> -->
+        <ol>
+          <li id="logemail">
+            <input type="email" name="email" id="email" value="Email Address" pattern="^.+@.+$"/>
+          </li>
+          <li id="logpass">
+            <input type="text" name="pass" id="pass" value="Password"/>
+          </li>
+          <li id="forgotpass">
+            <p> Forgot Password? </p>
+          <li id="login">
+            <input type="button" name="submit" id="submit" value="Login" />
+          </li>
+        </ol>
+      </form>
+    </main>
+  </body>
+</html>
