@@ -18,9 +18,7 @@ router.get('/test', (req, res) => {
   });
 });
 
-// @route   POST api/auth/
-// @desc    Authenticate user
-// @access  public
+// Login route
 router.post('/', (req, res) => {
   User.findOne({ email: req.body.email }).then((user) => {
     if (!user)
@@ -63,11 +61,6 @@ router.get('/user', auth, (req, res) => {
     .then((user) => {
       res.json(user);
     })
-    .catch((error) =>
-      res.status(400).json({
-        errors: [{ message: 'Email and/or password is incorrect.' }],
-      }),
-    );
 });
 
 // @route   POST api/auth/user/
@@ -79,10 +72,13 @@ router.post('/user', (req, res) => {
     res.status(409).json({ errors: [{ message: 'User already exits' }] });
   });
 
-  let = newUser = new User(req.body);
+  let = newUser = new User(req.body);  
+  let err = newUser.validateSync()
 
-  console.log(newUser);
-  
+  if (err) {
+    const errors = errorsFormatter(err);
+    return res.status(400).json({ errors: errors });
+  }
   
 
   // Hash Password with Bcryptjs
@@ -116,7 +112,7 @@ router.post('/user', (req, res) => {
         .catch((err) => {
           if (err.errors) {
             const errors = errorsFormatter(err);
-            res.status(400).json({ errors: errors });
+            return res.status(400).json({ errors: errors });
           } else {
             console.log(err);
           }
