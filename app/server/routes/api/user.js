@@ -38,21 +38,21 @@ router.put('/:id', auth, (req, res) => {
   );
   });
 
-  // Hash Password with Bcryptjs
-  bcrypt.genSalt(10, (error, salt) => {
-    bcrypt.hash(newUser.password, salt, (error, hash) => {
-      if (error) {
-        throw error;
+// @route   DELETE api/user/:id
+// @desc    Delete user
+// @access  Private
+router.delete('/:id', auth, (req, res) => {
+  // Check User param id versus user logged in
+  if (req.user.id != req.params.id) {
+    return res.status(401).json({
+      errors: [{ message: 'Not authorized' }],
+    });
       }
-      newUser.password = hash;
 
-      // Save New User with Hashed Password
-      newUser
-        .save()
-        .then(user => {
-          // Takes password out of user object
-          const { password, ...formattedUserObj } = user._doc;
-          user = formattedUserObj;
+  User.findByIdAndRemove(req.user.id).then((user) =>
+    res.status(200).json(user)
+  );
+});
 
           // Create json web token: payload is new user
           jwt.sign(
