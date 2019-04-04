@@ -1,5 +1,5 @@
 {
-  "name": "example",
+  "name": "Roomie",
   "version": "1.0.0",
   "description": "Private team repo for ITMT 430",
   "main": "index.js",
@@ -15,6 +15,7 @@
     "setup-dev": "npm run npm-install-windows && npm run dev",
     "setup-dev-linux": "sudo npm run npm-install-linux; sudo npm run dev-server",
     "postbuild-script": "npm run build --prefix ../client",
+    "apidoc-build": "npx apidoc -i routes/api/ -o ../../docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,6 +29,7 @@
   },
   "homepage": "https://github.com/jarronb/2019-team-09f#readme",
   "dependencies": {
+    "apidoc": "^0.17.7",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "dotenv-json": "^1.0.0",
@@ -40,5 +42,14 @@
   "devDependencies": {
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.10"
+  },
+  "apidoc": {
+    "name": "Roomie",
+    "version": "0.1.0",
+    "description": "Roomie api documentation",
+    "apidoc": {
+      "title": "Rommie API",
+      "url": "https://github.com/illinoistech-itm/2019-team-09f"
+    }
   }
 }
