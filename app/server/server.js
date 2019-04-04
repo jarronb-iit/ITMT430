@@ -8,7 +8,11 @@ const express = require("express"),
 const redis = require("redis");
 
 // Load routes files
-const listings = require('./routes/api/listings');
+const buyer = require("./routes/api/buyer");
+const listings = require("./routes/api/listings");
+const seller = require("./routes/api/seller");
+const user = require("./routes/api/user");
+const auth = require("./routes/api/auth");
 
 // Load Keys
 const keys = require("./config/keys");
@@ -22,7 +26,7 @@ app.use(bodyParser.json());
 
 // MongoDB connection
 mongoose
-  .connect(keys.mongoURI, { useNewUrlParser: true })
+  .connect(keys.mongoURI, { useNewUrlParser: true, useFindAndModify: false })
   .then(() => {
     console.log("[MONGODB]: MongoDB Connected");
   })
@@ -63,7 +67,11 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // Use Routes
-app.use('/api/listings', listings);
+app.use("/api/buyer", buyer);
+app.use("/api/listings", listings);
+app.use("/api/seller", seller);
+app.use("/api/user", user);
+app.use("/api/auth", auth);
 
 app.get("/", (req, res) => {
   res.json({ msg: "Bye world" });
