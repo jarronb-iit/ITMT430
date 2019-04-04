@@ -117,4 +117,20 @@ router.delete("/:id", auth, (req, res) => {
       })
     );
 });
+
+// @route   GET api/listing/:id
+// @desc    Get all listing for user
+// @access  Private
+router.get("/:id", auth, (req, res) => {
+  Listing.findById(req.params.id)
+    .then(listing => {
+      res.status(200).json(listing);
+    })
+    .catch(error =>
+      res.status(404).json({
+        errors: [{ message: "Listing does not exist." }]
+      })
+    );
+});
+
 module.exports = router;
