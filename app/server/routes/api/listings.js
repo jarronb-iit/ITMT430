@@ -90,4 +90,31 @@ router.put("/:id", auth, (req, res) => {
       })
     );
 });
+
+// @route   DELETE api/listing/:id
+// @desc    Delete listing for user
+// @access  Private
+router.delete("/:id", auth, (req, res) => {
+  Listing.findById(req.params.id)
+    .then(listing => {
+      // Check seller listing versus user logged in
+      if (req.user.id != listing.seller) {
+        return res.status(401).json({
+          errors: [{ message: "Not authorized" }]
+        });
+      }
+
+      // Update listing
+      Listing.findByIdAndRemove(req.params.id).then(listing =>
+        res.status(200).json(listing)
+      );
+
+      // return res.json(listing);
+    })
+    .catch(error =>
+      res.status(404).json({
+        errors: [{ message: "Listing doesn't exist." }]
+      })
+    );
+});
 module.exports = router;
