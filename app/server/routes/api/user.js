@@ -22,22 +22,20 @@ router.get("/test", (req, res) => {
   });
 });
 
-// @route   POST api/user/
-// @desc    Tests user route
+// @route   PUT api/user/:id
+// @desc    Update user
 // @access  Private
-router.post("/", (req, res) => {
-  User.findOne({ email: req.body.email }).then(user => {
-    if (!user) return;
-    res.status(400).json({ errors: [{ message: "User already exits" }] });
+router.put('/:id', auth, (req, res) => {
+  // Check User param id versus user logged in
+  if (req.user.id != req.params.id) {
+    return res.status(401).json({
+      errors: [{ message: 'Not authorized' }],
   });
+  }
 
-  newUser = new User({
-    email: req.body.email,
-    password: req.body.password,
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    phoneNumber: req.body.phoneNumber,
-    typeOfUser: req.body.typeOfUser
+  User.findByIdAndUpdate(req.params.id, { $set: req.body }).then((user) =>
+    res.status(200).json(user)
+  );
   });
 
   // Hash Password with Bcryptjs
