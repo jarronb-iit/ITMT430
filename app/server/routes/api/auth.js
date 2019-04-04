@@ -72,7 +72,60 @@ router.get('/user', auth, (req, res) => {
       }),
     );
 });
+
+// @route   POST api/auth/user/
+// @desc    Create user account
+// @access  Public
+router.post('/user', (req, res) => {
+  User.findOne({ email: req.body.email }).then((user) => {
+    if (!user) return;
+    res.status(409).json({ errors: [{ message: 'User already exits' }] });
+  });
+
+  let = newUser = new User(req.body);
+
+  console.log(newUser);
+  
+  
+
+  // Hash Password with Bcryptjs
+  bcrypt.genSalt(10, (error, salt) => {
+    bcrypt.hash(newUser.password, salt, (error, hash) => {
+      if (error) {
+        throw error;
+      }
+      newUser.password = hash;
+
+      // Save New User with Hashed Password
+      newUser
+        .save()
+        .then((user) => {
+          // Takes password out of user object
+          const { password, ...formattedUserObj } = user._doc;
+          user = formattedUserObj;
+
+          // Create json web token: payload is new user
+          jwt.sign(
+            user,
+            keys.jwtSecret,
+            { expiresIn: '1d' },
+            (error, token) => {
+              // Once jwt is signed, run code
+              if (error) throw error;
+              res.status(200).json({ token: token, user });
+            },
     );
+        })
+        .catch((err) => {
+          if (err.errors) {
+            const errors = errorsFormatter(err);
+            res.status(400).json({ errors: errors });
+          } else {
+            console.log(err);
+          }
+        });
+    });
+  });
 });
 
 module.exports = router;
