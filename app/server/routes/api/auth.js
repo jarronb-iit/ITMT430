@@ -60,14 +60,18 @@ router.post("/", (req, res) => {
 // @route   GET api/auth/user
 // @desc    Get User route
 // @access  Private
-router.get("/user", auth, (req, res) => {
+router.get('/user', auth, (req, res) => {
   User.findById(req.user.id)
-    .select("-password")
-    .then(user => {
+    .select('-password')
+    .then((user) => {
       res.json(user);
     })
-    .catch(error =>
-      res.json({ errors: [{ message: "Email and/or password is incorrect." }] })
+    .catch((error) =>
+      res.status(400).json({
+        errors: [{ message: 'Email and/or password is incorrect.' }],
+      }),
+    );
+});
     );
 });
 
