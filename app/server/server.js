@@ -40,31 +40,31 @@ const redisClient = redis.createClient({
   port: keys.port
 });
 
-redisClient.auth(keys.redisPassword, (error, reply) => {
-  if (error) console.log(error);
-  reply === 'OK'
-    ? console.log('[REDIS]: Redis connection authenticated')
-    : console.log('[REDIS]: Redis connection not authenticated');
-});
+// redisClient.auth(keys.redisPassword, (error, reply) => {
+//   if (error) console.log(error);
+//   reply === 'OK'
+//     ? console.log('[REDIS]: Redis connection authenticated')
+//     : console.log('[REDIS]: Redis connection not authenticated');
+// });
 
-redisClient.on('ready', () => {
-  console.log('[REDIS]: Redis is ready');
-});
+// redisClient.on('ready', () => {
+//   console.log('[REDIS]: Redis is ready');
+// });
 
-redisClient.on('error', () => {
-  console.log('[REDIS]: Error in Redis');
-});
+// redisClient.on('error', () => {
+//   console.log('[REDIS]: Error in Redis');
+// });
 
-if (process.env.NODE_ENV === 'development') {
-  app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header(
-      'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept'
-    );
-    next();
-  });
-}
+// if (process.env.NODE_ENV === 'development') {
+//   app.use(function(req, res, next) {
+//     res.header('Access-Control-Allow-Origin', '*');
+//     res.header(
+//       'Access-Control-Allow-Headers',
+//       'Origin, X-Requested-With, Content-Type, Accept'
+//     );
+//     next();
+//   });
+// }
 
 // Use Routes
 app.use('/api/buyer', buyer);

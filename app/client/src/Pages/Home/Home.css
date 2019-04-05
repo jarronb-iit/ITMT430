@@ -264,7 +264,7 @@ img, audio, video {
     width: 25%;
   }
 
-  h1{
+  #title{
     font-size: 100px;
     margin-top: 150px;
     margin-bottom: 40px;
@@ -288,12 +288,6 @@ img, audio, video {
     margin-top: 2.5em;
     text-align: center;
   }
-
-/* #loginPage{
-  background-image: url(./assets/images/bedroom.jpg);
-  background-size: cover;
-  min-height: 100%;
-} */
 
   .startSearchButton{
     border-radius: 60px;

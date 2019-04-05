@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Grid from '@material-ui/core/Grid';
 
 export default function SignUpForm(props) {
   const handleLogIn = event => {
@@ -11,12 +12,17 @@ export default function SignUpForm(props) {
   return (
     //Replace header with new logo image of roomie.
     <div id='homePage'>
-      <header> Roomie </header>
+      <header id='title'> Roomie </header>
       <form>
-        <input type='text' placeholder='Full Name' />
-        <input type='text' placeholder='Email Address' />
-        <input type='text' placeholder='Create a Password' />
-        <input type='text' placeholder='Phone Number' />
+        <Grid item xs={12}>
+          <input type='text' placeholder='Full Name' />
+        </Grid>
+        <Grid item xs={12}>
+          <input type='text' placeholder='Email Address' />
+        </Grid>
+        <Grid item xs={12}>
+          <input type='text' placeholder='Create a Password' />
+        </Grid>
       </form>
     </div>
   );
