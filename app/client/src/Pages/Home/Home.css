@@ -366,9 +366,17 @@ img, audio, video {
 
 /* @media screen and (min-width: 480px) and (max-width: 560px){
   body{
-    font-family: 'Montserrat', sans-serif;
     background-color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
     color: #00C6FF;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 6.5em;
+    /*Photo by Buenosia Carol from Pexels*/
+    background-image: url(../../assets/images/bedroom.jpg);
+    background-size: cover;
+    min-height: 100%;
+
   }
 }
 
