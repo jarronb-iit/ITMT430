@@ -334,6 +334,18 @@ img, audio, video {
     font-size: 2.5vw;
     margin-bottom: 1.5em;
   }
+
+  #pass{
+    border-radius: 20px;
+    border: solid 2px #00C6FF ;
+    padding: 15px 5px;
+    background: #ffffff;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 2.5vw;
+    margin-bottom: 3em;
+  }
+
   #forgotpass{
     cursor: pointer;
     margin-top: -10px;
