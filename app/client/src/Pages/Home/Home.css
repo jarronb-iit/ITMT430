@@ -293,6 +293,7 @@ img, audio, video {
     padding-left: 20px;
     font-size: 2.5vw;
   }
+
   input:not(#fullName) {
     margin-top: 0.5em;
   }
@@ -345,7 +346,7 @@ img, audio, video {
 
 /* START MOBILE CSS */
 
-@media screen and (max-width: 480px){
+/* @media screen and (min-width: 480px) and (max-width: 560px){
   body{
     font-family: 'Montserrat', sans-serif;
     background-color: #ffffff;
@@ -360,8 +361,8 @@ img, audio, video {
     width: 25%;
   }
 
-  h1{
-    font-size: 30px;
+  #title{
+    font-size: 7vw;
     margin-top: -25px;
     margin-bottom: 20px;
     margin-left: -30px;
@@ -385,6 +386,6 @@ img, audio, video {
 
   #logpass{
     margin-top: 10px;
-  }
+  } */
 
   /* END MOBILE CSS */
