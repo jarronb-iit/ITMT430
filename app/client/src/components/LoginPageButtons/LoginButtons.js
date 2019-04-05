@@ -13,7 +13,7 @@ export default function LoginButtons(props) {
         </Grid>
         <Grid xs={12}>
           <Button id='signUp' onClick={props.loginRequest}>
-        Sign Up
+            Sign Up
           </Button>
         </Grid>
       </form>
