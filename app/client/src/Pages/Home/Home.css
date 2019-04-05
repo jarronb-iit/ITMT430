@@ -293,6 +293,12 @@ img, audio, video {
     padding-left: 20px;
     font-size: 2.5vw;
   }
+  input:not(#fullName) {
+    margin-top: 0.5em;
+  }
+
+  #phoneNum{
+    margin-bottom: 4em;
   }
 
   .startSearchButton{
