@@ -265,9 +265,9 @@ img, audio, video {
   }
 
   #title{
-    font-size: 100px;
-    margin-top: 150px;
-    margin-bottom: 40px;
+    margin-top: -1em;
+    font-size: 8vw;
+    margin-bottom: 1em;
     font-family: 'Montserrat', sans-serif;
     color: #00C6FF;
   }
