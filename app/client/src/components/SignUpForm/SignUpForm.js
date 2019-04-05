@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 
 export default function SignUpForm(props) {
   const handleLogIn = event => {
@@ -26,6 +27,13 @@ export default function SignUpForm(props) {
         <Grid item xs={12}>
           <input type='text' id='phoneNum' placeholder='Phone Number' />
         </Grid>
+        <Button
+          variant='outlined'
+          color='secondary'
+          onClick={props.returnToLogin}
+        >
+          Back
+        </Button>
       </form>
     </div>
   );
