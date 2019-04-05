@@ -186,14 +186,7 @@ img, audio, video {
 
 /* ===== BASE STYLES ===== */
 
-/* @media (min-width: 600px){
-
-/*Revisit and import font later*/
-  /* Cannot get font to work yet */
-  /*@font-face {
-    font-family: 'Vonique64';
-    src:url(./assets/fonts/vonique-64/Vonique64.tff);
-  } */
+@media (min-width: 600px){
 
   html{
     font-size: 40px;
