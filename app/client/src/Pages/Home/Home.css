@@ -287,9 +287,12 @@ img, audio, video {
   input, button{
     border-radius: 20px;
     border: solid 2px #00C6FF ;
+    padding: 15px 5px;
     background: #ffffff;
-    margin-top: 2.5em;
-    text-align: center;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 2.5vw;
+  }
   }
 
   .startSearchButton{
