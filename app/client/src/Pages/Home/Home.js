@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import LoginButtons from '../../components/LoginPageButtons/LoginButtons';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import AboutMeInfo from '../../components/TellMeAboutYou/TellMe';
-//import LoggingInForm from '../../components/LoggingInForm/LoggingInForm';
-
+import LoggingInForm from '../../components/LoggingInForm/LoggingInForm';
+// import Styles from './Home.module.css';
 import './Home.css';
-
+//Styles.Homepage
 export default class Home extends Component {
   state = {
     changeToSignUp: true,
@@ -44,7 +44,7 @@ export default class Home extends Component {
     } else {
       if (this.state.changeToAboutMe) {
         exeComp = (
-          <SignUpForm
+          <LoggingInForm
             returnToLogin={this.changeVisibility}
             changeAboutMe={this.changeVisibility}
           />
@@ -54,5 +54,6 @@ export default class Home extends Component {
       }
     }
     return <div>{exeComp}</div>;
+    // return <div className={Styles.Homepage}>{exeComp}</div>;
   }
 }

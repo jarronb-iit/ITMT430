@@ -19,7 +19,7 @@ export default function LoggingInForm(props) {
           <input type='text' id='logEmail' placeholder='Email Address' />
         </Grid>
         <Grid item xs={12}>
-          <input type='text' id='pass' placeholder='Password' />
+          <input type='password' id='logPass' placeholder='Password' />
         </Grid>
         <Button
           variant='outlined'
