@@ -280,6 +280,10 @@ img, audio, video {
     color: #000000;
   }
 
+  ::placeholder{
+    color: #00C6FF
+  }
+
   input, button{
     border-radius: 60px;
     border: solid 5px #00C6FF ;
