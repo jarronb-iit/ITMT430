@@ -186,14 +186,7 @@ img, audio, video {
 
 /* ===== BASE STYLES ===== */
 
-/* @media (min-width: 600px){
-
-/*Revisit and import font later*/
-  /* Cannot get font to work yet */
-  /*@font-face {
-    font-family: 'Vonique64';
-    src:url(./assets/fonts/vonique-64/Vonique64.tff);
-  } */
+@media (min-width: 600px){
 
   html{
     font-size: 40px;
@@ -298,10 +291,6 @@ img, audio, video {
     margin-top: 0.5em;
   }
 
-  #phoneNum{
-    margin-bottom: 4em;
-  }
-
   .startSearchButton{
     border-radius: 60px;
     border: solid 5px #ffffff; /* Replace with proper shade of blue */
@@ -312,25 +301,50 @@ img, audio, video {
     color: #ffffff;
   }
 
-  #header{
-    margin-top: 50px;
-    margin-bottom: 100px;
+  #login{
+    border-radius: 20px;
+    padding: 0em 3.25em;
+    background: #ffffff;
+    text-align: center;
+    text-transform: none;
+    font-size: 2.5vw;
+    color: #00C6FF;
+    margin-top: 6em;
+    margin-bottom: 0.5em;
   }
 
-  #submit{
+  #signUp{
+    border-radius: 20px;
+    padding: 0em 2.75em;
     background: #00C6FF;
+    text-align: center;
+    text-transform: none;
+    font-size: 2.5vw;
+    color: #ffffff;
+    margin-bottom: 2em;
   }
 
-  #logemail{
-    margin-top: 10px;
+  #logEmail{
+    border-radius: 20px;
+    border: solid 2px #00C6FF ;
+    padding: 15px 5px;
+    background: #ffffff;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 2.5vw;
+    margin-bottom: 1.5em;
   }
 
-  #logpass{
-    margin-top: -20px;
-    margin-bottom: 30px;
+  #pass{
+    border-radius: 20px;
+    border: solid 2px #00C6FF ;
+    padding: 15px 5px;
+    background: #ffffff;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 2.5vw;
+    margin-bottom: 3em;
   }
-
-
 
   #forgotpass{
     cursor: pointer;
@@ -343,7 +357,11 @@ img, audio, video {
     color: #00f7ff;
   }
 
+  #phoneNum{
+    margin-bottom: 4em;
+  }
 
+}
 /* START MOBILE CSS */
 
 /* @media screen and (min-width: 480px) and (max-width: 560px){
