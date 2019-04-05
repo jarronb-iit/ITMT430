@@ -44,7 +44,7 @@ export default class Home extends Component {
     } else {
       if (this.state.changeToAboutMe) {
         exeComp = (
-          <LoggingInForm
+          <SignUpForm
             returnToLogin={this.changeVisibility}
             changeAboutMe={this.changeVisibility}
           />
