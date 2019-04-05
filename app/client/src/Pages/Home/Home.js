@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LoginButtons from '../../components/LoginPageButtons/LoginButtons';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
+//import LoggingInForm from '../../components/LoggingInForm/LoggingInForm';
 import './Home.css';
 
 export default class Home extends Component {
@@ -22,6 +23,7 @@ export default class Home extends Component {
       exeComp = (
         //Replace header with new logo image of roomie.
         <LoginButtons loginRequest={this.changeVisibility} />
+        //<LoggingInForm />
       );
     } else {
       exeComp = (
