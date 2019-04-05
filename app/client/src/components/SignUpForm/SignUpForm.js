@@ -15,13 +15,16 @@ export default function SignUpForm(props) {
       <header id='title'> Roomie </header>
       <form>
         <Grid item xs={12}>
-          <input type='text' placeholder='Full Name' />
+          <input type='text' id='fullName' placeholder='Full Name' />
         </Grid>
         <Grid item xs={12}>
-          <input type='text' placeholder='Email Address' />
+          <input type='text' id='Email' placeholder='Email Address' />
         </Grid>
         <Grid item xs={12}>
-          <input type='text' placeholder='Create a Password' />
+          <input type='text' id='createPass' placeholder='Create a Password' />
+        </Grid>
+        <Grid item xs={12}>
+          <input type='text' id='phoneNum' placeholder='Phone Number' />
         </Grid>
       </form>
     </div>
