@@ -1,8 +1,8 @@
-# Destroy and Remove VMS if exist
+<# Destroy and Remove VMS if exist #>
 ./remove-vms.ps1
 
-# Build each Server
-cd ../../vanilla-install/ || exit 1
+<# Build each Server #>
+cd ../../vanilla-install/
 
-packer build -force all-servers.json || exit 1
-echo "[PACKER] build finished..."
+packer build -force all-servers.json
+Write-Host "[PACKER] build finished..."

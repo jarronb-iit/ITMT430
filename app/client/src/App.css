@@ -272,6 +272,14 @@ img, audio, video {
     color: #00C6FF;
   }
 
+  h2{
+    font-size: 40px;
+    margin-top: 150px;
+    margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
+    color: #00C6FF;
+  }
+
   input, button{
     border-radius: 60px;
     border: solid 5px #00C6FF ;
@@ -287,6 +295,21 @@ img, audio, video {
   min-height: 100%;
 } */
 
+  .startSearchButton{
+    border-radius: 60px;
+    border: solid 5px #ffffff; /* Replace with proper shade of blue */
+    padding: 5px 20px;
+    background: #00C6FF;
+    margin-top: 2.5em;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  #header{
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+
   #submit{
     background: #00C6FF;
   }
@@ -299,6 +322,7 @@ img, audio, video {
     margin-top: -20px;
     margin-bottom: 30px;
   }
+
 
 
   #forgotpass{
