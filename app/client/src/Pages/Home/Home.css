@@ -305,9 +305,16 @@ img, audio, video {
     color: #ffffff;
   }
 
-  #header{
-    margin-top: 50px;
-    margin-bottom: 100px;
+  #login{
+    border-radius: 20px;
+    padding: 0em 3.25em;
+    background: #ffffff;
+    text-align: center;
+    text-transform: none;
+    font-size: 2.5vw;
+    color: #00C6FF;
+    margin-top: 6em;
+    margin-bottom: 0.5em;
   }
 
   #submit{
