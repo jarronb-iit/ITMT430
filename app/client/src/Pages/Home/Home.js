@@ -13,6 +13,6 @@ export default function Home(props) {
   };
   return (
     //Replace header with new logo image of roomie.
-    <LoginButtons />
+    <SignUpForm />
   );
 }
