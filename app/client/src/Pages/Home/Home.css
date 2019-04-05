@@ -285,9 +285,8 @@ img, audio, video {
   }
 
   input, button{
-    border-radius: 60px;
-    border: solid 5px #00C6FF ;
-    padding: 5px 20px;
+    border-radius: 20px;
+    border: solid 2px #00C6FF ;
     background: #ffffff;
     margin-top: 2.5em;
     text-align: center;
