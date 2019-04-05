@@ -34,6 +34,13 @@ export default function SignUpForm(props) {
         >
           Back
         </Button>
+        <Button
+          variant='outlined'
+          color='primary'
+          onClick={props.changeAboutMe}
+        >
+          Continue
+        </Button>
       </form>
     </div>
   );
