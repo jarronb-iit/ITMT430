@@ -291,10 +291,6 @@ img, audio, video {
     margin-top: 0.5em;
   }
 
-  #phoneNum{
-    margin-bottom: 4em;
-  }
-
   .startSearchButton{
     border-radius: 60px;
     border: solid 5px #ffffff; /* Replace with proper shade of blue */
@@ -327,8 +323,6 @@ img, audio, video {
     color: #ffffff;
     margin-bottom: 2em;
   }
-
-
 
   #forgotpass{
     cursor: pointer;
