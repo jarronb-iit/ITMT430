@@ -6,8 +6,10 @@ export default function LoginButtons(props) {
     //Replace header with new logo image of roomie.
     <div id='homePage'>
       <header> Roomie </header>
-      <button>Login</button>
-      <button>Sign Up</button>
+      <button id='login'>Login</button>
+      <button id='signUp' onClick={props.loginRequest}>
+        Sign Up
+      </button>
     </div>
   );
 }

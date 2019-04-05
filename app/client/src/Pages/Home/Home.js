@@ -1,18 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import LoginButtons from '../../components/LoginPageButtons/LoginButtons';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import './Home.css';
 
-export default function Home(props) {
-  const handleLogIn = event => {
-    if (this.state.value != 'Antoine');
-    {
-      alert('Your username or password is incorrect');
-      event.preventDefault();
+export default class Home extends Component {
+  state = {
+    changeToSignUp: true
+  };
+  changeVisibility = () => {
+    if (this.state.changeToSignUp) {
+      this.setState({
+        changeToSignUp: !this.state.changeToSignUp
+      });
+    } else {
+      this.setState({ changeToSignUp: true });
     }
   };
-  return (
-    //Replace header with new logo image of roomie.
-    <SignUpForm />
-  );
+  render() {
+    let exeComp;
+    if (this.state.changeToSignUp) {
+      exeComp = (
+        //Replace header with new logo image of roomie.
+        <LoginButtons loginRequest={this.changeVisibility} />
+      );
+    } else {
+      exeComp = (
+        //Replace header with new logo image of roomie.
+        <SignUpForm returnToLogin={this.changeVisibility} />
+      );
+    }
+
+    return <div>{exeComp}</div>;
+  }
 }
