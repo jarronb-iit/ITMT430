@@ -341,7 +341,11 @@ img, audio, video {
     color: #00f7ff;
   }
 
+  #phoneNum{
+    margin-bottom: 4em;
+  }
 
+}
 /* START MOBILE CSS */
 
 /* @media screen and (min-width: 480px) and (max-width: 560px){
