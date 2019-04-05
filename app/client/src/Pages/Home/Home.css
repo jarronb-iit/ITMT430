@@ -317,17 +317,15 @@ img, audio, video {
     margin-bottom: 0.5em;
   }
 
-  #submit{
+  #signUp{
+    border-radius: 20px;
+    padding: 0em 2.75em;
     background: #00C6FF;
-  }
-
-  #logemail{
-    margin-top: 10px;
-  }
-
-  #logpass{
-    margin-top: -20px;
-    margin-bottom: 30px;
+    text-align: center;
+    text-transform: none;
+    font-size: 2.5vw;
+    color: #ffffff;
+    margin-bottom: 2em;
   }
 
 
