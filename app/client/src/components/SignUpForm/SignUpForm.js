@@ -22,7 +22,11 @@ export default function SignUpForm(props) {
           <input type='text' id='Email' placeholder='Email Address' />
         </Grid>
         <Grid item xs={12}>
-          <input type='text' id='createPass' placeholder='Create a Password' />
+          <input
+            type='password'
+            id='createPass'
+            placeholder='Create a Password'
+          />
         </Grid>
         <Grid item xs={12}>
           <input type='text' id='phoneNum' placeholder='Phone Number' />
