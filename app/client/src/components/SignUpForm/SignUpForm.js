@@ -22,16 +22,16 @@ export default function SignUpForm(props) {
           <input type='text' id='Email' placeholder='Email Address' />
         </Grid>
         <Grid item xs={12}>
-          <input
-            type='password'
-            id='createPass'
-            placeholder='Create a Password'
-          />
+          <input type='password' id='pass' placeholder='Create a Password' />
+        </Grid>
+        <Grid item xs={12}>
+          <input type='password' id='pass' placeholder='Confirm Password' />
         </Grid>
         <Grid item xs={12}>
           <input type='text' id='phoneNum' placeholder='Phone Number' />
         </Grid>
         <Button
+          id='back'
           variant='outlined'
           color='secondary'
           onClick={props.returnToLogin}
@@ -39,6 +39,7 @@ export default function SignUpForm(props) {
           Back
         </Button>
         <Button
+          id='continue'
           variant='outlined'
           color='primary'
           onClick={props.changeAboutMe}
