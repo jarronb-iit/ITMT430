@@ -1,4 +1,0 @@
-notifications:
-  slack:
-    rooms:
-	  - iitcapstonesquad:nPRaaRQ8JNhzwSJWa73xKQPH#travis-ci
