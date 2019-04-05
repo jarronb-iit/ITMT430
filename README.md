@@ -1,4 +1,5 @@
 ## Building project
+- [API documentation](https://illinoistech-itm.github.io/2019-team-09f/)
 
 ### First generate an rsa key
 
