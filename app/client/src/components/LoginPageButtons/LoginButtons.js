@@ -7,12 +7,12 @@ export default function LoginButtons(props) {
     //Replace header with new logo image of roomie.
     <div id='homePage'>
       <header id='title'> Roomie </header>
-<<<<<<< HEAD
+      {/* 
       <button id='login'>Login</button>
       <button id='signUp' onClick={props.loginRequest}>
         Sign Up
-      </button>
-=======
+      </button> */}
+
       <form>
         <Grid xs={12}>
           <Button id='login'>Login</Button>
@@ -23,7 +23,6 @@ export default function LoginButtons(props) {
           </Button>
         </Grid>
       </form>
->>>>>>> c851f4ecffad0d6bfac7b29539ffe5360a13a835
     </div>
   );
 }
