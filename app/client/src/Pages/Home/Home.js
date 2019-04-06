@@ -16,37 +16,38 @@ export default class Home extends Component {
       this.setState({
         changeToSignUp: !this.state.changeToSignUp
       });
-    }
-    // else if (this.state.changeToAboutMe) {
-    //   this.setState({
-    //     changeToAboutMe: !this.changeToAboutMe
-    //   });
-    // }
-    else {
+    } else {
       this.setState({
         changeToSignUp: true
       });
     }
-    //  else {
-    //   this.setState({
-    //     changeToAboutMe: true
-    //   });
-    // }
+    if (this.state.changeToAboutMe) {
+      this.setState({
+        changeToAboutMe: !this.changeToAboutMe
+      });
+    } else {
+      this.setState({
+        changeToAboutMe: true
+      });
+    }
   };
+
   render() {
     let exeComp;
     if (this.state.changeToSignUp) {
       exeComp = (
         //Replace header with new logo image of roomie.
-        <LoginButtons loginRequest={this.changeVisibility} />
-        //<LoggingInForm />
+        <LoginButtons
+          signUpRequest={this.changeVisibility}
+          loginRequest={this.changeToAboutMe}
+        />
       );
     } else {
       if (this.state.changeToAboutMe) {
         exeComp = (
           <SignUpForm
             returnToLogin={this.changeVisibility}
-            changeAboutMe={this.changeVisibility}
+            changeAboutMe={this.changeToAboutMe}
           />
         );
       } else {
