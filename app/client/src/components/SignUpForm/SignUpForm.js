@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Styles from './SignUpForm.module.css';
 
 export default function SignUpForm(props) {
   const handleLogIn = event => {
