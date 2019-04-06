@@ -15,10 +15,12 @@ export default function LoginButtons(props) {
 
       <form>
         <Grid xs={12}>
-          <Button id='login'>Login</Button>
+          <Button id='login' onClick={props.loginRequest}>
+            Login
+          </Button>
         </Grid>
         <Grid xs={12}>
-          <Button id='signUp' onClick={props.loginRequest}>
+          <Button id='signUp' onClick={props.signUpRequest}>
             Sign Up
           </Button>
         </Grid>
