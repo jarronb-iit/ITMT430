@@ -1,4 +1,4 @@
-# Sprint 3 Report
+# Sprint 4 Report
 
 ## Roles
 
@@ -37,8 +37,19 @@ Design primary artboards on adobe
   - Get current user
   - Login user
   - Update user
+    Connect material ui to help create more responsive buttons and formatting
 
-## Sprint 4 To-Do
+## Sprint 5 To-Do
+
+For the upcoming spring we will try to complete the following:
+
+- Connect all react components to their proper buttons and functions
+- Connect forms to post to the api and create a user
+- Create React component for the listings that a user can see
+- Create React component for the Leasing Agents if they are selling a property
+- Experiment with saving images onto mongodb
+
+For the following sprint the goals that we have placed for ourselves is to connect the api calls to the React components. This will help us make the application interact with the mongodb database. We will also need to test the database for injections and ensure that the api call are secure.
 
 #### Team Members
 
