@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import LoginButtons from '../../components/LoginPageButtons/LoginButtons';
+import LoginButtons from '../../components/LoginPageButtons/LoginPageButtons';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import AboutMeInfo from '../../components/TellMeAboutYou/TellMe';
 import LoggingInForm from '../../components/LoggingInForm/LoggingInForm';
 // import Styles from './Home.module.css';
-import './Home.css';
+import Styles from './Home.module.css';
 //Styles.Homepage
 export default class Home extends Component {
   state = {
@@ -54,7 +54,6 @@ export default class Home extends Component {
         exeComp = <AboutMeInfo />;
       }
     }
-    return <div>{exeComp}</div>;
-    // return <div className={Styles.Homepage}>{exeComp}</div>;
+    return <div className={Styles.Home}>{exeComp}</div>;
   }
 }
