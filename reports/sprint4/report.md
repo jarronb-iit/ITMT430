@@ -68,7 +68,8 @@ For the following sprint the goals that we have placed for ourselves is to conne
 12. Our trello is currently accurate with the completed tasks.
 13. Currently we have not implemented our 14 test data since we need to first completely connect the api calls to the react components.
 
-##Trello Board
+## Trello Board
+
 ![Trello1](../../images/sprint4/TrelloBoard1.PNG)
 ![Trello1](../../images/sprint4/TrelloBoard2.PNG)
 ![Trello1](../../images/sprint4/TrelloBoard3.PNG)
