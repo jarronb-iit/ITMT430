@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LoginButtons from '../../components/LoginPageButtons/LoginPageButtons';
+import LoginButtons from '../../components/HomePageButtons/HomePageButtons';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import AboutMeInfo from '../../components/TellMeAboutYou/TellMe';
 import LoggingInForm from '../../components/LoggingInForm/LoggingInForm';
@@ -54,6 +54,11 @@ export default class Home extends Component {
         exeComp = <AboutMeInfo />;
       }
     }
-    return <div className={Styles.Home}>{exeComp}</div>;
+    return (
+      <div className={Styles.Home}>
+        <header className={Styles.Title}>Roomie </header>
+        {exeComp}
+      </div>
+    );
   }
 }
