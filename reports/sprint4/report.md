@@ -20,6 +20,10 @@ Design primary artboards on adobe
 - The primary CSS file has been created and is currently on github. This CSS hold the styling for the template that we will use throughout the application.
   Begin designing React Components
 - Currently we were able to design the following react components
+  ![Component1](../../images/sprint4/firstPage.PNG)
+  ![Component2](../../images/sprint4/loginpage.PNG)
+  ![Component3](../../images/sprint4/signup.PNG)
+  ![Component4](../../images/sprint4/aboutmepage.PNG)
   - LoginButtons: which are displayed when the user opens the application
   - Sign up form: which displays when the user selects sign up. Currently the application can switch between this component and the LoginButtons component.
   - Log in Form: This component is used when the user wants to log in to their account
@@ -28,6 +32,7 @@ Design primary artboards on adobe
 - We were able to create a Redis server
 - Connect authenticated node app client to connect to Redis server
   Design API’s for adding user to mongodb database
+  ![apiCalls](../../images/sprint4/apiCreated.PNG)
 - This is split into two parts Users and listings
 - The list of listings api goes as follows:
   - Delete a listing
@@ -75,8 +80,8 @@ For the following sprint the goals that we have placed for ourselves is to conne
 ## Trello Board
 
 ![Trello1](../../images/sprint4/TrelloBoard1.PNG)
-![Trello1](../../images/sprint4/TrelloBoard2.PNG)
-![Trello1](../../images/sprint4/TrelloBoard3.PNG)
+![Trello2](../../images/sprint4/TrelloBoard2.PNG)
+![Trello3](../../images/sprint4/TrelloBoard3.PNG)
 
 #### Team Members
 
