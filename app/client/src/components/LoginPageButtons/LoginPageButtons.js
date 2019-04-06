@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Styles from './LoginPageButtons.module.css';
 
 export default function Loginbuttons(props) {
   return (
