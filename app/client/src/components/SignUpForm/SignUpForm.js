@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
 
 export default function SignUpForm(props) {
   const handleLogIn = event => {
@@ -12,40 +10,16 @@ export default function SignUpForm(props) {
   };
   return (
     //Replace header with new logo image of roomie.
-    <div id='homePage'>
-      <header id='title'> Roomie </header>
+    <div id="homePage">
+      <header id="title"> Roomie </header>
       <form>
-        <Grid item xs={12}>
-          <input type='text' id='fullName' placeholder='Full Name' />
-        </Grid>
-        <Grid item xs={12}>
-          <input type='text' id='Email' placeholder='Email Address' />
-        </Grid>
-        <Grid item xs={12}>
-          <input type='password' id='pass' placeholder='Create a Password' />
-        </Grid>
-        <Grid item xs={12}>
-          <input type='password' id='pass' placeholder='Confirm Password' />
-        </Grid>
-        <Grid item xs={12}>
-          <input type='text' id='phoneNum' placeholder='Phone Number' />
-        </Grid>
-        <Button
-          id='back'
-          variant='outlined'
-          color='secondary'
-          onClick={props.returnToLogin}
-        >
-          Back
-        </Button>
-        <Button
-          id='continue'
-          variant='outlined'
-          color='primary'
-          onClick={props.changeAboutMe}
-        >
-          Continue
-        </Button>
+        <input type="text" id="fullName" placeholder="Full Name" />
+        <input type="text" id="Email" placeholder="Email Address" />
+        <input type="password" id="pass" placeholder="Create a Password" />
+        <input type="password" id="pass" placeholder="Confirm Password" />
+        <input type="text" id="phoneNum" placeholder="Phone Number" />
+        <button onClick={props.returnToLogin}>Back</button>
+        <button onClick={props.changeAboutMe}>Continue</button>
       </form>
     </div>
   );
