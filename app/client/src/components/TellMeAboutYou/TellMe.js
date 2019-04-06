@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Styles from './TellMe.module.css';
 
 export default function TellMe() {
   return (
