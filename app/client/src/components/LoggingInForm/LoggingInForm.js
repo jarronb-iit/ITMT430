@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Styles from './LoggingInForm.module.css';
 
 export default function LoggingInForm(props) {
   const handleLogIn = event => {
