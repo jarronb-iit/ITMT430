@@ -1,0 +1,33 @@
+.HomePageBtns {
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 70vh;
+  height: 20vh;
+  padding: 0 5%;
+}
+.Btn {
+  border-radius: 20px;
+  border: solid 2px #00C6FF ;
+  width: 100%;
+  max-width: 35rem;
+  background: #ffffff;
+  text-align: center;
+  font-size: 2.8rem;
+  cursor: pointer;
+  height: 40%;
+  min-height: 4rem;
+}
+
+
+.SignUpBtn {
+  background-color: #00C6FF;
+  color: #ffffff;
+  margin-top: 5%;
+}
