@@ -14,16 +14,12 @@ he goal of this sprint was to create a foundation for building and maintaining R
 ## Completed goals
 
 Design primary artboards on adobe
-The designs for the process of viewing potential properties has created and the artboards have been uploaded to GitHub
-Design the primary CSS for all react components
 
+- The designs for the process of viewing potential properties has created and the artboards have been uploaded to GitHub
+  Design the primary CSS for all react components
 - The primary CSS file has been created and is currently on github. This CSS hold the styling for the template that we will use throughout the application.
   Begin designing React Components
-- Currently we were able to design the following react components
-- LoginButtons: which are displayed when the user opens the application
-- Sign up form: which displays when the user selects sign up. Currently the application can switch between this component and the LoginButtons component.
-- Log in Form: This component is used when the user wants to log in to their account
-- About Me: This page deals with the about me component
+- Currently we were able to design the following react components - LoginButtons: which are displayed when the user opens the application - Sign up form: which displays when the user selects sign up. Currently the application can switch between this component and the LoginButtons component. - Log in Form: This component is used when the user wants to log in to their account - About Me: This page deals with the about me component
   We were able to continue building the servers
 - We were able to create a Redis server
 - Connect authenticated node app client to connect to Redis server
