@@ -12,7 +12,6 @@ export default function LoggingInForm(props) {
   return (
     //Replace header with new logo image of roomie.
     <div id="homePage">
-      <header id="title"> Roomie </header>
       <form>
         <input type="text" id="logEmail" placeholder="Email Address" />
         <input type="password" id="logPass" placeholder="Password" />
