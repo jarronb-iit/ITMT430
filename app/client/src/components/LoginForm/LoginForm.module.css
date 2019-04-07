@@ -1,8 +1,7 @@
 .LoginForm {
   position: absolute;
-  top: 70vh;
+  top: 50vh;
   padding: 5% 5%;
-  background: blue;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -10,22 +9,6 @@
   justify-content: center;
 }
 
-.Input {
-  border-radius: 10px;
-  border: solid 2px #00C6FF ;
-  width: 100%;
-  max-width: 35rem;
-  background: #ffffff;
-  font-size: 2.8rem;
-  cursor: pointer;
-  height: 40%;
-  min-height: 4rem;
-
-}
-
-::placeholder{
-  color: #00C6FF
-}
-
-input {
+.LoginForm input:not(:first-of-type) {
+  margin-top: 1.5rem;
 }
