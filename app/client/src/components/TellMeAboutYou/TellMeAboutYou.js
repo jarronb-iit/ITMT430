@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import Styles from './TellMe.module.css';
+import Styles from './TellMeAboutYou.module.css';
 
-export default function TellMe() {
+export default function TellMe(props) {
   return (
     <div>
       <header id="title"> Roomie </header>
       <h2>Tell us a bit about you!</h2>
-      <button>{/* onClick={props.returnToLogin} */}Back</button>
+      <button value="showSignup" onClick={props.changeVisibility}>
+        {/* onClick={props.returnToLogin} */}Back
+      </button>
       <button>{/* onClick={props.changeAboutMe} */} Continue</button>
     </div>
   );
