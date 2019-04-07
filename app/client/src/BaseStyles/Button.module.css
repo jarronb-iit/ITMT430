@@ -1,0 +1,12 @@
+.Button {
+  border-radius: 20px;
+  border: solid 2px #00C6FF ;
+  width: 100%;
+  max-width: 35rem;
+  background: #ffffff;
+  text-align: center;
+  font-size: 2.8rem;
+  cursor: pointer;
+  height: 40%;
+  min-height: 4rem;
+}
