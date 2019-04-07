@@ -1,12 +1,22 @@
 .Button {
-  border-radius: 20px;
-  border: solid 2px #00C6FF ;
+  border: none;
+  border-radius: 10px;
   width: 100%;
-  max-width: 35rem;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.8);
   text-align: center;
   font-size: 2.8rem;
   cursor: pointer;
-  height: 40%;
   min-height: 4rem;
+  color: #0096BF;
+  max-width: 86rem;
+}
+
+.Button:not(:first-of-type) {
+  margin-top: 2rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .Button {
+    height: 6.4rem;
+  }
 }
