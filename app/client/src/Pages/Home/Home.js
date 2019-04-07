@@ -1,63 +1,86 @@
 import React, { Component } from 'react';
-import LoginButtons from '../../components/HomePageButtons/HomePageButtons';
+import HomepageButtons from '../../components/HomePageButtons/HomePageButtons';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import AboutMeInfo from '../../components/TellMeAboutYou/TellMe';
-import LoggingInForm from '../../components/LoggingInForm/LoggingInForm';
-// import Styles from './Home.module.css';
+import LoginForm from '../../components/LoginForm/LoginForm';
 import Styles from './Home.module.css';
-//Styles.Homepage
+import { Route, Link, Switch } from 'react-router-dom';
 export default class Home extends Component {
   state = {
-    changeToSignUp: true,
-    changeToAboutMe: true
-  };
-  changeVisibility = () => {
-    if (this.state.changeToSignUp) {
-      this.setState({
-        changeToSignUp: !this.state.changeToSignUp
-      });
-    } else {
-      this.setState({
-        changeToSignUp: true
-      });
-    }
-    if (this.state.changeToAboutMe) {
-      this.setState({
-        changeToAboutMe: !this.changeToAboutMe
-      });
-    } else {
-      this.setState({
-        changeToAboutMe: true
-      });
+    renderedComponent: '',
+    pages: {
+      showLogin: false,
+      showSignup: false,
+      showHomepage: true,
+      showAboutMeInfo: false
     }
   };
 
-  render() {
-    let exeComp;
-    if (this.state.changeToSignUp) {
-      exeComp = (
-        //Replace header with new logo image of roomie.
-        <LoginButtons
-          signUpRequest={this.changeVisibility}
-          loginRequest={this.changeToAboutMe}
-        />
-      );
-    } else {
-      if (this.state.changeToAboutMe) {
-        exeComp = (
-          <SignUpForm
-            returnToLogin={this.changeVisibility}
-            changeAboutMe={this.changeToAboutMe}
-          />
-        );
-      } else {
-        exeComp = <AboutMeInfo />;
+  // componentDidMount(prevProps, prevState) {
+  //   const { renderedComponent } = prevState;
+  //   if (renderedComponent !== this.state.renderedComponent) {
+  //     console.log('different');
+  //   }
+  // }
+
+  changeVisibility = event => {
+    // Set page that was true to false
+    // TODO: Validate if page changed
+    event.preventDefault();
+    console.log(event.target.value);
+
+    let updatedPages = this.state.pages;
+
+    for (const [nameOfPage, value] of Object.entries(updatedPages)) {
+      if (value) {
+        updatedPages = {
+          ...updatedPages,
+          [nameOfPage]: false,
+          [event.target.value]: true
+        };
       }
     }
+    this.setState({
+      pages: updatedPages
+    });
+  };
+
+  determineRenderedComponent = () => {
+    let renderedComponent;
+    if (this.state.pages.showHomepage) {
+      renderedComponent = (
+        <HomepageButtons changeVisibility={this.changeVisibility} />
+      );
+    }
+
+    if (this.state.pages.showSignup) {
+      renderedComponent = (
+        <SignUpForm changeVisibility={this.changeVisibility} />
+      );
+    }
+
+    if (this.state.pages.showAboutMeInfo) {
+      renderedComponent = (
+        <AboutMeInfo changeVisibility={this.changeVisibility} />
+      );
+    }
+
+    if (this.state.pages.showLogin) {
+      renderedComponent = (
+        <LoginForm changeVisibility={this.changeVisibility} />
+      );
+    }
+
+    return renderedComponent;
+  };
+
+  render() {
+    let renderedComponent = this.determineRenderedComponent();
+
     return (
       <div className={Styles.Home}>
         <header className={Styles.Title}>Roomie </header>
-        {exeComp}
+        {renderedComponent}
       </div>
     );
   }
