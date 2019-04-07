@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Styles from './HomePageButtons.module.css';
+import BaseStyles from '../../BaseStyles/Button.module.css';
 
 export default function Loginbuttons(props) {
-  const signUpBtnClasses = [Styles.Btn, Styles.SignUpBtn];
+  const signUpBtnClasses = [BaseStyles.Button, Styles.SignUpBtn];
   return (
     //Replace header with new logo image of roomie.
     <div className={Styles.HomePageBtns}>
@@ -12,12 +13,17 @@ export default function Loginbuttons(props) {
         Sign Up
       </button> */}
 
-      <button className={Styles.Btn} onClick={props.loginRequest}>
+      <button
+        className={BaseStyles.Button}
+        onClick={props.changeVisibility}
+        value="showLogin"
+      >
         Login
       </button>
       <button
         className={signUpBtnClasses.join(' ')}
-        onClick={props.signUpRequest}
+        onClick={props.changeVisibility}
+        value="showSignup"
       >
         Sign Up
       </button>
