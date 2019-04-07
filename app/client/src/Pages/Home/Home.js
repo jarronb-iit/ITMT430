@@ -45,6 +45,10 @@ export default class Home extends Component {
     });
   };
 
+  onSignUpFormSubmit = event => {
+    event.preventDefault();
+  };
+
   determineRenderedComponent = () => {
     let renderedComponent;
     if (this.state.pages.showHomepage) {
