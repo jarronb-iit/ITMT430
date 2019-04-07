@@ -1,52 +1,54 @@
 import React, { Component } from 'react';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
+import Styles from './SignUpForm.module.css';
+import BaseStyles from '../../BaseStyles/Input.module.css';
 
 export default function SignUpForm(props) {
-  const handleLogIn = event => {
-    if (this.state.value != 'Antoine');
-    {
-      alert('Your username or password is incorrect');
-      event.preventDefault();
-    }
-  };
+  const inputStyles = [BaseStyles.Input, Styles.Input, 'browser-default'];
+
   return (
-    //Replace header with new logo image of roomie.
-    <div id='homePage'>
-      <header id='title'> Roomie </header>
-      <form>
-        <Grid item xs={12}>
-          <input type='text' id='fullName' placeholder='Full Name' />
-        </Grid>
-        <Grid item xs={12}>
-          <input type='text' id='Email' placeholder='Email Address' />
-        </Grid>
-        <Grid item xs={12}>
-          <input type='password' id='pass' placeholder='Create a Password' />
-        </Grid>
-        <Grid item xs={12}>
-          <input type='password' id='pass' placeholder='Confirm Password' />
-        </Grid>
-        <Grid item xs={12}>
-          <input type='text' id='phoneNum' placeholder='Phone Number' />
-        </Grid>
-        <Button
-          id='back'
-          variant='outlined'
-          color='secondary'
-          onClick={props.returnToLogin}
-        >
-          Back
-        </Button>
-        <Button
-          id='continue'
-          variant='outlined'
-          color='primary'
-          onClick={props.changeAboutMe}
-        >
-          Continue
-        </Button>
-      </form>
-    </div>
+    <form
+      id="SignUpForm"
+      className={Styles.SignUpForm}
+      onSubmit={props.onSignUpFormSubmit}
+    >
+      <input
+        className={inputStyles.join(' ')}
+        type="text"
+        id="fullName"
+        name="name"
+        placeholder="Full Name"
+      />
+      <input
+        className={inputStyles.join(' ')}
+        type="text"
+        id="Email"
+        placeholder="Email Address"
+      />
+      <input
+        className={inputStyles.join(' ')}
+        type="password"
+        id="pass"
+        placeholder="Create a Password"
+      />
+      <input
+        className={inputStyles.join(' ')}
+        type="password"
+        id="pass"
+        placeholder="Confirm Password"
+      />
+      <input
+        className={inputStyles.join(' ')}
+        type="text"
+        id="phoneNum"
+        placeholder="Phone Number"
+      />
+
+      <button value="showHomepage" onClick={props.changeVisibility}>
+        Back
+      </button>
+      <button value="showAboutMeInfo" onClick={props.changeVisibility}>
+        Continue
+      </button>
+    </form>
   );
 }

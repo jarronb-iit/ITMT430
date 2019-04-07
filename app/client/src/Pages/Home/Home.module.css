@@ -1,0 +1,44 @@
+.Home {
+  height: 100%;
+  position: relative;
+  color: #00C6FF;
+}
+.Home >:not(.BackgroundImg){
+ z-index: 1;
+}
+.Home::after {
+content: "";
+ height: 100%;
+ width: 100%; 
+ z-index: -1;
+ position: absolute;
+ top: 0;
+ left: 0;
+ display: block;
+
+ /*Photo by Buenosia Carol from Pexels*/
+ background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4)
+    ),
+    url(../../assets/images/bedroom.jpg);
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+}
+
+.Title {
+  display: block;
+  font-size: 8rem;
+  margin: 0 auto;
+  padding-top: 10vh;
+  text-align: center;
+  font-weight: 600;
+}
+
+@media only screen and (min-width: 600px) {
+  .Title {
+    padding-top: 20vh;
+  }
+}
