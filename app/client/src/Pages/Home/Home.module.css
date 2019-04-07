@@ -24,13 +24,21 @@ content: "";
     ),
     url(../../assets/images/bedroom.jpg);
  background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
 }
 
 .Title {
   display: block;
   font-size: 8rem;
   margin: 0 auto;
-  padding-top: 20vh;
+  padding-top: 10vh;
   text-align: center;
   font-weight: 600;
+}
+
+@media only screen and (min-width: 600px) {
+  .Title {
+    padding-top: 20vh;
+  }
 }
