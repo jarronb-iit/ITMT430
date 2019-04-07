@@ -1,35 +1,26 @@
 import React, { Component } from 'react';
 import Styles from './LoginForm.module.css';
+import BaseStyles from '../../BaseStyles/Input.module.css';
 
 export default function LoginForm(props) {
-  const handleLogIn = event => {
-    if (this.state.value != 'Antoine');
-    {
-      alert('Your username or password is incorrect');
-      event.preventDefault();
-    }
-  };
+  const inputStyles = [BaseStyles.Input, Styles.Input, 'browser-default'];
   return (
-    //Replace header with new logo image of roomie.
-    <div className={Styles.LoginForm}>
+    <form className={Styles.LoginForm}>
       <input
-        className={Styles.Input}
+        className={inputStyles.join(' ')}
         type="text"
         id="logEmail"
         placeholder="Email Address"
       />
       <input
-        className={Styles.Input}
+        className={inputStyles.join(' ')}
         type="password"
         id="logPass"
         placeholder="Password"
       />
-      <button
-        onClick={props.changeVisibility}
-        value="showHomepage"
-      >
+      <button onClick={props.changeVisibility} value="showHomepage">
         Back
       </button>
-    </div>
+    </form>
   );
 }
