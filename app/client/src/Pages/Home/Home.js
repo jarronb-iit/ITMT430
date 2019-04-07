@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import HomepageButtons from '../../components/HomePageButtons/HomePageButtons';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
-import AboutMeInfo from '../../components/TellMeAboutYou/TellMe';
+import AboutMeInfo from '../../components/TellMeAboutYou/TellMeAboutYou';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import Styles from './Home.module.css';
 import { Route, Link, Switch } from 'react-router-dom';
@@ -16,16 +16,7 @@ export default class Home extends Component {
     }
   };
 
-  // componentDidMount(prevProps, prevState) {
-  //   const { renderedComponent } = prevState;
-  //   if (renderedComponent !== this.state.renderedComponent) {
-  //     console.log('different');
-  //   }
-  // }
-
   changeVisibility = event => {
-    // Set page that was true to false
-    // TODO: Validate if page changed
     event.preventDefault();
     console.log(event.target.value);
 
