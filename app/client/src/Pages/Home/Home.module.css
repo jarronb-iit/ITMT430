@@ -39,6 +39,7 @@ content: "";
 
 @media only screen and (min-width: 600px) {
   .Title {
-    padding-top: 20vh;
+  font-size: 10rem;
+    
   }
 }
