@@ -1,4 +1,4 @@
-import { takeEvery } from 'redux-saga/effects';
+import { takeEvery, take, takeLatest } from 'redux-saga/effects';
 import * as actionTypes from '../actions/actionTypes';
 import * as sampleSaga from './sampleSaga';
 import * as authSaga from './authSaga';
@@ -8,5 +8,6 @@ export function* watchPosts() {
 }
 
 export function* watchAuth() {
-  yield takeEvery(actionTypes.USER_LOAD_INIT, authSaga.loadUserSaga);
+  yield takeLatest(actionTypes.USER_LOAD_INIT, authSaga.loadUserSaga);
+  yield takeLatest(actionTypes.LOGIN_INIT, authSaga.loginUserSaga);
 }

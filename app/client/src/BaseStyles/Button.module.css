@@ -15,3 +15,8 @@
 .Button:not(:first-of-type) {
   margin-top: 2rem;
 }
+
+.Blue {
+  background-color: rgba(0, 198, 255, 0.8);
+  color: #ffffff;
+}

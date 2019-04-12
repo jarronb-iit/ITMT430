@@ -6,6 +6,7 @@ const express = require('express'),
   app = express(),
   server = http.createServer(app);
 const redis = require('redis');
+const cors = require('cors');
 
 // Load routes files
 const buyer = require('./routes/api/buyer');
@@ -23,6 +24,11 @@ let webAddress = keys.webAddress;
 // Body-Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+console.log(process.env.NODE_ENV === 'development');
+
+if (process.env.NODE_ENV == 'development') {
+  app.use(cors());
+}
 
 // MongoDB connection
 mongoose
@@ -40,31 +46,20 @@ const redisClient = redis.createClient({
   port: keys.port
 });
 
-// redisClient.auth(keys.redisPassword, (error, reply) => {
-//   if (error) console.log(error);
-//   reply === 'OK'
-//     ? console.log('[REDIS]: Redis connection authenticated')
-//     : console.log('[REDIS]: Redis connection not authenticated');
-// });
+redisClient.auth(keys.redisPassword, (error, reply) => {
+  if (error) console.log(error);
+  reply === 'OK'
+    ? console.log('[REDIS]: Redis connection authenticated')
+    : console.log('[REDIS]: Redis connection not authenticated');
+});
 
-// redisClient.on('ready', () => {
-//   console.log('[REDIS]: Redis is ready');
-// });
+redisClient.on('ready', () => {
+  console.log('[REDIS]: Redis is ready');
+});
 
-// redisClient.on('error', () => {
-//   console.log('[REDIS]: Error in Redis');
-// });
-
-// if (process.env.NODE_ENV === 'development') {
-//   app.use(function(req, res, next) {
-//     res.header('Access-Control-Allow-Origin', '*');
-//     res.header(
-//       'Access-Control-Allow-Headers',
-//       'Origin, X-Requested-With, Content-Type, Accept'
-//     );
-//     next();
-//   });
-// }
+redisClient.on('error', () => {
+  console.log('[REDIS]: Error in Redis');
+});
 
 // Use Routes
 app.use('/api/buyer', buyer);
