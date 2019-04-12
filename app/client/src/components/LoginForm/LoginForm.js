@@ -24,3 +24,22 @@ export default function LoginForm(props) {
     </form>
   );
 }
+}
+const mapStateToProps = state => {
+  return {
+    // state: reducerSlice.prop
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    loginInit: (email, password) =>
+      dispatch(actions.loginInit(email, password)),
+    loadUser: () => dispatch(actions.loadUserInit())
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginForm);
