@@ -2,13 +2,13 @@ import { put, select, call } from 'redux-saga/effects';
 import axiosInstance from '../../axiosConfig';
 import * as actions from '../actions';
 import * as actionsTypes from '../actions/actionTypes';
+import store from '../../store';
 
 export async function tokenConfig() {
-  // const state = await select();
-  // console.log(state);
+  const state = await store.getState();
 
   // Get token from storage
-  const token = localStorage.getItem('token');
+  const token = state.auth.token;
   // Headers
   const config = {
     headers: {
@@ -37,6 +37,7 @@ export function* loadUserSaga(action) {
     yield put(actions.getErrors(error.response.data.errors));
   }
 }
+
 export function* loginUserSaga(action) {
   let body = yield {
     email: action.payload.email,
