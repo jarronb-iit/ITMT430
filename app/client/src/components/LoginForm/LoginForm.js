@@ -29,6 +29,18 @@ class LoginForm extends Component {
     console.log(JSON.stringify(this.state));
     console.log(this.props.loginInit(email, password));
     // this.props.loadUser();
+    this.props.loginInit(this.state);
+
+    // let user = {
+    //   email: 'test3@gmail.com',
+    //   password: 'password',
+    //   firstName: 'John',
+    //   lastName: 'Doe',
+    //   phoneNumber: '123-456-7890',
+    //   bio: 'Welcome, to rommie!',
+    //   roles: ['buyer']
+    // };
+    // console.log(this.props.createUser(user));
   };
   render() {
     const inputStyles = [
@@ -74,9 +86,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    loginInit: (email, password) =>
-      dispatch(actions.loginInit(email, password)),
-    loadUser: () => dispatch(actions.loadUserInit())
+    createUser: user => dispatch(actions.registerInit(user))
   };
 };
 
