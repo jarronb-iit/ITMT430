@@ -27,3 +27,10 @@ export const loginSuccess = (token, user) => {
     payload: { token: token, user: user }
   };
 };
+
+export const registerInit = user => {
+  return {
+    type: actionTypes.REGISTER_INIT,
+    payload: { user: user }
+  };
+};
