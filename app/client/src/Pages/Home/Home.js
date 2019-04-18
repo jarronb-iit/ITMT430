@@ -3,6 +3,7 @@ import HomepageButtons from '../../components/HomePageButtons/HomePageButtons';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import AboutMeInfo from '../../components/TellMeAboutYou/TellMeAboutYou';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import UserType from '../../components/UserType/UserType';
 import Styles from './Home.module.css';
 import { Route, Link, Switch, BrowserRouter } from 'react-router-dom';
 
@@ -22,6 +23,7 @@ export default class Test extends Component {
           <Route path='/aboutme' exact component={AboutMeInfo} />
           <Route path='/login' exact component={LoginForm} />
           <Route path='/' exact component={HomepageButtons} />
+          <Route path='/userType' exact component={UserType} />
         </div>
       </BrowserRouter>
     );
