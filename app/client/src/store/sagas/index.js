@@ -6,4 +6,5 @@ export function* watchAuth() {
   yield takeLatest(actionTypes.USER_LOAD_INIT, authSaga.loadUserSaga);
   yield takeLatest(actionTypes.LOGIN_INIT, authSaga.loginUserSaga);
   yield takeLatest(actionTypes.REGISTER_INIT, authSaga.registerUserSaga);
+  yield takeLatest(actionTypes.DELETE_USER_INIT, authSaga.deleteUserSaga);
 }
