@@ -3,7 +3,11 @@ import Styles from './LoginForm.module.css';
 import InputBaseStyles from '../../BaseStyles/Input.module.css';
 import ButtonBaseStyles from '../../BaseStyles/Button.module.css';
 import { connect } from 'react-redux';
+import BaseStyles from '../../BaseStyles/Input.module.css';
 import * as actions from '../../store/actions';
+import { NavLink } from 'react-router-dom';
+
+const signUpBtnClasses = [BaseStyles.Button, Styles.SignUpBtn];
 
 class LoginForm extends Component {
   state = {
@@ -37,27 +41,27 @@ class LoginForm extends Component {
       <form className={Styles.LoginForm}>
         <input
           className={inputStyles.join(' ')}
-          name="email"
-          type="text"
-          id="logEmail"
-          placeholder="Email Address"
+          name='email'
+          type='text'
+          id='logEmail'
+          placeholder='Email Address'
           onChange={this.onInputChangeHandler}
         />
         <input
           className={inputStyles.join(' ')}
-          name="password"
-          type="password"
-          id="logPass"
-          placeholder="Password"
+          name='password'
+          type='password'
+          id='logPass'
+          placeholder='Password'
           onChange={this.onInputChangeHandler}
         />
         <button className={loginButtonClasses.join(' ')} onClick={this.onClick}>
           Login
         </button>
 
-        <button onClick={this.props.changeVisibility} value="showHomepage">
+        <NavLink className={signUpBtnClasses.join(' ')} to='/' value='return'>
           Back
-        </button>
+        </NavLink>
       </form>
     );
   }
