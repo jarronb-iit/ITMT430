@@ -39,12 +39,11 @@ export function* loadUserSaga(action) {
 }
 
 export function* loginUserSaga(action) {
-  let body = yield {
-    email: action.payload.email,
-    password: action.payload.password
-  };
   try {
-    const tryPostRes = yield axiosInstance.post('/api/auth', body);
+    const tryPostRes = yield axiosInstance.post(
+      '/api/auth',
+      action.payload.user
+    );
     const { token, user } = yield tryPostRes.data;
     yield put(actions.loginSuccess(token, user));
   } catch (error) {

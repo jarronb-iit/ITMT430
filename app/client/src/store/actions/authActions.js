@@ -14,10 +14,10 @@ export const loadUserSuccess = () => {
   };
 };
 
-export const loginInit = (email, password) => {
+export const loginInit = user => {
   return {
     type: actionTypes.LOGIN_INIT,
-    payload: { email: email, password: password }
+    payload: { user: user }
   };
 };
 

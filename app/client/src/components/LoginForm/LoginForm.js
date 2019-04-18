@@ -86,6 +86,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    loginInit: user => dispatch(actions.loginInit(user)),
+    loadUser: () => dispatch(actions.loadUserInit()),
     createUser: user => dispatch(actions.registerInit(user))
   };
 };
