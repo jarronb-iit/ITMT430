@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Styles from './HomePageButtons.module.css';
+import { NavLink } from 'react-router-dom';
 import BaseStyles from '../../BaseStyles/Button.module.css';
 
 export default function Loginbuttons(props) {
@@ -12,21 +13,16 @@ export default function Loginbuttons(props) {
       <button id='signUp' onClick={props.loginRequest}>
         Sign Up
       </button> */}
-
-      <button
-        className={BaseStyles.Button}
-        onClick={props.changeVisibility}
-        value="showLogin"
-      >
+      <NavLink className={BaseStyles.Button} to='/Login' value='/showLogin'>
         Login
-      </button>
-      <button
+      </NavLink>
+      <NavLink
         className={signUpBtnClasses.join(' ')}
-        onClick={props.changeVisibility}
-        value="showSignup"
+        to='/signup'
+        value='showSignup'
       >
         Sign Up
-      </button>
+      </NavLink>
     </div>
   );
 }
