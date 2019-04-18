@@ -52,3 +52,17 @@ export function* loginUserSaga(action) {
     yield put(actions.getErrors(error.response.data.errors));
   }
 }
+
+export function* registerUserSaga(action) {
+  try {
+    const tryPostRes = yield axiosInstance.post(
+      '/api/auth/user',
+      action.payload.user
+    );
+    const { token, user } = yield tryPostRes.data;
+    yield put(actions.registerSuccess(token, user));
+  } catch (error) {
+    yield put({ type: actionsTypes.AUTH_ERROR });
+    yield put(actions.getErrors(error.response.data.errors));
+  }
+}
