@@ -41,3 +41,15 @@ export const registerSuccess = (token, user) => {
     payload: { token: token, user: user }
   };
 };
+
+export const deleteUserInit = () => {
+  return {
+    type: actionTypes.DELETE_USER_INIT
+  };
+};
+
+export const deleteUserSuccess = () => {
+  return {
+    type: actionTypes.DELETE_USER_SUCCESS
+  };
+};
