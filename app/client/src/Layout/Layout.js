@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SampleContainer from '../containers/SampleContainer/SampleContainer';
 import Home from '../Pages/Home/Home';
 import Styles from '../Pages/Home/Home.module.css';
 import { Route } from 'react-router-dom';
