@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function UserType(props) {
   const inputStyles = [BaseStyles.Input, Styles.Input, 'browser-default'];
-
+  const signUpBtnClasses = [BaseStyles.Button, Styles.SignUpBtn];
   return (
     <form
       id='userType'
@@ -14,12 +14,12 @@ export default function UserType(props) {
     >
       <h1>Im Looking for property</h1>
       <h1>Im selling property</h1>
-      <button value='showHomepage' onClick={props.changeVisibility}>
+      <NavLink className={BaseStyles.Button} to='/aboutme' value='/showAboutMe'>
         Back
-      </button>
-      <button value='showAboutMeInfo' onClick={props.changeVisibility}>
-        Finish
-      </button>
+      </NavLink>
+      <NavLink className={signUpBtnClasses.join(' ')} to='#' value='COMPLETE'>
+        FINISH
+      </NavLink>
     </form>
   );
 }
