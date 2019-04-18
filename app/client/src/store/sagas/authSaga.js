@@ -61,6 +61,10 @@ export function* registerUserSaga(action) {
     const { token, user } = yield tryPostRes.data;
     yield put(actions.registerSuccess(token, user));
   } catch (error) {
+    yield put({ type: actionsTypes.REGISTER_FAIL });
+    yield put(actions.getErrors(error.response.data.errors));
+  }
+}
 
 export function* deleteUserSaga(action) {
   let config;
