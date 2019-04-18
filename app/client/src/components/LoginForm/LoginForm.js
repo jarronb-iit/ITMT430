@@ -23,24 +23,21 @@ class LoginForm extends Component {
 
   onClick = event => {
     event.preventDefault();
-    let { email, password } = this.state;
-    console.log(email, password);
-    JSON.stringify(this.state);
-    console.log(JSON.stringify(this.state));
-    console.log(this.props.loginInit(email, password));
     // this.props.loadUser();
-    this.props.loginInit(this.state);
+    // this.props.loginInit(this.state);
+    // this.props.deleteUser();
 
-    // let user = {
-    //   email: 'test3@gmail.com',
-    //   password: 'password',
-    //   firstName: 'John',
-    //   lastName: 'Doe',
-    //   phoneNumber: '123-456-7890',
-    //   bio: 'Welcome, to rommie!',
-    //   roles: ['buyer']
-    // };
-    // console.log(this.props.createUser(user));
+    let user = {
+      email: 'test3@gmail.com',
+      password: 'password',
+      firstName: 'John',
+      lastName: 'Doe',
+      phoneNumber: '123-456-7890',
+      bio: 'Welcome, to rommie!',
+      roles: ['buyer']
+    };
+
+    this.props.createUser(user);
   };
   render() {
     const inputStyles = [
@@ -88,7 +85,8 @@ const mapDispatchToProps = dispatch => {
   return {
     loginInit: user => dispatch(actions.loginInit(user)),
     loadUser: () => dispatch(actions.loadUserInit()),
-    createUser: user => dispatch(actions.registerInit(user))
+    createUser: user => dispatch(actions.registerInit(user)),
+    deleteUser: () => dispatch(actions.deleteUserInit())
   };
 };
 
