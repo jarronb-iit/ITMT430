@@ -17,7 +17,7 @@ export default function UserType(props) {
         Back
       </button>
       <button value='showAboutMeInfo' onClick={props.changeVisibility}>
-        Continue
+        Finish
       </button>
     </form>
   );
