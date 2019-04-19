@@ -1,7 +1,7 @@
-import * as actionTypes from "../actions/actionTypes";
+import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-  token: localStorage.getItem("token"),
+  token: localStorage.getItem('token'),
   isAuthenticated: null,
   isLoading: null,
   user: null
@@ -26,7 +26,7 @@ const userLoaded = (state, action) => {
 };
 
 const setUserAuthentication = (state, action) => {
-  localStorage.setItem("token", action.payload.token);
+  localStorage.setItem('token', action.payload.token);
   state = {
     ...state,
     isLoading: false,
@@ -38,7 +38,7 @@ const setUserAuthentication = (state, action) => {
 };
 
 const resetAuthentication = (state, action) => {
-  localStorage.removeItem("token");
+  localStorage.removeItem('token');
   state = {
     ...state,
     token: null,
@@ -63,6 +63,7 @@ const reducer = (state = initialState, action) => {
     case actionTypes.LOGIN_FAIL:
     case actionTypes.LOGOUT_SUCCESS:
     case actionTypes.REGISTER_FAIL:
+    case actionTypes.DELETE_USER_SUCCESS:
       return resetAuthentication(state, action);
     default:
       return state;
