@@ -71,36 +71,39 @@ class Test extends Component {
 
   render() {
     return (
-      <Switch>
-        {/* PROTECTED ROUTE EXAMPLE */}
-        {/* <ProtectedRoute path="/signup" exact component={SignUpForm} /> */}
-        <Route
-          path='/signup'
-          exact
-          component={() => (
-            <SignUpForm getCurrentState={this.getCurrentState} />
-          )}
-        />
-        <Route
-          path='/aboutme'
-          exact
-          component={() => (
-            <AboutMeInfo getCurrentState={this.getCurrentState} />
-          )}
-        />
-        <Route path='/login' exact component={LoginForm} />
-        <Route path='/' exact component={HomepageButtons} />
-        <Route
-          path='/userType'
-          exact
-          component={() => <UserType finishNewUser={this.finishNewUser} />}
-        />
-        <Route
-          path='/NavMenuSellersScreen'
-          exact
-          component={NavMenuSellersScreen}
-        />
-      </Switch>
+      <div className={Styles.Home}>
+        <header className={Styles.Title}>Roomie </header>
+        <Switch>
+          {/* PROTECTED ROUTE EXAMPLE */}
+          {/* <ProtectedRoute path="/signup" exact component={SignUpForm} /> */}
+          <Route
+            path="/signup"
+            exact
+            component={() => (
+              <SignUpForm getCurrentState={this.getCurrentState} />
+            )}
+          />
+          <Route
+            path="/aboutme"
+            exact
+            component={() => (
+              <AboutMeInfo getCurrentState={this.getCurrentState} />
+            )}
+          />
+          <Route path="/login" exact component={LoginForm} />
+          <Route path="/" exact component={HomepageButtons} />
+          <Route
+            path="/userType"
+            exact
+            component={() => <UserType finishNewUser={this.finishNewUser} />}
+          />
+          <Route
+            path="/NavMenuSellersScreen"
+            exact
+            component={NavMenuSellersScreen}
+          />
+        </Switch>
+      </div>
     );
   }
 }
