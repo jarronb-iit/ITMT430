@@ -67,7 +67,11 @@ class Test extends Component {
         />
         <Route path='/login' exact component={LoginForm} />
         <Route path='/' exact component={HomepageButtons} />
-        <Route path='/userType' exact component={UserType} />
+        <Route
+          path='/userType'
+          exact
+          component={() => <UserType getCurrentState={this.getCurrentState} />}
+        />
         <Route
           path='/NavMenuSellersScreen'
           exact
