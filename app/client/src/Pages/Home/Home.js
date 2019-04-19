@@ -13,9 +13,47 @@ import { connect } from 'react-redux';
 import * as actions from '../../store/actions';
 
 class Test extends Component {
-  changePage(event) {
+  state = {
+    email: null,
+    password: null,
+    firstName: null,
+    lastName: null,
+    phoneNumber: null,
+    bio: null,
+    roles: null
+  };
+
+  getCurrentState = (event, state) => {
+    // event.preventDefault();
     console.log(event);
-  }
+    console.log({ ...state });
+    this.setState({
+      ...this.state,
+      ...state
+    });
+    console.log(this.state);
+  };
+
+  finishNewUser = (event, state) => {
+    // event.preventDefault();
+    console.log(event);
+    console.log({ ...state });
+    this.setState({
+      ...this.state,
+      ...state
+    });
+    console.log(this.state);
+
+    this.props.createUser(this.state);
+  };
+
+  generateNewUser = () => {
+    this.props.createUser(this.state);
+  };
+
+  changePage = event => {
+    console.log(event);
+  };
 
   // TODO:
   // eventHandler = (event) => {
@@ -33,16 +71,39 @@ class Test extends Component {
 
   render() {
     return (
-      <Switch>
-        {/* PROTECTED ROUTE EXAMPLE */}
-        {/* <ProtectedRoute path="/signup" exact component={SignUpForm} /> */}
-        <Route path="/signup" exact component={SignUpForm} />
-        <Route path="/aboutme" exact component={AboutMeInfo} />
-        <Route path="/login" exact component={LoginForm} />
-        <Route path="/" exact component={HomepageButtons} />
-        <Route path="/userType" exact component={UserType} />
-       <Route path='/NavMenuSellersScreen' exact component={NavMenuSellersScreen} />
-      </Switch>
+      <div className={Styles.Home}>
+        <header className={Styles.Title}>Roomie </header>
+        <Switch>
+          {/* PROTECTED ROUTE EXAMPLE */}
+          {/* <ProtectedRoute path="/signup" exact component={SignUpForm} /> */}
+          <Route
+            path="/signup"
+            exact
+            component={() => (
+              <SignUpForm getCurrentState={this.getCurrentState} />
+            )}
+          />
+          <Route
+            path="/aboutme"
+            exact
+            component={() => (
+              <AboutMeInfo getCurrentState={this.getCurrentState} />
+            )}
+          />
+          <Route path="/login" exact component={LoginForm} />
+          <Route path="/" exact component={HomepageButtons} />
+          <Route
+            path="/userType"
+            exact
+            component={() => <UserType finishNewUser={this.finishNewUser} />}
+          />
+          <Route
+            path="/NavMenuSellersScreen"
+            exact
+            component={NavMenuSellersScreen}
+          />
+        </Switch>
+      </div>
     );
   }
 }
