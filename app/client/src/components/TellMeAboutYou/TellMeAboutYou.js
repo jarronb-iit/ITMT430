@@ -28,6 +28,7 @@ export default class TellMe extends Component {
             className={Styles.input}
             cols='20'
             rows='50'
+            name='aboutme'
             placeholder='I am pretty cool...'
             onChange={this.onInputChangeHandler}
           />
@@ -38,6 +39,7 @@ export default class TellMe extends Component {
             className={continueButtonStyles.join(' ')}
             to='/usertype'
             value='/showAboutMe'
+            onClick={event => this.props.getCurrentState(event, this.state)}
           >
             Continue
           </NavLink>
