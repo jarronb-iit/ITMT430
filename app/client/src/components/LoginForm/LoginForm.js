@@ -24,20 +24,20 @@ class LoginForm extends Component {
   onClick = event => {
     event.preventDefault();
     // this.props.loadUser();
-    // this.props.loginInit(this.state);
+    this.props.loginInit(this.state);
     // this.props.deleteUser();
 
-    let user = {
-      email: 'test3@gmail.com',
-      password: 'password',
-      firstName: 'John',
-      lastName: 'Doe',
-      phoneNumber: '123-456-7890',
-      bio: 'Welcome, to rommie!',
-      roles: ['buyer']
-    };
+    // let user = {
+    //   email: 'test3@gmail.com',
+    //   password: 'password',
+    //   firstName: 'John',
+    //   lastName: 'Doe',
+    //   phoneNumber: '123-456-7890',
+    //   bio: 'Welcome, to rommie!',
+    //   roles: ['buyer']
+    // };
 
-    this.props.createUser(user);
+    // this.props.createUser(user);
   };
   render() {
     const inputStyles = [
