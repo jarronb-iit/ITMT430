@@ -1,58 +1,31 @@
 import React, { Component } from 'react';
-import LoginButtons from '../../components/LoginPageButtons/LoginButtons';
+import HomepageButtons from '../../components/HomePageButtons/HomePageButtons';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
-import AboutMeInfo from '../../components/TellMeAboutYou/TellMe';
-//import LoggingInForm from '../../components/LoggingInForm/LoggingInForm';
+import AboutMeInfo from '../../components/TellMeAboutYou/TellMeAboutYou';
+import LoginForm from '../../components/LoginForm/LoginForm';
+import UserType from '../../components/UserType/UserType';
+import Styles from './Home.module.css';
+import { Route, Link, Switch, BrowserRouter } from 'react-router-dom';
 
-import './Home.css';
+export default class Test extends Component {
+  changePage(event) {
+    console.log(event);
+  }
 
-export default class Home extends Component {
-  state = {
-    changeToSignUp: true,
-    changeToAboutMe: true
-  };
-  changeVisibility = () => {
-    if (this.state.changeToSignUp) {
-      this.setState({
-        changeToSignUp: !this.state.changeToSignUp
-      });
-    }
-    // else if (this.state.changeToAboutMe) {
-    //   this.setState({
-    //     changeToAboutMe: !this.changeToAboutMe
-    //   });
-    // }
-    else {
-      this.setState({
-        changeToSignUp: true
-      });
-    }
-    //  else {
-    //   this.setState({
-    //     changeToAboutMe: true
-    //   });
-    // }
-  };
   render() {
-    let exeComp;
-    if (this.state.changeToSignUp) {
-      exeComp = (
-        //Replace header with new logo image of roomie.
-        <LoginButtons loginRequest={this.changeVisibility} />
-        //<LoggingInForm />
-      );
-    } else {
-      if (this.state.changeToAboutMe) {
-        exeComp = (
-          <SignUpForm
-            returnToLogin={this.changeVisibility}
-            changeAboutMe={this.changeVisibility}
-          />
-        );
-      } else {
-        exeComp = <AboutMeInfo />;
-      }
-    }
-    return <div>{exeComp}</div>;
+    let pageProps = {
+      changePage: this.changePage
+    };
+    return (
+      <BrowserRouter>
+        <div>
+          <Route path='/signup' exact component={SignUpForm} />
+          <Route path='/aboutme' exact component={AboutMeInfo} />
+          <Route path='/login' exact component={LoginForm} />
+          <Route path='/' exact component={HomepageButtons} />
+          <Route path='/userType' exact component={UserType} />
+        </div>
+      </BrowserRouter>
+    );
   }
 }
