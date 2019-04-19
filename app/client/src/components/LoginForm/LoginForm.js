@@ -50,25 +50,25 @@ class LoginForm extends Component {
       <form className={Styles.LoginForm}>
         <input
           className={inputStyles.join(' ')}
-          name='email'
-          type='text'
-          id='logEmail'
-          placeholder='Email Address'
+          name="email"
+          type="text"
+          id="logEmail"
+          placeholder="Email Address"
           onChange={this.onInputChangeHandler}
         />
         <input
           className={inputStyles.join(' ')}
-          name='password'
-          type='password'
-          id='logPass'
-          placeholder='Password'
+          name="password"
+          type="password"
+          id="logPass"
+          placeholder="Password"
           onChange={this.onInputChangeHandler}
         />
         <button className={loginButtonClasses.join(' ')} onClick={this.onClick}>
           Login
         </button>
 
-        <NavLink className={signUpBtnClasses.join(' ')} to='/' value='return'>
+        <NavLink className={signUpBtnClasses.join(' ')} to="/" value="return">
           Back
         </NavLink>
       </form>

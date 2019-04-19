@@ -4,6 +4,7 @@ import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import AboutMeInfo from '../../components/TellMeAboutYou/TellMeAboutYou';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import UserType from '../../components/UserType/UserType';
+import ProtectedRoute from '../../hoc/ProtectedRoute';
 import Styles from './Home.module.css';
 import { Route, Link, Switch, BrowserRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -29,19 +30,16 @@ class Test extends Component {
   // }
 
   render() {
-    let pageProps = {
-      changePage: this.changePage
-    };
     return (
-      <BrowserRouter>
-        <div>
-          <Route path="/signup" exact component={SignUpForm} />
-          <Route path="/aboutme" exact component={AboutMeInfo} />
-          <Route path="/login" exact component={LoginForm} />
-          <Route path="/" exact component={HomepageButtons} />
-          <Route path="/userType" exact component={UserType} />
-        </div>
-      </BrowserRouter>
+      <Switch>
+        {/* PROTECTED ROUTE EXAMPLE */}
+        {/* <ProtectedRoute path="/signup" exact component={SignUpForm} /> */}
+        <Route path="/signup" exact component={SignUpForm} />
+        <Route path="/aboutme" exact component={AboutMeInfo} />
+        <Route path="/login" exact component={LoginForm} />
+        <Route path="/" exact component={HomepageButtons} />
+        <Route path="/userType" exact component={UserType} />
+      </Switch>
     );
   }
 }
