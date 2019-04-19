@@ -5,7 +5,7 @@
 - Junior Developer - [Giancarlo Barillas](https://github.com/giancarlobarillas), [Johnathan Garcia](https://github.com/)
 - Lead Developer - [Erick Cabrera](https://github.com/ecabrera796)
 - UI/UX -  [Jarron Bailey](https://github.com/jarronb)
-- Project Manager - [Antoine Foggs](https://github.com/AFoggs),
+- Project Manager - [Antoine Foggs](https://github.com/AFoggs)
 - IT Operations - [Theo Economos](https://github.com/teconomo)
 
 
