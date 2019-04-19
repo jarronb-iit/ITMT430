@@ -2,11 +2,11 @@
 
 First, Fork the team repository so that you have a personal copy. It is the button labeled fork on the upper right hand corner.
 
-![Image of Where to Fork](images/fork.png)
+![Image of Where to Fork](../images/fork.png)
 
 Next, in the newly forked Repo, copy the clone text and clone your personal repository.
 
-![Image of Where to clone](images/clone.png)
+![Image of Where to clone](../images/clone.png)
 
 After cloning the repository, enter the following commands so that you can set up your remote repository and team one.
 
