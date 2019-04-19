@@ -24,20 +24,20 @@ class LoginForm extends Component {
   onClick = event => {
     event.preventDefault();
     // this.props.loadUser();
-    // this.props.loginInit(this.state);
+    this.props.loginInit(this.state);
     // this.props.deleteUser();
 
-    let user = {
-      email: 'test3@gmail.com',
-      password: 'password',
-      firstName: 'John',
-      lastName: 'Doe',
-      phoneNumber: '123-456-7890',
-      bio: 'Welcome, to rommie!',
-      roles: ['buyer']
-    };
+    // let user = {
+    //   email: 'test3@gmail.com',
+    //   password: 'password',
+    //   firstName: 'John',
+    //   lastName: 'Doe',
+    //   phoneNumber: '123-456-7890',
+    //   bio: 'Welcome, to rommie!',
+    //   roles: ['buyer']
+    // };
 
-    this.props.createUser(user);
+    // this.props.createUser(user);
   };
   render() {
     const inputStyles = [
@@ -50,25 +50,25 @@ class LoginForm extends Component {
       <form className={Styles.LoginForm}>
         <input
           className={inputStyles.join(' ')}
-          name='email'
-          type='text'
-          id='logEmail'
-          placeholder='Email Address'
+          name="email"
+          type="text"
+          id="logEmail"
+          placeholder="Email Address"
           onChange={this.onInputChangeHandler}
         />
         <input
           className={inputStyles.join(' ')}
-          name='password'
-          type='password'
-          id='logPass'
-          placeholder='Password'
+          name="password"
+          type="password"
+          id="logPass"
+          placeholder="Password"
           onChange={this.onInputChangeHandler}
         />
         <button className={loginButtonClasses.join(' ')} onClick={this.onClick}>
           Login
         </button>
 
-        <NavLink className={signUpBtnClasses.join(' ')} to='/' value='return'>
+        <NavLink className={signUpBtnClasses.join(' ')} to="/" value="return">
           Back
         </NavLink>
       </form>
