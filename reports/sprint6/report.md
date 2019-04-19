@@ -1,15 +1,15 @@
-# Sprint 5 Report
+# Sprint 6 Report
 
 ## Roles
 
-- Junior Developer - [Erick Cabrera](https://github.com/ecabrera796)
-- Lead Developer - [Theo Economos](https://github.com/teconomo)
-- UI/UX - [Antoine Foggs](https://github.com/AFoggs), [Giancarlo Barillas](https://github.com/giancarlobarillas)
-- Project Manager - [Johnathan Garcia](https://github.com/)
-- IT Operations - [Jarron Bailey](https://github.com/jarronb)
+- Junior Developer - [Giancarlo Barillas](https://github.com/giancarlobarillas), [Johnathan Garcia](https://github.com/)
+- Lead Developer - [Erick Cabrera](https://github.com/ecabrera796)
+- UI/UX -  [Jarron Bailey](https://github.com/jarronb)
+- Project Manager - [Antoine Foggs](https://github.com/AFoggs),
+- IT Operations - [Theo Economos](https://github.com/teconomo)
 
 
-## Sprint 4 Goals
+## Sprint 5 Goals
 
 <!-- The goal of this sprint was to create a foundation for building and maintaining React components. We want to finalize all key wireframes for this sprint and how they should look like so that we have a template to build off of. The goals from the class were to create a user and go through the process of 1 key functionally of the application -->
 
@@ -50,7 +50,7 @@
   - Update user
     Connect material ui to help create more responsive buttons and formatting -->
 
-## Sprint 6 To-Do
+## Final To-Do
 
 <!-- For the upcoming spring we will try to complete the following:
 
@@ -62,7 +62,7 @@
 
 For the following sprint the goals that we have placed for ourselves is to connect the api calls to the React components. This will help us make the application interact with the mongodb database. We will also need to test the database for injections and ensure that the api call are secure. -->
 
-## Sprint 5 Rubric Info
+## Sprint 6 Rubric Info
 
 1. The language we are using is Javascript
 2. The operating system that we are using is Linux and Windows for development. We have some developers that are using Linux as their native development envirment and current we have implemented a npm linux start for the react application. The frameworks that we are using are Node js and React js. We are using node to build the application and routing while we are using react to build the components of the application
