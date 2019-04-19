@@ -58,7 +58,13 @@ class Test extends Component {
             <SignUpForm getCurrentState={this.getCurrentState} />
           )}
         />
-        <Route path='/aboutme' exact component={AboutMeInfo} />
+        <Route
+          path='/aboutme'
+          exact
+          component={() => (
+            <AboutMeInfo getCurrentState={this.getCurrentState} />
+          )}
+        />
         <Route path='/login' exact component={LoginForm} />
         <Route path='/' exact component={HomepageButtons} />
         <Route path='/userType' exact component={UserType} />
