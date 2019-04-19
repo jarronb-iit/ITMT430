@@ -75,14 +75,14 @@ class Test extends Component {
         <header className={Styles.Title}>Roomie </header>
         <Switch>
           {/* PROTECTED ROUTE EXAMPLE */}
-          <ProtectedRoute path="/signup" exact component={SignUpForm} />
-          {/* <Route
-          path="/signup"
-          exact
-          component={() => (
-            <SignUpForm getCurrentState={this.getCurrentState} />
-          )}
-        /> */}
+          {/* <ProtectedRoute path="/signup" exact component={SignUpForm} /> */}
+          <Route
+            path="/signup"
+            exact
+            component={() => (
+              <SignUpForm getCurrentState={this.getCurrentState} />
+            )}
+          />
           <Route
             path="/aboutme"
             exact
