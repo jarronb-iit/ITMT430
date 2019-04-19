@@ -45,7 +45,7 @@ export default class UserType extends Component {
             className={continueButtonStyles.join(' ')}
             to='#'
             value='COMPLETE'
-            onClick={event => this.props.getCurrentState(event, this.state)}
+            onClick={event => this.props.finishNewUser(event, this.state)}
           >
             FINISH
           </NavLink>
