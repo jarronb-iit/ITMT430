@@ -7,11 +7,6 @@ import { Route } from 'react-router-dom';
 
 export default class Layout extends Component {
   render() {
-    return (
-      <div className={Styles.Home}>
-        <header className={Styles.Title}>Roomie </header>
-        <Route path='/' component={Home} />
-      </div>
-    );
+    return <Route path="/" component={Home} />;
   }
 }
