@@ -26,8 +26,29 @@ class Test extends Component {
   getCurrentState = (event, state) => {
     // event.preventDefault();
     console.log(event);
-    console.log(state);
-    console.log(this.state.data);
+    console.log({ ...state });
+    this.setState({
+      ...this.state,
+      ...state
+    });
+    console.log(this.state);
+  };
+
+  finishNewUser = (event, state) => {
+    // event.preventDefault();
+    console.log(event);
+    console.log({ ...state });
+    this.setState({
+      ...this.state,
+      ...state
+    });
+    console.log(this.state);
+
+    this.props.createUser(this.state);
+  };
+
+  generateNewUser = () => {
+    this.props.createUser(this.state);
   };
 
   changePage = event => {
@@ -72,7 +93,7 @@ class Test extends Component {
         <Route
           path='/userType'
           exact
-          component={() => <UserType getCurrentState={this.getCurrentState} />}
+          component={() => <UserType finishNewUser={this.finishNewUser} />}
         />
         <Route
           path='/NavMenuSellersScreen'
