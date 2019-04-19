@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import Styles from './SignUpForm.module.css';
 import { NavLink } from 'react-router-dom';
 import BaseStyles from '../../BaseStyles/Input.module.css';
+import HomeStyles from '../../Pages/Home/Home.module.css';
 
 export default function SignUpForm(props) {
   const inputStyles = [BaseStyles.Input, Styles.Input, 'browser-default'];
   const signUpBtnClasses = [BaseStyles.Button, Styles.SignUpBtn];
+  const continueButtonStyles = [BaseStyles.Button, HomeStyles.Button1];
+  const backButtonStyles = [BaseStyles.Button, HomeStyles.Button2];
   return (
     <form
       id='SignUpForm'
@@ -43,12 +46,17 @@ export default function SignUpForm(props) {
         id='phoneNum'
         placeholder='Phone Number'
       />
-      <NavLink className={BaseStyles.Button} to='/aboutme' value='/showAboutMe'>
+
+      <section className={HomeStyles.container}>
+
+      <NavLink className={continueButtonStyles.join(" ")} to='/aboutme' value='/showAboutMe'>
         Continue
       </NavLink>
-      <NavLink className={signUpBtnClasses.join(' ')} to='/' value='return'>
+      <NavLink className={backButtonStyles.join(" ")} to='/' value='return'>
         Back
       </NavLink>
+
+      </section>
     </form>
   );
 }

@@ -7,6 +7,8 @@ import UserType from '../../components/UserType/UserType';
 import ProtectedRoute from '../../hoc/ProtectedRoute';
 import Styles from './Home.module.css';
 import { Route, Link, Switch, BrowserRouter } from 'react-router-dom';
+import Navmenu from '../../components/Navmenuscreens/Navmenu';
+import NavMenuSellersScreen from '../../components/Navmenuscreens/NavMenuSellersScreen';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions';
 
@@ -39,6 +41,7 @@ class Test extends Component {
         <Route path="/login" exact component={LoginForm} />
         <Route path="/" exact component={HomepageButtons} />
         <Route path="/userType" exact component={UserType} />
+       <Route path='/NavMenuSellersScreen' exact component={NavMenuSellersScreen} />
       </Switch>
     );
   }
