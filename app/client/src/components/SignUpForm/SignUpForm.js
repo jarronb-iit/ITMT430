@@ -7,10 +7,10 @@ import HomeStyles from '../../Pages/Home/Home.module.css';
 export default class SignUpForm extends Component {
   state = {
     email: null,
-    phone: null,
-    fname: null,
-    lname: null,
-    password: null
+    password: null,
+    firstName: null,
+    lastName: null,
+    phoneNumber: null
   };
 
   onInputChangeHandler = event => {
@@ -31,7 +31,7 @@ export default class SignUpForm extends Component {
           className={inputStyles.join(' ')}
           type='text'
           id='firstName'
-          name='fname'
+          name='firstName'
           placeholder='First Name'
           onChange={this.onInputChangeHandler}
         />
@@ -39,7 +39,7 @@ export default class SignUpForm extends Component {
           className={inputStyles.join(' ')}
           type='text'
           id='lastName'
-          name='lname'
+          name='lastName'
           placeholder='Last Name'
           onChange={this.onInputChangeHandler}
         />
@@ -69,7 +69,7 @@ export default class SignUpForm extends Component {
           className={inputStyles.join(' ')}
           type='text'
           id='phoneNum'
-          name='phone'
+          name='phoneNumber'
           placeholder='Phone Number'
           onChange={this.onInputChangeHandler}
         />
