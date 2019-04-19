@@ -11,6 +11,7 @@ export default class UserType extends Component {
   };
 
   onInputChangeHandler = event => {
+    event.preventDefault();
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -22,26 +23,29 @@ export default class UserType extends Component {
     const backButtonStyles = [BaseStyles.Button, HomeStyles.Button2];
     return (
       <form id='userType' className={Styles.SignUpForm}>
-        <h1
-          name='Buying'
+        <button
+          name='role'
+          value='Buying'
           className={TypeStyles.h1}
-          onclick={this.onInputChangeHandler}
+          onClick={this.onInputChangeHandler}
         >
           I'm Looking for property
-        </h1>
-        <h1
-          name='Selling'
+        </button>
+        <button
+          name='role'
+          value='Selling'
           className={TypeStyles.h2}
-          onclick={this.onInputChangeHandler}
+          onClick={this.onInputChangeHandler}
         >
           I'm selling property
-        </h1>
+        </button>
 
         <section className={HomeStyles.container}>
           <NavLink
             className={continueButtonStyles.join(' ')}
             to='#'
             value='COMPLETE'
+            onClick={event => this.props.getCurrentState(event, this.state)}
           >
             FINISH
           </NavLink>
