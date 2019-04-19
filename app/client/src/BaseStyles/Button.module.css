@@ -1,6 +1,7 @@
 .Button {
   border: none;
   border-radius: 10px;
+  display: block;
   width: 100%;
   background: rgba(255, 255, 255, 0.8);
   text-align: center;
@@ -9,7 +10,9 @@
   height: 3vw;
   min-height: 4rem;
   color: #0096BF;
-  max-width: 86rem;
+  margin-top: 2rem;
+  margin: auto;
+
 }
 
 .Button:not(:first-of-type) {
@@ -19,4 +22,12 @@
 .Blue {
   background-color: rgba(0, 198, 255, 0.8);
   color: #ffffff;
+  margin-top: 2rem;
 }
+
+@media only screen and (min-width: 600px) {
+  .Button {
+  width: 75rem;
+    
+  }
+  }

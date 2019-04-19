@@ -3,11 +3,10 @@ import Styles from './LoginForm.module.css';
 import InputBaseStyles from '../../BaseStyles/Input.module.css';
 import ButtonBaseStyles from '../../BaseStyles/Button.module.css';
 import { connect } from 'react-redux';
-import BaseStyles from '../../BaseStyles/Input.module.css';
 import * as actions from '../../store/actions';
 import { NavLink } from 'react-router-dom';
 
-const signUpBtnClasses = [BaseStyles.Button, Styles.SignUpBtn];
+const loginStyleClasses = [ButtonBaseStyles.Button, Styles.SignUpBtn];
 
 class LoginForm extends Component {
   state = {
@@ -24,20 +23,20 @@ class LoginForm extends Component {
   onClick = event => {
     event.preventDefault();
     // this.props.loadUser();
-    // this.props.loginInit(this.state);
+    this.props.loginInit(this.state, this.props.history);
     // this.props.deleteUser();
 
-    let user = {
-      email: 'test3@gmail.com',
-      password: 'password',
-      firstName: 'John',
-      lastName: 'Doe',
-      phoneNumber: '123-456-7890',
-      bio: 'Welcome, to rommie!',
-      roles: ['buyer']
-    };
+    // let user = {
+    //   email: 'test3@gmail.com',
+    //   password: 'password',
+    //   firstName: 'John',
+    //   lastName: 'Doe',
+    //   phoneNumber: '123-456-7890',
+    //   bio: 'Welcome, to rommie!',
+    //   roles: ['buyer']
+    // };
 
-    this.props.createUser(user);
+    // this.props.createUser(user);
   };
   render() {
     const inputStyles = [
@@ -50,31 +49,33 @@ class LoginForm extends Component {
       <form className={Styles.LoginForm}>
         <input
           className={inputStyles.join(' ')}
-          name='email'
-          type='text'
-          id='logEmail'
-          placeholder='Email Address'
+          name="email"
+          type="text"
+          id="logEmail"
+          placeholder="Email Address"
           onChange={this.onInputChangeHandler}
         />
         <input
           className={inputStyles.join(' ')}
-          name='password'
-          type='password'
-          id='logPass'
-          placeholder='Password'
+          name="password"
+          type="password"
+          id="logPass"
+          placeholder="Password"
           onChange={this.onInputChangeHandler}
         />
+
         <button className={loginButtonClasses.join(' ')} onClick={this.onClick}>
           Login
         </button>
 
-        <NavLink className={signUpBtnClasses.join(' ')} to='/' value='return'>
+        <NavLink className={loginStyleClasses.join(' ')} to="/" value="return">
           Back
         </NavLink>
       </form>
     );
   }
 }
+
 const mapStateToProps = state => {
   return {
     // state: reducerSlice.prop
@@ -83,7 +84,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    loginInit: user => dispatch(actions.loginInit(user)),
+    loginInit: (user, history) => dispatch(actions.loginInit(user, history)),
     loadUser: () => dispatch(actions.loadUserInit()),
     createUser: user => dispatch(actions.registerInit(user)),
     deleteUser: () => dispatch(actions.deleteUserInit())

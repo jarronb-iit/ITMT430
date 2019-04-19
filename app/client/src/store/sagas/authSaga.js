@@ -39,6 +39,8 @@ export function* loadUserSaga(action) {
 }
 
 export function* loginUserSaga(action) {
+  yield console.log(action);
+
   try {
     const tryPostRes = yield axiosInstance.post(
       '/api/auth',
@@ -46,6 +48,7 @@ export function* loginUserSaga(action) {
     );
     const { token, user } = yield tryPostRes.data;
     yield put(actions.loginSuccess(token, user));
+    yield action.payload.history.push('/home');
   } catch (error) {
     yield put({ type: actionsTypes.AUTH_ERROR });
     yield put(actions.getErrors(error.response.data.errors));

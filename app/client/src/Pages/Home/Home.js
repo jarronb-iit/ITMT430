@@ -4,15 +4,56 @@ import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import AboutMeInfo from '../../components/TellMeAboutYou/TellMeAboutYou';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import UserType from '../../components/UserType/UserType';
+import ProtectedRoute from '../../hoc/ProtectedRoute';
 import Styles from './Home.module.css';
 import { Route, Link, Switch, BrowserRouter } from 'react-router-dom';
+import Navmenu from '../../components/Navmenuscreens/Navmenu';
+import NavMenuSellersScreen from '../../components/Navmenuscreens/NavMenuSellersScreen';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions';
 
 class Test extends Component {
-  changePage(event) {
+  state = {
+    email: null,
+    password: null,
+    firstName: null,
+    lastName: null,
+    phoneNumber: null,
+    bio: null,
+    roles: null
+  };
+
+  getCurrentState = (event, state) => {
+    // event.preventDefault();
     console.log(event);
-  }
+    console.log({ ...state });
+    this.setState({
+      ...this.state,
+      ...state
+    });
+    console.log(this.state);
+  };
+
+  finishNewUser = (event, state) => {
+    // event.preventDefault();
+    console.log(event);
+    console.log({ ...state });
+    this.setState({
+      ...this.state,
+      ...state
+    });
+    console.log(this.state);
+
+    this.props.createUser(this.state);
+  };
+
+  generateNewUser = () => {
+    this.props.createUser(this.state);
+  };
+
+  changePage = event => {
+    console.log(event);
+  };
 
   // TODO:
   // eventHandler = (event) => {
@@ -29,19 +70,40 @@ class Test extends Component {
   // }
 
   render() {
-    let pageProps = {
-      changePage: this.changePage
-    };
     return (
-      <BrowserRouter>
-        <div>
-          <Route path="/signup" exact component={SignUpForm} />
-          <Route path="/aboutme" exact component={AboutMeInfo} />
+      <div className={Styles.Home}>
+        <header className={Styles.Title}>Roomie </header>
+        <Switch>
+          {/* PROTECTED ROUTE EXAMPLE */}
+          {/* <ProtectedRoute path="/signup" exact component={SignUpForm} /> */}
+          <Route
+            path="/signup"
+            exact
+            component={() => (
+              <SignUpForm getCurrentState={this.getCurrentState} />
+            )}
+          />
+          <Route
+            path="/aboutme"
+            exact
+            component={() => (
+              <AboutMeInfo getCurrentState={this.getCurrentState} />
+            )}
+          />
           <Route path="/login" exact component={LoginForm} />
           <Route path="/" exact component={HomepageButtons} />
-          <Route path="/userType" exact component={UserType} />
-        </div>
-      </BrowserRouter>
+          <Route
+            path="/userType"
+            exact
+            component={() => <UserType finishNewUser={this.finishNewUser} />}
+          />
+          <Route
+            path="/NavMenuSellersScreen"
+            exact
+            component={NavMenuSellersScreen}
+          />
+        </Switch>
+      </div>
     );
   }
 }

@@ -14,10 +14,10 @@ export const loadUserSuccess = () => {
   };
 };
 
-export const loginInit = user => {
+export const loginInit = (user, history) => {
   return {
     type: actionTypes.LOGIN_INIT,
-    payload: { user: user }
+    payload: { user: user, history: history }
   };
 };
 
