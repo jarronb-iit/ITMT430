@@ -14,19 +14,42 @@ import * as actions from '../../store/actions';
 
 class Test extends Component {
   state = {
-    fullName: null
+    email: null,
+    password: null,
+    firstName: null,
+    lastName: null,
+    phoneNumber: null,
+    bio: null,
+    roles: null
   };
 
   getCurrentState = (event, state) => {
     // event.preventDefault();
     console.log(event);
-    console.log(state);
+    console.log({ ...state });
+    this.setState({
+      ...this.state,
+      ...state
+    });
+    console.log(this.state);
   };
 
-  logResult() {
-    console.log(this.state.fullName);
-  }
-  logResult = this.logResult.bind(this);
+  finishNewUser = (event, state) => {
+    // event.preventDefault();
+    console.log(event);
+    console.log({ ...state });
+    this.setState({
+      ...this.state,
+      ...state
+    });
+    console.log(this.state);
+
+    this.props.createUser(this.state);
+  };
+
+  generateNewUser = () => {
+    this.props.createUser(this.state);
+  };
 
   changePage = event => {
     console.log(event);
@@ -58,10 +81,20 @@ class Test extends Component {
             <SignUpForm getCurrentState={this.getCurrentState} />
           )}
         />
-        <Route path='/aboutme' exact component={AboutMeInfo} />
+        <Route
+          path='/aboutme'
+          exact
+          component={() => (
+            <AboutMeInfo getCurrentState={this.getCurrentState} />
+          )}
+        />
         <Route path='/login' exact component={LoginForm} />
         <Route path='/' exact component={HomepageButtons} />
-        <Route path='/userType' exact component={UserType} />
+        <Route
+          path='/userType'
+          exact
+          component={() => <UserType finishNewUser={this.finishNewUser} />}
+        />
         <Route
           path='/NavMenuSellersScreen'
           exact
