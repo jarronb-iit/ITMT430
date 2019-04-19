@@ -11,6 +11,7 @@
   min-height: 4rem;
   color: #0096BF;
   margin-top: 2rem;
+  margin: auto;
 
 }
 
@@ -21,6 +22,7 @@
 .Blue {
   background-color: rgba(0, 198, 255, 0.8);
   color: #ffffff;
+  margin-top: 2rem;
 }
 
 @media only screen and (min-width: 600px) {

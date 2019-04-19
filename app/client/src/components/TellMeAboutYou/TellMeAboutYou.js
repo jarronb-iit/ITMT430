@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 import Styles from './TellMeAboutYou.module.css';
 import BaseStyles from '../../BaseStyles/Input.module.css';
+import ButtonBaseStyles from '../../BaseStyles/Button.module.css';
 import { NavLink } from 'react-router-dom';
 
 export default function TellMe(props) {
-  const signUpBtnClasses = [BaseStyles.Button, Styles.SignUpBtn];
+  const loginStyleClasses = [ButtonBaseStyles.Button, Styles.SignUpBtn];
+  const loginButtonClasses = [ButtonBaseStyles.Button, ButtonBaseStyles.Blue];
   return (
     <div>
-      <header id='title'> Roomie </header>
-      <h2>Tell us a bit about you!</h2>
+
+      <h2 className = {Styles.h2}>Tell us a bit about you!</h2>
       <NavLink
-        className={BaseStyles.Button}
+        className={loginButtonClasses.join(' ')}
         to='/usertype'
         value='/showAboutMe'
       >
         Continue
       </NavLink>
       <NavLink
-        className={signUpBtnClasses.join(' ')}
+        className={loginStyleClasses.join(' ')}
         to='/signup'
         value='return'
       >
