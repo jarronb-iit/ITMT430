@@ -14,6 +14,7 @@ const listings = require('./routes/api/listings');
 const seller = require('./routes/api/seller');
 const user = require('./routes/api/user');
 const auth = require('./routes/api/auth');
+const admin = require('./routes/api/admin');
 
 // Load Keys
 const keys = require('./config/keys');
@@ -67,6 +68,7 @@ app.use('/api/listings', listings);
 app.use('/api/seller', seller);
 app.use('/api/user', user);
 app.use('/api/auth', auth);
+app.use('/api/admin', admin);
 
 app.get('/', (req, res) => {
   res.json({ msg: 'Bye world' });
