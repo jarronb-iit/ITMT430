@@ -13,9 +13,24 @@ import { connect } from 'react-redux';
 import * as actions from '../../store/actions';
 
 class Test extends Component {
-  changePage(event) {
+  state = {
+    fullName: null
+  };
+
+  getCurrentState = (event, state) => {
+    // event.preventDefault();
     console.log(event);
+    console.log(state);
+  };
+
+  logResult() {
+    console.log(this.state.fullName);
   }
+  logResult = this.logResult.bind(this);
+
+  changePage = event => {
+    console.log(event);
+  };
 
   // TODO:
   // eventHandler = (event) => {
@@ -36,12 +51,22 @@ class Test extends Component {
       <Switch>
         {/* PROTECTED ROUTE EXAMPLE */}
         {/* <ProtectedRoute path="/signup" exact component={SignUpForm} /> */}
-        <Route path="/signup" exact component={SignUpForm} />
-        <Route path="/aboutme" exact component={AboutMeInfo} />
-        <Route path="/login" exact component={LoginForm} />
-        <Route path="/" exact component={HomepageButtons} />
-        <Route path="/userType" exact component={UserType} />
-       <Route path='/NavMenuSellersScreen' exact component={NavMenuSellersScreen} />
+        <Route
+          path='/signup'
+          exact
+          component={() => (
+            <SignUpForm getCurrentState={this.getCurrentState} />
+          )}
+        />
+        <Route path='/aboutme' exact component={AboutMeInfo} />
+        <Route path='/login' exact component={LoginForm} />
+        <Route path='/' exact component={HomepageButtons} />
+        <Route path='/userType' exact component={UserType} />
+        <Route
+          path='/NavMenuSellersScreen'
+          exact
+          component={NavMenuSellersScreen}
+        />
       </Switch>
     );
   }
