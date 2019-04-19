@@ -6,6 +6,7 @@
 - Lead Developer - [Johnathan Garcia](https://github.com/),
 - UI/UX - [Jarron Bailey](https://github.com/jarronb)
 - Project Manager - [Giancarlo Barillas](https://github.com/giancarlobarillas)
+- IT Operations - [Erick Cabrera](https://github.com/ecabrera796)
 
 ## Sprint 3 Goals
 

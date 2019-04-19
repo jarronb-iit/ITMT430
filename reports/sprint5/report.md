@@ -1,19 +1,21 @@
-# Sprint 4 Report
+# Sprint 5 Report
 
 ## Roles
 
-- Junior Developer - [Theo Economos](https://github.com/teconomo),[Antoine Foggs](https://github.com/AFoggs)
-- Lead Developer - [Johnathan Garcia](https://github.com/),
-- UI/UX - [Jarron Bailey](https://github.com/jarronb)
-- Project Manager - [Giancarlo Barillas](https://github.com/giancarlobarillas)
+- Junior Developer - [Erick Cabrera](https://github.com/ecabrera796)
+- Lead Developer - [Theo Economos](https://github.com/teconomo)
+- UI/UX - [Antoine Foggs](https://github.com/AFoggs), [Giancarlo Barillas](https://github.com/giancarlobarillas)
+- Project Manager - [Johnathan Garcia](https://github.com/)
+- IT Operations - [Jarron Bailey](https://github.com/jarronb))
 
-## Sprint 3 Goals
 
-he goal of this sprint was to create a foundation for building and maintaining React components. We want to finalize all key wireframes for this sprint and how they should look like so that we have a template to build off of. The goals from the class were to create a user and go through the process of 1 key functionally of the application
+## Sprint 4 Goals
+
+<!-- The goal of this sprint was to create a foundation for building and maintaining React components. We want to finalize all key wireframes for this sprint and how they should look like so that we have a template to build off of. The goals from the class were to create a user and go through the process of 1 key functionally of the application -->
 
 ## Completed goals
 
-Design primary artboards on adobe
+<!-- Design primary artboards on adobe
 
 - The designs for the process of viewing potential properties has created and the artboards have been uploaded to GitHub
   Design the primary CSS for all react components
@@ -46,11 +48,11 @@ Design primary artboards on adobe
   - Get current user
   - Login user
   - Update user
-    Connect material ui to help create more responsive buttons and formatting
+    Connect material ui to help create more responsive buttons and formatting -->
 
-## Sprint 5 To-Do
+## Sprint 6 To-Do
 
-For the upcoming spring we will try to complete the following:
+<!-- For the upcoming spring we will try to complete the following:
 
 - Connect all react components to their proper buttons and functions
 - Connect forms to post to the api and create a user
@@ -58,9 +60,9 @@ For the upcoming spring we will try to complete the following:
 - Create React component for the Leasing Agents if they are selling a property
 - Experiment with saving images onto mongodb
 
-For the following sprint the goals that we have placed for ourselves is to connect the api calls to the React components. This will help us make the application interact with the mongodb database. We will also need to test the database for injections and ensure that the api call are secure.
+For the following sprint the goals that we have placed for ourselves is to connect the api calls to the React components. This will help us make the application interact with the mongodb database. We will also need to test the database for injections and ensure that the api call are secure. -->
 
-## Sprint 4 Rubric Info
+## Sprint 5 Rubric Info
 
 1. The language we are using is Javascript
 2. The operating system that we are using is Linux and Windows for development. We have some developers that are using Linux as their native development envirment and current we have implemented a npm linux start for the react application. The frameworks that we are using are Node js and React js. We are using node to build the application and routing while we are using react to build the components of the application
@@ -79,9 +81,9 @@ For the following sprint the goals that we have placed for ourselves is to conne
 
 ## Trello Board
 
-![Trello1](../../images/sprint4/TrelloBoard1.PNG)
+<!-- ![Trello1](../../images/sprint4/TrelloBoard1.PNG)
 ![Trello2](../../images/sprint4/TrelloBoard2.PNG)
-![Trello3](../../images/sprint4/TrelloBoard3.PNG)
+![Trello3](../../images/sprint4/TrelloBoard3.PNG) -->
 
 #### Team Members
 
