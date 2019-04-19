@@ -14,10 +14,10 @@ export const loadUserSuccess = () => {
   };
 };
 
-export const loginInit = (email, password) => {
+export const loginInit = user => {
   return {
     type: actionTypes.LOGIN_INIT,
-    payload: { email: email, password: password }
+    payload: { user: user }
   };
 };
 
@@ -25,5 +25,31 @@ export const loginSuccess = (token, user) => {
   return {
     type: actionTypes.LOGIN_SUCCESS,
     payload: { token: token, user: user }
+  };
+};
+
+export const registerInit = user => {
+  return {
+    type: actionTypes.REGISTER_INIT,
+    payload: { user: user }
+  };
+};
+
+export const registerSuccess = (token, user) => {
+  return {
+    type: actionTypes.LOGIN_SUCCESS,
+    payload: { token: token, user: user }
+  };
+};
+
+export const deleteUserInit = () => {
+  return {
+    type: actionTypes.DELETE_USER_INIT
+  };
+};
+
+export const deleteUserSuccess = () => {
+  return {
+    type: actionTypes.DELETE_USER_SUCCESS
   };
 };
