@@ -6,14 +6,36 @@ import TypeStyles from './UserType.module.css';
 import { NavLink } from 'react-router-dom';
 
 export default class UserType extends Component {
+  state = {
+    role: null
+  };
+
+  onInputChangeHandler = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
   render() {
     const inputStyles = [BaseStyles.Input, Styles.Input, 'browser-default'];
     const continueButtonStyles = [BaseStyles.Button, HomeStyles.Button1];
     const backButtonStyles = [BaseStyles.Button, HomeStyles.Button2];
     return (
       <form id='userType' className={Styles.SignUpForm}>
-        <h1 className={TypeStyles.h1}>I'm Looking for property</h1>
-        <h1 className={TypeStyles.h2}>I'm selling property</h1>
+        <h1
+          name='Buying'
+          className={TypeStyles.h1}
+          onclick={this.onInputChangeHandler}
+        >
+          I'm Looking for property
+        </h1>
+        <h1
+          name='Selling'
+          className={TypeStyles.h2}
+          onclick={this.onInputChangeHandler}
+        >
+          I'm selling property
+        </h1>
 
         <section className={HomeStyles.container}>
           <NavLink
