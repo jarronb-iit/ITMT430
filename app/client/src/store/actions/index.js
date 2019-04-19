@@ -1,8 +1,11 @@
-export { getPostsInit, getPostsSuccess } from './sampleActions';
 export { getErrors, clearErrors } from './errorActions';
 export {
   loadUserInit,
   loadUserSuccess,
   loginInit,
-  loginSuccess
+  loginSuccess,
+  registerInit,
+  registerSuccess,
+  deleteUserInit,
+  deleteUserSuccess
 } from './authActions';
