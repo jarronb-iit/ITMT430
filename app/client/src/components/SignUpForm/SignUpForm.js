@@ -7,10 +7,10 @@ import HomeStyles from '../../Pages/Home/Home.module.css';
 export default class SignUpForm extends Component {
   state = {
     email: null,
-    phoneNumber: null,
+    password: null,
     firstName: null,
     lastName: null,
-    password: null
+    phoneNumber: null
   };
 
   onInputChangeHandler = event => {
