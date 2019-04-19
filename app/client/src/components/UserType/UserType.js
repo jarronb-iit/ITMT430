@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 
 export default class UserType extends Component {
   state = {
-    role: null
+    roles: null
   };
 
   onInputChangeHandler = event => {
@@ -24,7 +24,7 @@ export default class UserType extends Component {
     return (
       <form id='userType' className={Styles.SignUpForm}>
         <button
-          name='role'
+          name='roles'
           value='Buying'
           className={TypeStyles.h1}
           onClick={this.onInputChangeHandler}
@@ -32,7 +32,7 @@ export default class UserType extends Component {
           I'm Looking for property
         </button>
         <button
-          name='role'
+          name='roles'
           value='Selling'
           className={TypeStyles.h2}
           onClick={this.onInputChangeHandler}

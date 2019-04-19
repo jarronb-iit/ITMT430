@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 
 export default class TellMe extends Component {
   state = {
-    aboutme: null
+    bio: null
   };
 
   onInputChangeHandler = event => {
@@ -28,7 +28,7 @@ export default class TellMe extends Component {
             className={Styles.input}
             cols='20'
             rows='50'
-            name='aboutme'
+            name='bio'
             placeholder='I am pretty cool...'
             onChange={this.onInputChangeHandler}
           />
