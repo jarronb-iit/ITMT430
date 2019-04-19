@@ -14,19 +14,21 @@ import * as actions from '../../store/actions';
 
 class Test extends Component {
   state = {
-    fullName: null
+    email: null,
+    password: null,
+    firstName: null,
+    lastName: null,
+    phoneNumber: null,
+    bio: null,
+    roles: null
   };
 
   getCurrentState = (event, state) => {
     // event.preventDefault();
     console.log(event);
     console.log(state);
+    console.log(this.state.data);
   };
-
-  logResult() {
-    console.log(this.state.fullName);
-  }
-  logResult = this.logResult.bind(this);
 
   changePage = event => {
     console.log(event);
