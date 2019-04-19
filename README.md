@@ -1,3 +1,19 @@
+## Assumptions
+
+1. We are assuming that when running this program, you are utilizing a terminal that enables bash. If you are using a Windows Computer, we recommend installing [Git Bash Terminal](http://www.techoism.com/how-to-install-git-bash-on-windows/)
+
+2. If you are Launching this on a Linux OS, there are a few issues that may arise if the following specific versions of a program isn't installed.
+  - Vagrant Version 2.2.4 or Higher [Install Tutorial](https://computingforgeeks.com/install-latest-vagrant-on-ubuntu-18-04-debian-9-kali-linux/)
+  - No Program Configured to run Vagrant
+    - If Another program is configured to be presented as an option for vagrant, I.E. Ruby, please remove or reconfigure your vagrant settings.
+
+
+3. The following Software is available on your host machine:
+  - Packer
+  - Vagrant
+  - VirtualBox    
+____
+
 ## Building project
 - [API documentation](https://illinoistech-itm.github.io/2019-team-09f/)
 

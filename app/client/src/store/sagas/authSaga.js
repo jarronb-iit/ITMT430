@@ -39,16 +39,50 @@ export function* loadUserSaga(action) {
 }
 
 export function* loginUserSaga(action) {
-  let body = yield {
-    email: action.payload.email,
-    password: action.payload.password
-  };
   try {
-    const tryPostRes = yield axiosInstance.post('/api/auth', body);
+    const tryPostRes = yield axiosInstance.post(
+      '/api/auth',
+      action.payload.user
+    );
     const { token, user } = yield tryPostRes.data;
     yield put(actions.loginSuccess(token, user));
   } catch (error) {
     yield put({ type: actionsTypes.AUTH_ERROR });
+    yield put(actions.getErrors(error.response.data.errors));
+  }
+}
+
+export function* registerUserSaga(action) {
+  try {
+    const tryPostRes = yield axiosInstance.post(
+      '/api/auth/user',
+      action.payload.user
+    );
+    const { token, user } = yield tryPostRes.data;
+    yield put(actions.registerSuccess(token, user));
+  } catch (error) {
+    yield put({ type: actionsTypes.REGISTER_FAIL });
+    yield put(actions.getErrors(error.response.data.errors));
+  }
+}
+
+export function* deleteUserSaga(action) {
+  let config;
+  let user;
+  try {
+    config = yield tokenConfig();
+    const response = yield axiosInstance.get('/api/auth/user', config);
+    user = yield response.data;
+  } catch (error) {
+    yield put({ type: actionsTypes.AUTH_ERROR });
+    yield put(actions.getErrors(error.response.data.errors));
+  }
+
+  try {
+    yield axiosInstance.delete(`/api/user/${user._id}`, config);
+    yield put(actions.deleteUserSuccess());
+  } catch (error) {
+    // yield put({ type: actionsTypes.AUTH_ERROR }); TODO: Delete fail error state?
     yield put(actions.getErrors(error.response.data.errors));
   }
 }
