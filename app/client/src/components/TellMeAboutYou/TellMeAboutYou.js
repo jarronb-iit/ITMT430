@@ -6,6 +6,16 @@ import HomeStyles from '../../Pages/Home/Home.module.css';
 import { NavLink } from 'react-router-dom';
 
 export default class TellMe extends Component {
+  state = {
+    aboutme: null
+  };
+
+  onInputChangeHandler = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
   render() {
     const continueButtonStyles = [BaseStyles.Button, HomeStyles.Button1];
     const backButtonStyles = [BaseStyles.Button, HomeStyles.Button2];
@@ -13,14 +23,15 @@ export default class TellMe extends Component {
       <div>
         <h2 className={Styles.h2}>Tell us a bit about you!</h2>
 
-        <form className={Styles.form}>
+        <div className={Styles.form}>
           <textarea
             className={Styles.input}
             cols='20'
             rows='50'
             placeholder='I am pretty cool...'
+            onChange={this.onInputChangeHandler}
           />
-        </form>
+        </div>
 
         <section className={HomeStyles.container}>
           <NavLink
