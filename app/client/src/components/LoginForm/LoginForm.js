@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import * as actions from '../../store/actions';
 import { NavLink } from 'react-router-dom';
 
-
 const loginStyleClasses = [ButtonBaseStyles.Button, Styles.SignUpBtn];
 
 class LoginForm extends Component {
@@ -24,7 +23,7 @@ class LoginForm extends Component {
   onClick = event => {
     event.preventDefault();
     // this.props.loadUser();
-    this.props.loginInit(this.state);
+    this.props.loginInit(this.state, this.props.history);
     // this.props.deleteUser();
 
     // let user = {
@@ -65,19 +64,18 @@ class LoginForm extends Component {
           onChange={this.onInputChangeHandler}
         />
 
-       <button className={loginButtonClasses.join(' ')} onClick={this.onClick}>
+        <button className={loginButtonClasses.join(' ')} onClick={this.onClick}>
           Login
-      </button>
+        </button>
 
-      <NavLink className={loginStyleClasses.join(' ')} to='/' value='return'>
+        <NavLink className={loginStyleClasses.join(' ')} to="/" value="return">
           Back
         </NavLink>
-
-
       </form>
     );
   }
 }
+
 const mapStateToProps = state => {
   return {
     // state: reducerSlice.prop
@@ -86,7 +84,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    loginInit: user => dispatch(actions.loginInit(user)),
+    loginInit: (user, history) => dispatch(actions.loginInit(user, history)),
     loadUser: () => dispatch(actions.loadUserInit()),
     createUser: user => dispatch(actions.registerInit(user)),
     deleteUser: () => dispatch(actions.deleteUserInit())
