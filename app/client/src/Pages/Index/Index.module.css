@@ -8,7 +8,47 @@
 }
 
 .cardTitle {
-	color: red;
+	color: #00C6FF;
+	font-size: 4rem;
+	font-weight: 600;
+	padding-left: 1rem;
+	padding-top: 2rem;
+}
+
+.cardPhoto {
+	color: #00C6FF;
+	padding: 20rem;
+
+}
+
+.cardAddress {
+	color: #00C6FF;
+	font-size: 2rem;
+	padding-left: 1.5rem;
+	font-weight: 600;
+}
+
+.cardPrice {
+	color: #00C6FF;
+	display: inline-block;
+	float: right;
+	padding-right: 2rem;
+	justify-content: center;
+	font-weight: 600;
+
+}
+
+.cardBedBath {
+	color: #00C6FF;
+	font-weight: 600;
+}
+
+.cardSqft {
+	color: #00C6FF;
+	display: inline-block;
+	justify-content: center;
+	float: right;
+	font-weight: 600;
 }
 
 @media only screen and (min-width: 600px) {
