@@ -4,6 +4,7 @@ import Index from '../Pages/Index/Index';
 import Styles from '../Pages/Home/Home.module.css';
 import { Route, Switch } from 'react-router-dom';
 import ProtectedRoute from '../hoc/ProtectedRoute';
+import AdminPage from '../Pages/AdminPage/AdminPage'; // TEMPORARY
 
 // import { Route, Switch } from "react-router-dom";
 
@@ -11,8 +12,9 @@ export default class Layout extends Component {
   render() {
     return (
       <Switch>
-        <ProtectedRoute path="/home" component={Index} />
-        <Route path="/" component={Home} />
+        <ProtectedRoute path='/home' component={Index} />
+        <Route path='/adminPage' component={AdminPage} /> {/* TEMPORARY */}
+        <Route path='/' component={Home} />
       </Switch>
     );
   }

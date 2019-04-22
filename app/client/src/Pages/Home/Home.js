@@ -11,7 +11,6 @@ import Navmenu from '../../components/Navmenuscreens/Navmenu';
 import NavMenuSellersScreen from '../../components/Navmenuscreens/NavMenuSellersScreen';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions';
-import adminPage from '../../components/adminPage/adminPage'; // TEMPORARY
 
 class Test extends Component {
   state = {
@@ -103,7 +102,6 @@ class Test extends Component {
             exact
             component={NavMenuSellersScreen}
           />
-          <Route path='/adminPage' component={adminPage} /> {/* TEMPORARY */}
         </Switch>
       </div>
     );
