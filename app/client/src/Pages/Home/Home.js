@@ -77,28 +77,28 @@ class Test extends Component {
           {/* PROTECTED ROUTE EXAMPLE */}
           {/* <ProtectedRoute path="/signup" exact component={SignUpForm} /> */}
           <Route
-            path="/signup"
+            path='/signup'
             exact
             component={() => (
               <SignUpForm getCurrentState={this.getCurrentState} />
             )}
           />
           <Route
-            path="/aboutme"
+            path='/aboutme'
             exact
             component={() => (
               <AboutMeInfo getCurrentState={this.getCurrentState} />
             )}
           />
-          <Route path="/login" exact component={LoginForm} />
-          <Route path="/" exact component={HomepageButtons} />
+          <Route path='/login' exact component={LoginForm} />
+          <Route path='/' exact component={HomepageButtons} />
           <Route
-            path="/userType"
+            path='/userType'
             exact
             component={() => <UserType finishNewUser={this.finishNewUser} />}
           />
           <Route
-            path="/NavMenuSellersScreen"
+            path='/NavMenuSellersScreen'
             exact
             component={NavMenuSellersScreen}
           />
