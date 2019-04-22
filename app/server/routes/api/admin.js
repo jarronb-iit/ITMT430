@@ -38,4 +38,24 @@ router.get('/users', auth, (req, res) => {
       return res.status(400).json({ errors: errors });
     });
 });
+
+// @route   Delete api/admin/users
+// @desc    Delete all users
+// @access  Private
+router.delete('/users', auth, (req, res) => {
+  let { roles } = req.user;
+  let role = roles.find(role => role === 'admin');
+  if (role !== 'admin') {
+    return res.status(401).json({
+      errors: [{ message: 'Not authorized' }]
+    });
+  }
+
+  User.deleteMany({}).then(users => {
+    if (users.deletedCount === 0) {
+      return res.status(404).json({ message: 'No users' });
+    }
+    res.status(200).json({ message: 'Users deleted...' });
+  });
+});
 module.exports = router;
