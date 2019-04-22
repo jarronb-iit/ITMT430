@@ -14,7 +14,25 @@ export default class Index extends Component {
           <div className="col s12 m6">
             <div className="card blue-grey darken-1">
               <div className="card-content white-text">
-                <span className="card-title">Listing 1</span>
+                <span className={Styles.cardTitle}>10 Sunset Drive</span>
+                <p>
+                  I am a very simple card. I am good at containing small bits of
+                  information. I am convenient because I require little markup
+                  to use effectively.
+                </p>
+              </div>
+              <div className="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="col s12 m6">
+            <div className="card blue-grey darken-1">
+              <div className="card-content white-text">
+                <span className={Styles.cardTitle}>Listing 2</span>
                 <p>
                   I am a very simple card. I am good at containing small bits of
                   information. I am convenient because I require little markup
@@ -32,25 +50,7 @@ export default class Index extends Component {
           <div className="col s12 m6">
             <div className="card blue-grey darken-1">
               <div className="card-content white-text">
-                <span className="card-title">Listing 2</span>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <div className="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="col s12 m6">
-            <div className="card blue-grey darken-1">
-              <div className="card-content white-text">
-                <span className="card-title">Listing 3</span>
+                <span className={Styles.cardTitle}>Listing 3</span>
                 <p>
                   I am a very simple card. I am good at containing small bits of
                   information. I am convenient because I require little markup
@@ -68,7 +68,7 @@ export default class Index extends Component {
           <div className="col s12 m6">
             <div className="card blue-grey darken-1">
               <div className="card-content white-text">
-                <span className="card-title">Listing 4</span>
+                <span className={Styles.cardTitle}>Listing 4</span>
                 <p>
                   I am a very simple card. I am good at containing small bits of
                   information. I am convenient because I require little markup
