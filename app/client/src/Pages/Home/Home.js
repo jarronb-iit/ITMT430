@@ -11,6 +11,7 @@ import Navmenu from '../../components/Navmenuscreens/Navmenu';
 import NavMenuSellersScreen from '../../components/Navmenuscreens/NavMenuSellersScreen';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions';
+import adminPage from '../../components/adminPage/adminPage'; // TEMPORARY
 
 class Test extends Component {
   state = {
@@ -77,31 +78,32 @@ class Test extends Component {
           {/* PROTECTED ROUTE EXAMPLE */}
           {/* <ProtectedRoute path="/signup" exact component={SignUpForm} /> */}
           <Route
-            path="/signup"
+            path='/signup'
             exact
             component={() => (
               <SignUpForm getCurrentState={this.getCurrentState} />
             )}
           />
           <Route
-            path="/aboutme"
+            path='/aboutme'
             exact
             component={() => (
               <AboutMeInfo getCurrentState={this.getCurrentState} />
             )}
           />
-          <Route path="/login" exact component={LoginForm} />
-          <Route path="/" exact component={HomepageButtons} />
+          <Route path='/login' exact component={LoginForm} />
+          <Route path='/' exact component={HomepageButtons} />
           <Route
-            path="/userType"
+            path='/userType'
             exact
             component={() => <UserType finishNewUser={this.finishNewUser} />}
           />
           <Route
-            path="/NavMenuSellersScreen"
+            path='/NavMenuSellersScreen'
             exact
             component={NavMenuSellersScreen}
           />
+          <Route path='/adminPage' component={adminPage} /> {/* TEMPORARY */}
         </Switch>
       </div>
     );
