@@ -8,7 +8,3 @@
   align-items: center;
   justify-content: center;
 }
-
-::placeholder {
-  color: #00c6ff;
-}
