@@ -66,3 +66,21 @@
     "message": "Users deleted..."
 }
  */
+
+// ***** @api {DELETE} api/admin/listings Delete all listings *****
+
+/**
+ * @api {DELETE} api/admin/listings Delete all listings
+ * @apiVersion 0.1.0
+ * @apiName DeleteListings
+ * @apiGroup Admin
+ * @apiDescription Request headers are need:  
+ * x-auth-token = token  
+ * content/type = application/json
+ * @apiSuccess {Object} message "Listings deleted"
+ * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 200 OK
+{
+    "message": "Listings deleted..."
+}
+ */
