@@ -9,3 +9,5 @@ export {
   deleteUserInit,
   deleteUserSuccess
 } from './authActions';
+
+export { getListingsInit, getListingsSuccess } from './listingsActions';
