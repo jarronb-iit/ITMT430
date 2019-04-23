@@ -24,8 +24,31 @@ export const addListingInit = listing => {
 };
 
 // Get all listing success
-export const addListingSuccess = listings => {
+export const addListingSuccess = () => {
   return {
     type: actionTypes.GET_LISTINGS_INIT
+  };
+};
+
+// Get single listing
+export const getListingInit = id => {
+  return {
+    type: actionTypes.GET_LISTING_INIT,
+    payload: { id: id }
+  };
+};
+
+// Get single listing success
+export const getListingSuccess = listing => {
+  return {
+    type: actionTypes.GET_LISTING_SUCCESS,
+    payload: { listing: listing }
+  };
+};
+
+// Clear listing
+export const clearListing = () => {
+  return {
+    type: actionTypes.CLEAR_LISTING
   };
 };
