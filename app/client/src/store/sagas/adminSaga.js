@@ -24,6 +24,17 @@ export async function tokenConfig() {
   return config;
 }
 
+export function* deleteListingsSaga(action) {
+  const config = yield tokenConfig();
+
+  try {
+    yield axiosInstance.delete('/api/admin/listings', config);
+    yield put(actions.deleteListingsSuccess());
+  } catch (error) {
+    yield put(actions.getErrors({ message: 'No listings' }));
+  }
+}
+
 export function* loadUsersSaga(action) {
   const config = yield tokenConfig();
 
