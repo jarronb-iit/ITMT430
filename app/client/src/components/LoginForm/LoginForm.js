@@ -52,6 +52,12 @@ class LoginForm extends Component {
     //   photos: ['src/photos/url', 'src/photos/url2'],
     //   dateAvailable: '04-05-2019'
     // };
+
+    // let listing = {
+    //   price: '600',
+    //   squareFootage: '1234'
+    // };
+    // this.props.updateListing('5cbea241998d5e0f3010c369', listing);
     // this.props.addListing(listing);
     // this.props.deleteUser();
 
@@ -125,7 +131,9 @@ const mapDispatchToProps = dispatch => {
     deleteListings: () => dispatch(actions.deleteListingsInit()),
     deleteUsers: () => dispatch(actions.deleteUsersInit()),
     getListing: id => dispatch(actions.getListingInit(id)),
-    deleteListing: id => dispatch(actions.deleteListingInit(id))
+    deleteListing: id => dispatch(actions.deleteListingInit(id)),
+    updateListing: (id, listing) =>
+      dispatch(actions.updateListingInit(id, listing))
   };
 };
 
