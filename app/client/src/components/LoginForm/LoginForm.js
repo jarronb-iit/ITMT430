@@ -23,10 +23,19 @@ class LoginForm extends Component {
   onClick = event => {
     event.preventDefault();
     this.props.loginInit(this.state, this.props.history);
+    //  ***** Get all users---Admin*****
     // this.props.getUsers();
+
+    //  ***** Delete all users---Admin*****
     // this.props.deleteUsers();
+
+    //  ***** Get current users*****
     // this.props.loadUser();
+
+    //  ***** Get all listings*****
     // this.props.getListings();
+
+    //  ***** Make a listing*****
     // let listing = {
     //   address: {
     //     street: '4444 S. Main St.',
@@ -52,15 +61,17 @@ class LoginForm extends Component {
     //   photos: ['src/photos/url', 'src/photos/url2'],
     //   dateAvailable: '04-05-2019'
     // };
+    // this.props.addListing(listing);
 
+    //  ***** Update a Listing---CAn be any property of a listing*****
     // let listing = {
     //   price: '600',
     //   squareFootage: '1234'
     // };
     // this.props.updateListing('5cbea241998d5e0f3010c369', listing);
-    // this.props.addListing(listing);
     // this.props.deleteUser();
 
+    //  ***** Creating a user--- Required properties*****
     // let user = {
     //   email: 'test3@gmail.com',
     //   password: 'password',
@@ -70,9 +81,12 @@ class LoginForm extends Component {
     //   bio: 'Welcome, to rommie!',
     //   roles: ['buyer']
     // };
-
     // this.props.createUser(user);
+
+    //  ***** Get a single listing*****
     // this.props.getListing('5cbea232998d5e0f3010c365');
+
+    //  ***** Delete a single listing*****
     // this.props.deleteListing('5cbea4c3998d5e0f3010c36a');
   };
   render() {
