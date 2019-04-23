@@ -21,9 +21,12 @@ router.get('/test', (req, res) => {
 router.put('/:id', auth, (req, res) => {
   let admin = false;
 
-  User.findById(req.user.id)
+  User.findById(req.params.id)
     .then(user => {
-      let { roles } = user;
+      if (!user) {
+        throw error;
+      }
+      let { roles } = req.user;
       let role = roles.find(role => role === 'admin');
       if (role === 'admin') {
         return (admin = true);
@@ -33,15 +36,21 @@ router.put('/:id', auth, (req, res) => {
     })
     .then(admin => {
       // Check User param id versus user logged in
+
       if (req.user.id != req.params.id && !admin) {
         return res.status(401).json({
           errors: [{ message: 'Not authorized' }]
         });
       }
 
-      User.findByIdAndUpdate(req.params.id, { $set: req.body }).then(user =>
-        res.status(200).json(user)
-      );
+      User.findByIdAndUpdate(req.params.id, { $set: req.body }).then(user => {
+        res.status(200).json(user);
+      });
+    })
+    .catch(error => {
+      return res.status(404).json({
+        errors: [{ message: "User don't exist" }]
+      });
     });
 });
 
