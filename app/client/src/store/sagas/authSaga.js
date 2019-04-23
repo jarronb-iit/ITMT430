@@ -70,22 +70,13 @@ export function* registerUserSaga(action) {
 }
 
 export function* deleteUserSaga(action) {
-  let config;
-  let user;
+  let { id } = action.payload;
   try {
-    config = yield tokenConfig();
-    const response = yield axiosInstance.get('/api/auth/user', config);
-    user = yield response.data;
-  } catch (error) {
-    yield put({ type: actionsTypes.AUTH_ERROR });
-    yield put(actions.getErrors(error.response.data.errors));
-  }
+    let config = yield tokenConfig();
+    const response = yield axiosInstance.delete(`/api/user/${id}`, config);
 
-  try {
-    yield axiosInstance.delete(`/api/user/${user._id}`, config);
     yield put(actions.deleteUserSuccess());
   } catch (error) {
-    // yield put({ type: actionsTypes.AUTH_ERROR }); TODO: Delete fail error state?
-    yield put(actions.getErrors(error.response.data.errors));
+    yield put(actions.getErrors({ message: 'User does not exist.' }));
   }
 }
