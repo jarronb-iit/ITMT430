@@ -48,7 +48,7 @@ export function* addListingSaga(action) {
       config
     );
     const listing = yield tryPostRes.data;
-    yield put(actions.addListingsSuccess(listing));
+    yield put(actions.addListingSuccess(listing));
   } catch (error) {
     yield put(actions.getErrors(error.response.data.errors));
   }

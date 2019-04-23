@@ -18,13 +18,13 @@ export const getListingsSuccess = listings => {
 // Add listing
 export const addListingInit = listing => {
   return {
-    type: actionTypes.ADD_LISTINGS_INIT,
+    type: actionTypes.ADD_LISTING_INIT,
     payload: { listing: listing }
   };
 };
 
-// Get all listings success
-export const addListingsSuccess = listings => {
+// Get all listing success
+export const addListingSuccess = listings => {
   return {
     type: actionTypes.GET_LISTINGS_INIT
   };
