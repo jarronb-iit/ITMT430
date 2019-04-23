@@ -67,6 +67,7 @@ class LoginForm extends Component {
 
     // this.props.createUser(user);
     // this.props.getListing('5cbea232998d5e0f3010c365');
+    // this.props.deleteListing('5cbea4c3998d5e0f3010c36a');
   };
   render() {
     const inputStyles = [
@@ -123,7 +124,8 @@ const mapDispatchToProps = dispatch => {
     getUsers: () => dispatch(actions.getUsersInit()),
     deleteListings: () => dispatch(actions.deleteListingsInit()),
     deleteUsers: () => dispatch(actions.deleteUsersInit()),
-    getListing: id => dispatch(actions.getListingInit(id))
+    getListing: id => dispatch(actions.getListingInit(id)),
+    deleteListing: id => dispatch(actions.deleteListingInit(id))
   };
 };
 
