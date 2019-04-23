@@ -66,3 +66,18 @@ export function* getListingSaga(action) {
     yield put(actions.getErrors(error.response.data.errors));
   }
 }
+
+export function* deleteListingSaga(action) {
+  const config = yield tokenConfig();
+  let { id } = action.payload;
+
+  try {
+    const tryPostRes = yield axiosInstance.delete(
+      `/api/listings/${id}`,
+      config
+    );
+    yield put(actions.deleteListingSuccess());
+  } catch (error) {
+    yield put(actions.getErrors(error.response.data.errors));
+  }
+}

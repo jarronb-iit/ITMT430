@@ -18,6 +18,10 @@ export function* watchListings() {
   );
   yield takeLatest(actionTypes.ADD_LISTING_INIT, listingsSaga.addListingSaga);
   yield takeLatest(actionTypes.GET_LISTING_INIT, listingsSaga.getListingSaga);
+  yield takeLatest(
+    actionTypes.DELETE_LISTING_INIT,
+    listingsSaga.deleteListingSaga
+  );
 }
 
 export function* watchAdmin() {
