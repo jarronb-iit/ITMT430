@@ -1,6 +1,99 @@
 define({ "api": [
   {
     "type": "DELETE",
+    "url": "api/admin/listings",
+    "title": "Delete all listings",
+    "version": "0.1.0",
+    "name": "DeleteListings",
+    "group": "Admin",
+    "description": "<p>Request headers are need:<br> x-auth-token = token<br> content/type = application/json</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "message",
+            "description": "<p>&quot;Listings deleted&quot;</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n    \"message\": \"Listings deleted...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/api/adminDoc.js",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "DELETE",
+    "url": "api/admin/users",
+    "title": "Delete all users",
+    "version": "0.1.0",
+    "name": "DeleteUsers",
+    "group": "Admin",
+    "description": "<p>Request headers are need:<br> x-auth-token = token<br> content/type = application/json</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "message",
+            "description": "<p>&quot;Users deleted&quot;</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n    \"message\": \"Users deleted...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/api/adminDoc.js",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "GET",
+    "url": "api/admin/users",
+    "title": "Get all users",
+    "version": "0.1.0",
+    "name": "GetUsers",
+    "group": "Admin",
+    "description": "<p>Request headers are need:<br> x-auth-token = token<br> content/type = application/json</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Array",
+            "optional": false,
+            "field": "users",
+            "description": "<p>Array of users</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n[\n    {\n        \"roles\": [\n            \"buyer\"\n        ],\n        \"roommates\": [],\n        \"favListings\": [],\n        \"_id\": \"5cbe2d777d99140cfcd3a902\",\n        \"email\": \"test1@gmail.com\",\n        \"password\": \"$2a$10$M.3g3CkftNnTgmgg1Zqe7uT38Diqii2zRESvaXgbOhbqGpuyemose\",\n        \"firstName\": \"John\",\n        \"lastName\": \"Doe\",\n        \"phoneNumber\": \"123-456-7890\",\n        \"bio\": \"Welcome, to rommie!\",\n        \"registeredDate\": \"2019-04-22T21:09:11.099Z\",\n        \"__v\": 0\n    },\n    {\n        \"roles\": [\n            \"buyer\"\n        ],\n        \"roommates\": [],\n        \"favListings\": [],\n        \"_id\": \"5cbe2d7a7d99140cfcd3a903\",\n        \"email\": \"test2@gmail.com\",\n        \"password\": \"$2a$10$6yYIfWS.MobQPeA7wrKdEOAWgr0PKLBtkEt3DXFPGGtg36564dS/a\",\n        \"firstName\": \"John\",\n        \"lastName\": \"Doe\",\n        \"phoneNumber\": \"123-456-7890\",\n        \"bio\": \"Welcome, to rommie!\",\n        \"registeredDate\": \"2019-04-22T21:09:14.415Z\",\n        \"__v\": 0\n    }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/api/adminDoc.js",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "DELETE",
     "url": "api/listings/:id",
     "title": "Delete a listing",
     "version": "0.1.0",

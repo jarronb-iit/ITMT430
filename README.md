@@ -78,6 +78,10 @@ Lastly, run the following command:
 ```
 npm run dev
 ```
+If on a linux device, use the following command instead:
+```
+npm run dev-linux
+```
 The project should then open in your default browser.
 
 

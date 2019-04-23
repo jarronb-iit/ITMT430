@@ -4,7 +4,8 @@ const auth = require("../../middleware/auth");
 const errorsFormatter = require("../../helperFunctions/errorsFormatter");
 
 // Load Model
-const Listing = require("../../models/Listing");
+const Listing = require('../../models/Listing');
+const User = require('../../models/User');
 
 // @route   GET api/listing/test
 // @desc    Tests user route
@@ -67,13 +68,26 @@ router.post("/", auth, (req, res) => {
 // @route   PUT api/listing/:id
 // @desc    Update listing for user
 // @access  Private
-router.put("/:id", auth, (req, res) => {
+router.put('/:id', auth, (req, res) => {
+  let admin = false;
+  User.findById(req.user.id)
+    .then(user => {
+      let { roles } = user;
+      let role = roles.find(role => role === 'admin');
+      if (role === 'admin') {
+        return (admin = true);
+      } else {
+        return (admin = false);
+      }
+    })
+    .then(admin => {
+      // Check User param id versus user logged in
   Listing.findById(req.params.id)
     .then(listing => {
       // Check seller listing versus user logged in
-      if (req.user.id != listing.seller) {
+          if (req.user.id != listing.seller && !admin) {
         return res.status(401).json({
-          errors: [{ message: "Not authorized" }]
+              errors: [{ message: 'Not authorized' }]
         });
       }
 
@@ -89,6 +103,7 @@ router.put("/:id", auth, (req, res) => {
         errors: [{ message: "Listing doesn't exist." }]
       })
     );
+});
 });
 
 // @route   DELETE api/listing/:id
