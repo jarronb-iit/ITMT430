@@ -24,6 +24,7 @@ class LoginForm extends Component {
     event.preventDefault();
     // this.props.loadUser();
     this.props.loginInit(this.state, this.props.history);
+    // this.props.getListings();
     // this.props.deleteUser();
 
     // let user = {
@@ -87,7 +88,8 @@ const mapDispatchToProps = dispatch => {
     loginInit: (user, history) => dispatch(actions.loginInit(user, history)),
     loadUser: () => dispatch(actions.loadUserInit()),
     createUser: user => dispatch(actions.registerInit(user)),
-    deleteUser: () => dispatch(actions.deleteUserInit())
+    deleteUser: () => dispatch(actions.deleteUserInit()),
+    getListings: () => dispatch(actions.getListingsInit())
   };
 };
 
