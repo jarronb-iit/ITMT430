@@ -35,6 +35,26 @@ export const registerInit = user => {
   };
 };
 
+export const getUserInit = id => {
+  return {
+    type: actionTypes.GET_USER_INIT,
+    payload: { id: id }
+  };
+};
+
+export const getUserSuccess = user => {
+  return {
+    type: actionTypes.GET_USER_SUCCESS,
+    payload: { user: user }
+  };
+};
+
+export const clearUSer = () => {
+  return {
+    type: actionTypes.CLEAR_USER
+  };
+};
+
 export const registerSuccess = (token, user) => {
   return {
     type: actionTypes.LOGIN_SUCCESS,

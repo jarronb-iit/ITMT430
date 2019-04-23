@@ -4,6 +4,8 @@ export {
   loadUserSuccess,
   loginInit,
   loginSuccess,
+  getUserInit,
+  getUserSuccess,
   registerInit,
   registerSuccess,
   updateUserInit,
