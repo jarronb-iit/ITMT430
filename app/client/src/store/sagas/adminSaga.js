@@ -35,6 +35,17 @@ export function* deleteListingsSaga(action) {
   }
 }
 
+export function* deleteUsersSaga(action) {
+  const config = yield tokenConfig();
+
+  try {
+    yield axiosInstance.delete('/api/admin/users', config);
+    yield put(actions.deleteUsersSuccess());
+  } catch (error) {
+    yield put(actions.getErrors({ message: 'No Users' }));
+  }
+}
+
 export function* loadUsersSaga(action) {
   const config = yield tokenConfig();
 

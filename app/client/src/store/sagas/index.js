@@ -25,4 +25,5 @@ export function* watchAdmin() {
     actionTypes.DELETE_LISTINGS_INIT,
     adminSaga.deleteListingsSaga
   );
+  yield takeLatest(actionTypes.DELETE_USERS_INIT, adminSaga.deleteUsersSaga);
 }
