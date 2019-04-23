@@ -2,6 +2,7 @@ import { takeEvery, take, takeLatest } from 'redux-saga/effects';
 import * as actionTypes from '../actions/actionTypes';
 import * as authSaga from './authSaga';
 import * as listingsSaga from './listingsSaga';
+import * as adminSaga from './adminSaga';
 
 export function* watchAuth() {
   yield takeLatest(actionTypes.USER_LOAD_INIT, authSaga.loadUserSaga);
@@ -16,4 +17,8 @@ export function* watchListings() {
     listingsSaga.loadListingsSaga
   );
   yield takeLatest(actionTypes.ADD_LISTINGS_INIT, listingsSaga.addListingSaga);
+}
+
+export function* watchAdmin() {
+  yield takeLatest(actionTypes.GET_USERS_INIT, adminSaga.loadUsersSaga);
 }
