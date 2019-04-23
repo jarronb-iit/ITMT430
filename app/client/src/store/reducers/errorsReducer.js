@@ -1,11 +1,10 @@
-import * as actionTypes from "../actions/actionTypes";
+import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
   errors: {}
 };
 
 const getErrors = (state, action) => {
-  console.log("HERE", action);
   state = {
     ...state,
     errors: action.payload.errors
