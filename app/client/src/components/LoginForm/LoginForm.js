@@ -23,8 +23,8 @@ class LoginForm extends Component {
   onClick = event => {
     event.preventDefault();
     this.props.loginInit(this.state, this.props.history);
-    // this.props.deleteListings();
     // this.props.getUsers();
+    // this.props.deleteUsers();
     // this.props.loadUser();
     // this.props.getListings();
     // let listing = {
@@ -120,7 +120,8 @@ const mapDispatchToProps = dispatch => {
     getListings: () => dispatch(actions.getListingsInit()),
     addListing: listing => dispatch(actions.addListingInit(listing)),
     getUsers: () => dispatch(actions.getUsersInit()),
-    deleteListings: () => dispatch(actions.deleteListingsInit())
+    deleteListings: () => dispatch(actions.deleteListingsInit()),
+    deleteUsers: () => dispatch(actions.deleteUsersInit())
   };
 };
 
