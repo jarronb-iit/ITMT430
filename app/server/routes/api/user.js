@@ -14,6 +14,24 @@ router.get('/test', (req, res) => {
     msg: 'User works'
   });
 });
+// @route   GET api/user/:id
+// @desc    GET user
+// @access  Private
+router.get('/:id', auth, (req, res) => {
+  User.findById(req.params.id)
+    .then(user => {
+      if (!user) throw error;
+      user = user._doc;
+      delete user.password;
+
+      res.status(200).json({ user });
+    })
+    .catch(error => {
+      return res.status(404).json({
+        errors: [{ message: "User don't exist" }]
+      });
+    });
+});
 
 // @route   PUT api/user/:id
 // @desc    Update user
