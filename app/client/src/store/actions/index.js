@@ -6,6 +6,8 @@ export {
   loginSuccess,
   registerInit,
   registerSuccess,
+  updateUserInit,
+  updateUserSuccess,
   deleteUserInit,
   deleteUserSuccess
 } from './authActions';

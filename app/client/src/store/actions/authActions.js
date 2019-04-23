@@ -42,6 +42,19 @@ export const registerSuccess = (token, user) => {
   };
 };
 
+export const updateUserInit = (id, updatedUser) => {
+  return {
+    type: actionTypes.UPDATE_USER_INIT,
+    payload: { id: id, updatedUser }
+  };
+};
+
+export const updateUserSuccess = () => {
+  return {
+    type: actionTypes.GET_USERS_INIT
+  };
+};
+
 export const deleteUserInit = id => {
   return {
     type: actionTypes.DELETE_USER_INIT,
