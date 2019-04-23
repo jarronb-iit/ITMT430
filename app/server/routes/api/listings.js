@@ -4,6 +4,7 @@ const auth = require("../../middleware/auth");
 const errorsFormatter = require("../../helperFunctions/errorsFormatter");
 
 // Load Model
+const Listing = require('../../models/Listing');
 const User = require('../../models/User');
 
 // @route   GET api/listing/test
