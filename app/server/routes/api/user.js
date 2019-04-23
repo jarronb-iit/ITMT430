@@ -19,16 +19,30 @@ router.get('/test', (req, res) => {
 // @desc    Update user
 // @access  Private
 router.put('/:id', auth, (req, res) => {
-  // Check User param id versus user logged in
-  if (req.user.id != req.params.id) {
-    return res.status(401).json({
-      errors: [{ message: 'Not authorized' }]
-    });
-  }
+  let admin = false;
 
-  User.findByIdAndUpdate(req.params.id, { $set: req.body }).then(user =>
-    res.status(200).json(user)
-  );
+  User.findById(req.user.id)
+    .then(user => {
+      let { roles } = user;
+      let role = roles.find(role => role === 'admin');
+      if (role === 'admin') {
+        return (admin = true);
+      } else {
+        return (admin = false);
+      }
+    })
+    .then(admin => {
+      // Check User param id versus user logged in
+      if (req.user.id != req.params.id && !admin) {
+        return res.status(401).json({
+          errors: [{ message: 'Not authorized' }]
+        });
+      }
+
+      User.findByIdAndUpdate(req.params.id, { $set: req.body }).then(user =>
+        res.status(200).json(user)
+      );
+    });
 });
 
 // @route   DELETE api/user/:id
