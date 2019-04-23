@@ -16,3 +16,5 @@ export {
   addListingInit,
   addListingsSuccess
 } from './listingsActions';
+
+export { getUsersInit, getUsersSuccess } from './adminActions';
