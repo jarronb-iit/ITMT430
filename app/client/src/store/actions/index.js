@@ -17,4 +17,9 @@ export {
   addListingsSuccess
 } from './listingsActions';
 
-export { getUsersInit, getUsersSuccess } from './adminActions';
+export {
+  getUsersInit,
+  getUsersSuccess,
+  deleteListingsInit,
+  deleteListingsSuccess
+} from './adminActions';

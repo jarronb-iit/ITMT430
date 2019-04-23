@@ -14,3 +14,17 @@ export const getUsersSuccess = users => {
     payload: { users: users }
   };
 };
+
+// Delete all listings
+export const deleteListingsInit = () => {
+  return {
+    type: actionTypes.DELETE_LISTINGS_INIT
+  };
+};
+
+// Delete listings success
+export const deleteListingsSuccess = users => {
+  return {
+    type: actionTypes.GET_LISTINGS_INIT
+  };
+};
