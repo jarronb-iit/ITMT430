@@ -42,14 +42,15 @@ export const registerSuccess = (token, user) => {
   };
 };
 
-export const deleteUserInit = () => {
+export const deleteUserInit = id => {
   return {
-    type: actionTypes.DELETE_USER_INIT
+    type: actionTypes.DELETE_USER_INIT,
+    payload: { id: id }
   };
 };
 
 export const deleteUserSuccess = () => {
   return {
-    type: actionTypes.DELETE_USER_SUCCESS
+    type: actionTypes.GET_USERS_INIT
   };
 };
