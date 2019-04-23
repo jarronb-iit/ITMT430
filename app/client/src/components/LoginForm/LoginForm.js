@@ -22,7 +22,7 @@ class LoginForm extends Component {
 
   onClick = event => {
     event.preventDefault();
-    // this.props.loginInit(this.state, this.props.history);
+    this.props.loginInit(this.state, this.props.history);
     //  ***** Get all users---Admin*****
     // this.props.getUsers();
 
@@ -93,14 +93,17 @@ class LoginForm extends Component {
     // this.props.deleteUser('5cbeba65c412bf52086c062a');
 
     //  ***** Update a  user--- Can be any property*****
-    let user = {
-      email: 'test3@gmail.com',
-      firstName: 'John',
-      lastName: 'Doe',
-      bio: 'Welcome, to rommie!'
-    };
+    // let user = {
+    //   email: 'test3@gmail.com',
+    //   firstName: 'John',
+    //   lastName: 'Doe',
+    //   bio: 'Welcome, to rommie!'
+    // };
 
-    this.props.updateUser('5cbeb669ee9d8a4adc42d088', user);
+    // this.props.updateUser('5cbeb669ee9d8a4adc42d088', user);
+
+    //  ***** Update a  user*****
+    // this.props.getUser('5cbeb669ee9d8a4adc42d088');
   };
   render() {
     const inputStyles = [
@@ -161,7 +164,8 @@ const mapDispatchToProps = dispatch => {
     deleteListing: id => dispatch(actions.deleteListingInit(id)),
     updateListing: (id, listing) =>
       dispatch(actions.updateListingInit(id, listing)),
-    updateUser: (id, user) => dispatch(actions.updateUserInit(id, user))
+    updateUser: (id, user) => dispatch(actions.updateUserInit(id, user)),
+    getUser: id => dispatch(actions.getUserInit(id))
   };
 };
 
