@@ -53,3 +53,16 @@ export function* addListingSaga(action) {
     yield put(actions.getErrors(error.response.data.errors));
   }
 }
+
+export function* getListingSaga(action) {
+  const config = yield tokenConfig();
+  let { id } = action.payload;
+
+  try {
+    const tryPostRes = yield axiosInstance.get(`/api/listings/${id}`, config);
+    const listing = yield tryPostRes.data;
+    yield put(actions.getListingSuccess(listing));
+  } catch (error) {
+    yield put(actions.getErrors(error.response.data.errors));
+  }
+}

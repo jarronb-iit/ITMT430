@@ -17,6 +17,7 @@ export function* watchListings() {
     listingsSaga.loadListingsSaga
   );
   yield takeLatest(actionTypes.ADD_LISTING_INIT, listingsSaga.addListingSaga);
+  yield takeLatest(actionTypes.GET_LISTING_INIT, listingsSaga.getListingSaga);
 }
 
 export function* watchAdmin() {
