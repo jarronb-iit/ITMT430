@@ -21,5 +21,7 @@ export {
   getUsersInit,
   getUsersSuccess,
   deleteListingsInit,
-  deleteListingsSuccess
+  deleteListingsSuccess,
+  deleteUsersInit,
+  deleteUsersSuccess
 } from './adminActions';

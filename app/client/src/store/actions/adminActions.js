@@ -28,3 +28,17 @@ export const deleteListingsSuccess = users => {
     type: actionTypes.GET_LISTINGS_INIT
   };
 };
+
+// Delete all users
+export const deleteUsersInit = () => {
+  return {
+    type: actionTypes.DELETE_USERS_INIT
+  };
+};
+
+// Delete users success
+export const deleteUsersSuccess = users => {
+  return {
+    type: actionTypes.GET_USERS_INIT
+  };
+};
