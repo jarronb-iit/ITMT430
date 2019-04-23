@@ -52,3 +52,18 @@ export const clearListing = () => {
     type: actionTypes.CLEAR_LISTING
   };
 };
+
+// Delete single listing
+export const deleteListingInit = id => {
+  return {
+    type: actionTypes.DELETE_LISTING_INIT,
+    payload: { id: id }
+  };
+};
+
+// Delete single listing success
+export const deleteListingSuccess = () => {
+  return {
+    type: actionTypes.GET_LISTINGS_INIT
+  };
+};

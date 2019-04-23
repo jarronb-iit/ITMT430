@@ -17,7 +17,9 @@ export {
   addListingSuccess,
   getListingInit,
   getListingSuccess,
-  clearListing
+  clearListing,
+  deleteListingInit,
+  deleteListingSuccess
 } from './listingsActions';
 
 export {
