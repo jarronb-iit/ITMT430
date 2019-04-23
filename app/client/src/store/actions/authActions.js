@@ -35,6 +35,26 @@ export const registerInit = user => {
   };
 };
 
+export const getUserInit = id => {
+  return {
+    type: actionTypes.GET_USER_INIT,
+    payload: { id: id }
+  };
+};
+
+export const getUserSuccess = user => {
+  return {
+    type: actionTypes.GET_USER_SUCCESS,
+    payload: { user: user }
+  };
+};
+
+export const clearUSer = () => {
+  return {
+    type: actionTypes.CLEAR_USER
+  };
+};
+
 export const registerSuccess = (token, user) => {
   return {
     type: actionTypes.LOGIN_SUCCESS,
@@ -42,14 +62,28 @@ export const registerSuccess = (token, user) => {
   };
 };
 
-export const deleteUserInit = () => {
+export const updateUserInit = (id, updatedUser) => {
   return {
-    type: actionTypes.DELETE_USER_INIT
+    type: actionTypes.UPDATE_USER_INIT,
+    payload: { id: id, updatedUser }
+  };
+};
+
+export const updateUserSuccess = () => {
+  return {
+    type: actionTypes.GET_USERS_INIT
+  };
+};
+
+export const deleteUserInit = id => {
+  return {
+    type: actionTypes.DELETE_USER_INIT,
+    payload: { id: id }
   };
 };
 
 export const deleteUserSuccess = () => {
   return {
-    type: actionTypes.DELETE_USER_SUCCESS
+    type: actionTypes.GET_USERS_INIT
   };
 };

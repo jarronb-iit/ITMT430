@@ -7,9 +7,10 @@ import { loadUserInit } from './store/actions/authActions';
 import store from './store';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
+store.dispatch(loadUserInit());
+
 class App extends Component {
   render() {
-    store.dispatch(loadUserInit());
     return (
       <div className={Styles.App}>
         <Layout />

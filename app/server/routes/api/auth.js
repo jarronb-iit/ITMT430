@@ -40,6 +40,7 @@ router.post('/', (req, res) => {
         firstName: user.firstName,
         lastName: user.lastName,
         phoneNumber: user.phoneNumber,
+        roles: user.roles
       };
 
       // Create json web token: payload is new user
