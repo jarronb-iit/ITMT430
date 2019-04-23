@@ -22,6 +22,10 @@ export function* watchListings() {
     actionTypes.DELETE_LISTING_INIT,
     listingsSaga.deleteListingSaga
   );
+  yield takeLatest(
+    actionTypes.UPDATE_LISTING_INIT,
+    listingsSaga.updateListingSaga
+  );
 }
 
 export function* watchAdmin() {

@@ -67,6 +67,22 @@ export function* getListingSaga(action) {
   }
 }
 
+export function* updateListingSaga(action) {
+  const config = yield tokenConfig();
+  let { id, updatedListing } = action.payload;
+
+  try {
+    const tryPostRes = yield axiosInstance.put(
+      `/api/listings/${id}`,
+      updatedListing,
+      config
+    );
+    yield put(actions.updateListingSuccess());
+  } catch (error) {
+    yield put(actions.getErrors(error.response.data.errors));
+  }
+}
+
 export function* deleteListingSaga(action) {
   const config = yield tokenConfig();
   let { id } = action.payload;
