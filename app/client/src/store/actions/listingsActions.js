@@ -67,3 +67,20 @@ export const deleteListingSuccess = () => {
     type: actionTypes.GET_LISTINGS_INIT
   };
 };
+
+// Update single listing
+export const updateListingInit = (id, updatedListing) => {
+  console.log(id);
+
+  return {
+    type: actionTypes.UPDATE_LISTING_INIT,
+    payload: { id: id, updatedListing: updatedListing }
+  };
+};
+
+// Update single listing success
+export const updateListingSuccess = () => {
+  return {
+    type: actionTypes.GET_LISTINGS_INIT
+  };
+};

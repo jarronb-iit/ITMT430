@@ -18,6 +18,8 @@ export {
   getListingInit,
   getListingSuccess,
   clearListing,
+  updateListingInit,
+  updateListingSuccess,
   deleteListingInit,
   deleteListingSuccess
 } from './listingsActions';
