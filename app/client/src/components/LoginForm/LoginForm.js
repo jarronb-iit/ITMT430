@@ -22,9 +22,35 @@ class LoginForm extends Component {
 
   onClick = event => {
     event.preventDefault();
-    // this.props.loadUser();
     this.props.loginInit(this.state, this.props.history);
+    // this.props.loadUser();
     // this.props.getListings();
+    // let listing = {
+    //   address: {
+    //     street: '4444 S. Main St.',
+    //     city: 'Chicago',
+    //     state: 'Illinois',
+    //     zipCode: '60616'
+    //   },
+    //   price: '499',
+    //   squareFootage: '1239',
+    //   bedrooms: '3',
+    //   bathrooms: '2',
+    //   amenities: {
+    //     wifi: 'true',
+    //     heating: 'true',
+    //     cooling: 'true',
+    //     washer: 'true',
+    //     indoorFireplace: 'true',
+    //     parkingType: ['street', 'garage'],
+    //     petsAllowed: ['Small dogs', 'Small Cats']
+    //   },
+    //   listingType: 'condo',
+    //   name: 'Listing 1',
+    //   photos: ['src/photos/url', 'src/photos/url2'],
+    //   dateAvailable: '04-05-2019'
+    // };
+    // this.props.addListing(listing);
     // this.props.deleteUser();
 
     // let user = {
@@ -89,7 +115,8 @@ const mapDispatchToProps = dispatch => {
     loadUser: () => dispatch(actions.loadUserInit()),
     createUser: user => dispatch(actions.registerInit(user)),
     deleteUser: () => dispatch(actions.deleteUserInit()),
-    getListings: () => dispatch(actions.getListingsInit())
+    getListings: () => dispatch(actions.getListingsInit()),
+    addListing: listing => dispatch(actions.addListingInit(listing))
   };
 };
 
