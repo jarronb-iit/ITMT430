@@ -31,6 +31,8 @@
   },
   "homepage": "https://github.com/jarronb/2019-team-09f#readme",
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
     "apidoc": "^0.17.7",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
