@@ -14,3 +14,18 @@ export const getListingsSuccess = listings => {
     payload: { listings: listings }
   };
 };
+
+// Add listing
+export const addListingInit = listing => {
+  return {
+    type: actionTypes.ADD_LISTINGS_INIT,
+    payload: { listing: listing }
+  };
+};
+
+// Get all listings success
+export const addListingsSuccess = listings => {
+  return {
+    type: actionTypes.GET_LISTINGS_INIT
+  };
+};
