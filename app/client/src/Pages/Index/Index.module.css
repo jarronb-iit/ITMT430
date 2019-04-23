@@ -18,7 +18,8 @@
 .cardPhoto {
 	color: #00C6FF;
 	padding: 20rem;
-
+	background-image: url(../../assets/images/house.png);
+	background-size: 600px;
 }
 
 .cardAddress {
