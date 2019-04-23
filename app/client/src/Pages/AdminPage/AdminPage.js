@@ -20,9 +20,9 @@ import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 
 let counter = 0;
-function createData(name, calories, fat, carbs, protein) {
+function createData(name, email, pass, phoneNum) {
   counter += 1;
-  return { id: counter, name, calories, fat, carbs, protein };
+  return { id: counter, name, email, pass, phoneNum };
 }
 
 function desc(a, b, orderBy) {
@@ -56,12 +56,16 @@ const rows = [
     id: 'name',
     numeric: false,
     disablePadding: true,
-    label: 'Dessert (100g serving)'
+    label: 'Name'
   },
-  { id: 'calories', numeric: true, disablePadding: false, label: 'Calories' },
-  { id: 'fat', numeric: true, disablePadding: false, label: 'Fat (g)' },
-  { id: 'carbs', numeric: true, disablePadding: false, label: 'Carbs (g)' },
-  { id: 'protein', numeric: true, disablePadding: false, label: 'Protein (g)' }
+  { id: 'email', numeric: false, disablePadding: true, label: 'Email' },
+  { id: 'pass', numeric: false, disablePadding: true, label: 'Password' },
+  {
+    id: 'phoneNum',
+    numeric: true,
+    disablePadding: true,
+    label: 'Phone Number'
+  }
 ];
 
 class EnhancedTableHead extends React.Component {
@@ -169,7 +173,7 @@ let EnhancedTableToolbar = props => {
           </Typography>
         ) : (
           <Typography variant='h6' id='tableTitle'>
-            Nutrition
+            Admin: Users
           </Typography>
         )}
       </div>
@@ -216,22 +220,15 @@ const styles = theme => ({
 class EnhancedTable extends React.Component {
   state = {
     order: 'asc',
-    orderBy: 'calories',
+    orderBy: 'name',
     selected: [],
     data: [
-      createData('Cupcake', 305, 3.7, 67, 4.3),
-      createData('Donut', 452, 25.0, 51, 4.9),
-      createData('Eclair', 262, 16.0, 24, 6.0),
-      createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-      createData('Gingerbread', 356, 16.0, 49, 3.9),
-      createData('Honeycomb', 408, 3.2, 87, 6.5),
-      createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-      createData('Jelly Bean', 375, 0.0, 94, 0.0),
-      createData('KitKat', 518, 26.0, 65, 7.0),
-      createData('Lollipop', 392, 0.2, 98, 0.0),
-      createData('Marshmallow', 318, 0, 81, 2.0),
-      createData('Nougat', 360, 19.0, 9, 37.0),
-      createData('Oreo', 437, 18.0, 63, 4.0)
+      createData('Erick', 'ecabrer2@hawk.iit.edu', 'password', 1111111111),
+      createData('Jarron', 'jbailey6@hawk.iit.edu', 'pass1', 2222222222),
+      createData('Theo', 'teconomo@hawk.iit.edu', 'pass2', 3333333333),
+      createData('Gioncarlo', 'gbarilla@hawk.iit.edu', 'pass3', 4444444444),
+      createData('Antoine', 'afoggs@hawk.iit.edu', 'pass4', 5555555555),
+      createData('Jonathan', 'jgarci21@hawk.iit.edu', 'pass5', 6666666666)
     ],
     page: 0,
     rowsPerPage: 5
