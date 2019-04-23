@@ -26,12 +26,29 @@ export async function tokenConfig() {
 
 export function* loadListingsSaga(action) {
   const config = yield tokenConfig();
+
   try {
     const response = yield axiosInstance.get('/api/listings', config);
     const listings = yield response.data;
     console.log(listings);
 
     yield put(actions.getListingsSuccess(listings));
+  } catch (error) {
+    yield put(actions.getErrors(error.response.data.errors));
+  }
+}
+
+export function* addListingSaga(action) {
+  const config = yield tokenConfig();
+
+  try {
+    const tryPostRes = yield axiosInstance.post(
+      '/api/listings',
+      action.payload.listing,
+      config
+    );
+    const { listing } = yield tryPostRes.data;
+    yield put(actions.addListingsSuccess(listing));
   } catch (error) {
     yield put(actions.getErrors(error.response.data.errors));
   }
