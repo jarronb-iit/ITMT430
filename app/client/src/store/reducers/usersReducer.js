@@ -5,7 +5,6 @@ const initialState = {
 };
 
 const getUsers = (state, action) => {
-  console.log('HERE', action);
   state = {
     ...state,
     users: action.payload.users

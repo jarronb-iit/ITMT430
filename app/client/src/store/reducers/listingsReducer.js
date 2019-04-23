@@ -5,7 +5,6 @@ const initialState = {
 };
 
 const getListings = (state, action) => {
-  console.log('HERE', action);
   state = {
     ...state,
     listings: action.payload.listings
