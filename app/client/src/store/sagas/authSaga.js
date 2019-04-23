@@ -69,6 +69,17 @@ export function* registerUserSaga(action) {
   }
 }
 
+export function* getUserSaga(action) {
+  const config = yield tokenConfig();
+  try {
+    let { id } = action.payload;
+    const response = yield axiosInstance.get(`/api/user/${id}`, config);
+    yield put(actions.getUserSuccess(response.data));
+  } catch (error) {
+    yield put(actions.getErrors(error.response.data.errors));
+  }
+}
+
 export function* updateUserSaga(action) {
   const config = yield tokenConfig();
   try {
