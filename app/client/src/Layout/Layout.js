@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
-import Home from '../Pages/Home/Home';
-import Index from '../Pages/Index/Index';
-import Styles from '../Pages/Home/Home.module.css';
+import Index from '../Pages/IndexPage';
 import { Route, Switch } from 'react-router-dom';
 import ProtectedRoute from '../hoc/ProtectedRoute';
-import AdminPage from '../Pages/AdminPage/AdminPage'; // TEMPORARY
+import { withStyles } from '@material-ui/core/styles';
 
-// import { Route, Switch } from "react-router-dom";
+const styles = theme => ({
+  root: {
+    height: '100vh'
+  }
+});
 
-export default class Layout extends Component {
+class Layout extends Component {
   render() {
+    const { classes } = this.props;
+
     return (
-      <Switch>
-        <ProtectedRoute path='/home' component={Index} />
-        <Route path='/adminPage' component={AdminPage} /> {/* TEMPORARY */}
-        <Route path='/' component={Home} />
-      </Switch>
+      <div className={classes.root}>
+        <Switch>
+          <Route path="/" component={Index} />
+        </Switch>
+      </div>
     );
   }
 }
+
+export default withStyles(styles)(Layout);
