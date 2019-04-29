@@ -74,82 +74,97 @@ const styles = theme => ({
   }
 });
 
-const LoginPage = props => {
-  const { classes } = props;
+class LoginPage extends Component {
+  state = {
+    email: '',
+    password: ''
+  };
 
-  const loginOnClick = () => props.history.push('/home');
-  const backOnClick = () => props.history.goBack();
+  // Handle fields change
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
-  return (
-    <div className={classes.root}>
-      <Typography
-        className={classes.brandName}
-        variant="h1"
-        color="primary"
-        fontWeight={800}
-      >
-        Roomie
-      </Typography>
-      <Grid container className={classes.grid}>
-        <Grid item xs={12}>
-          <TextField
-            fullWidth={true}
-            id="email"
-            label="Email"
-            placeholder="Email"
-            className={classes.textField}
-            margin="normal"
-            variant="filled"
-            InputProps={{
-              className: classes.input,
-              classes: { underline: classes.underline, input: classes.input },
-              type: 'email'
-            }}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            fullWidth={true}
-            id="password"
-            label="Password"
-            placeholder="Password"
-            className={classes.textField}
-            margin="normal"
-            variant="filled"
-            InputProps={{
-              className: classes.input,
-              classes: { underline: classes.underline, input: classes.input },
-              type: 'password'
-            }}
-          />
-        </Grid>
+  loginOnClick = () => this.props.loginInit(this.state, this.props.history);
+  backOnClick = () => this.props.history.goBack();
 
-        <Grid container className={classes.buttonGrid}>
+  render() {
+    const { classes } = this.props;
+    return (
+      <div className={classes.root}>
+        <Typography
+          className={classes.brandName}
+          variant="h1"
+          color="primary"
+          fontWeight={800}
+        >
+          Roomie
+        </Typography>
+        <Grid container className={classes.grid}>
           <Grid item xs={12}>
-            <Button
-              variant="contained"
-              color="primary"
-              className={classes.button}
-              onClick={loginOnClick}
-            >
-              Login
-            </Button>
+            <TextField
+              fullWidth={true}
+              id="email"
+              label="Email"
+              placeholder="Email"
+              name="email"
+              className={classes.textField}
+              margin="normal"
+              variant="filled"
+              onChange={this.handleChange}
+              InputProps={{
+                className: classes.input,
+                classes: { underline: classes.underline, input: classes.input },
+                type: 'email'
+              }}
+            />
           </Grid>
           <Grid item xs={12}>
-            <Button
-              variant="contained"
-              color="secondary"
-              className={classes.button}
-              onClick={backOnClick}
-            >
-              Back
-            </Button>
+            <TextField
+              fullWidth={true}
+              id="password"
+              label="Password"
+              name="password"
+              placeholder="Password"
+              className={classes.textField}
+              margin="normal"
+              variant="filled"
+              onChange={this.handleChange}
+              InputProps={{
+                className: classes.input,
+                classes: { underline: classes.underline, input: classes.input },
+                type: 'password'
+              }}
+            />
+          </Grid>
+
+          <Grid container className={classes.buttonGrid}>
+            <Grid item xs={12}>
+              <Button
+                variant="contained"
+                color="primary"
+                className={classes.button}
+                onClick={this.loginOnClick}
+              >
+                Login
+              </Button>
+            </Grid>
+            <Grid item xs={12}>
+              <Button
+                variant="contained"
+                color="secondary"
+                className={classes.button}
+                onClick={this.backOnClick}
+              >
+                Back
+              </Button>
+            </Grid>
           </Grid>
         </Grid>
-      </Grid>
-    </div>
-  );
-};
+      </div>
+    );
+  }
+}
 
 const mapStateToProps = state => {
   return {
@@ -159,7 +174,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    createUser: user => dispatch(actions.registerInit(user))
+    loginInit: (user, history) => dispatch(actions.loginInit(user, history))
   };
 };
 
