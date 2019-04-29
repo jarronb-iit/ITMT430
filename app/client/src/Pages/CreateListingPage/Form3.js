@@ -7,6 +7,7 @@ import { Typography, Grid, Button, TextField } from '@material-ui/core';
 
 const styles = theme => ({
   root: {
+    width: '100%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
