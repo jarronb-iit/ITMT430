@@ -16,7 +16,8 @@ const theme = createMuiTheme({
   },
   typography: {
     useNextVariants: true,
-    htmlFontSize: 10
+    htmlFontSize: 10,
+    fontSize: 10
   }
 });
 
