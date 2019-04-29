@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions';
 import { withStyles } from '@material-ui/core/styles';
@@ -62,7 +62,7 @@ const styles = theme => ({
 });
 
 const Confirm = props => {
-  const { classes, values } = props;
+  const { classes } = props;
 
   const {
     values: { firstName, lastName, email, bio, roles }

@@ -1,5 +1,4 @@
 import * as actionTypes from './actionTypes';
-import { select } from 'redux-saga/effects';
 
 // Check token and load user
 export const loadUserInit = () => {

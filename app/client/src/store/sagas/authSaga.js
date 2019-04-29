@@ -1,4 +1,4 @@
-import { put, select, call } from 'redux-saga/effects';
+import { put } from 'redux-saga/effects';
 import axiosInstance from '../../axiosConfig';
 import * as actions from '../actions';
 import * as actionsTypes from '../actions/actionTypes';
@@ -82,8 +82,8 @@ export function* getUserSaga(action) {
 export function* updateUserSaga(action) {
   const config = yield tokenConfig();
   try {
-    let { id, updatedUser } = action.payload;
-    const tryPostRes = yield axiosInstance.put(
+    let { id } = action.payload;
+    yield axiosInstance.put(
       `/api/user/${id}`,
       action.payload.updatedUser,
       config
@@ -98,7 +98,7 @@ export function* deleteUserSaga(action) {
   let { id } = action.payload;
   try {
     let config = yield tokenConfig();
-    const response = yield axiosInstance.delete(`/api/user/${id}`, config);
+    yield axiosInstance.delete(`/api/user/${id}`, config);
 
     yield put(actions.deleteUserSuccess());
   } catch (error) {
