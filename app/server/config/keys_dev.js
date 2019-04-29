@@ -9,6 +9,7 @@ module.exports = {
   jwtSecret: process.env["jwt-secret"],
   redisPassword: process.env["redis-server-password"],
   redisIp: process.env["redis-server-ip"],
+  redisPort: process.env["redis-server-port"],
   cloudinaryCloudName: process.env["cloudinary-cloud-name"],
   cloudinaryApiKey: process.env["cloudinary-api-key"],
   cloudinaryApiSecret: process.env["cloudinary-api-secret"]
