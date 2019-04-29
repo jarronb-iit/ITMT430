@@ -28,10 +28,10 @@ export const loginSuccess = (token, user) => {
   };
 };
 
-export const registerInit = user => {
+export const registerInit = (user, history) => {
   return {
     type: actionTypes.REGISTER_INIT,
-    payload: { user: user }
+    payload: { user: user, history: history }
   };
 };
 

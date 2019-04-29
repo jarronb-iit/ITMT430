@@ -93,7 +93,25 @@ class SignupForm extends Component {
   };
 
   submitUser = e => {
-    console.log('User to be submitted', this.state);
+    const {
+      bio,
+      firstName,
+      lastName,
+      email,
+      password,
+      phoneNumber,
+      roles
+    } = this.state;
+    const user = {
+      bio,
+      firstName,
+      lastName,
+      email,
+      password,
+      phoneNumber,
+      roles
+    };
+    this.props.createUser(user, this.props.history);
   };
 
   loginOnClick = () => this.props.history.push('/home');
@@ -196,7 +214,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    createUser: user => dispatch(actions.registerInit(user))
+    createUser: (user, history) => dispatch(actions.registerInit(user, history))
   };
 };
 
