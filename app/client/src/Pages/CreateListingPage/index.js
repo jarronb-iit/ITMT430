@@ -7,6 +7,7 @@ import { Typography } from '@material-ui/core/';
 import Form1 from './Form1';
 import Form2 from './Form2';
 import Form3 from './Form3';
+import Form4 from './Form4';
 import Confirm from './Confirm';
 
 const styles = theme => ({
@@ -42,7 +43,7 @@ const styles = theme => ({
 
 class ListingForm extends Component {
   state = {
-    step: 1,
+    step: 4,
     address: {
       street: '',
       city: '',
@@ -63,8 +64,8 @@ class ListingForm extends Component {
       indoorFireplace: false,
       parkingType: [],
       petsAllowed: [],
-      name: ''
-      /// TODO: photos
+      name: '',
+      photos: []
     }
   };
 
@@ -106,6 +107,15 @@ class ListingForm extends Component {
         [input]: [e.target.value]
       });
     }
+  };
+
+  // Handle photos change
+  handlePhotoChange = (input, acceptedFiles) => {
+    console.log(input, acceptedFiles);
+
+    this.setState({
+      [input]: acceptedFiles
+    });
   };
 
   toggleButton = input => e => {
@@ -151,6 +161,10 @@ class ListingForm extends Component {
 
     this.props.addListing(listing);
   };
+
+  submitPhotos = () => {
+    
+  }
 
   loginOnClick = () => this.props.history.push('/home');
   backOnClick = () => this.props.history.push('/');
@@ -217,6 +231,18 @@ class ListingForm extends Component {
         );
         break;
       case 4:
+        renderedPage = (
+          <Form4
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handlePhotoChange}
+            toggleButton={this.toggleButton}
+            submitListing={this.submitListing}
+            values={values}
+          />
+        );
+        break;
+      case 5:
         renderedPage = (
           <Confirm
             nextStep={this.nextStep}
