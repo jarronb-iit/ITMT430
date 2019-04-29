@@ -17,12 +17,10 @@ store.dispatch(loadUserInit());
 class App extends Component {
   render() {
     return (
-      <div>
-        <MuiThemeProvider theme={theme}>
-          <CssBaseline />
-          <Layout />
-        </MuiThemeProvider>
-      </div>
+      <MuiThemeProvider theme={theme}>
+        <CssBaseline />
+        <Layout />
+      </MuiThemeProvider>
     );
   }
 }
