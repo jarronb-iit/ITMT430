@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const auth = require("../../middleware/auth");
-const errorsFormatter = require("../../helperFunctions/errorsFormatter");
+const parser = require('../../services/cloudinary.service');
 
 // Load Model
 const Listing = require('../../models/Listing');
@@ -68,7 +67,16 @@ router.post("/", auth, (req, res) => {
 // @route   PUT api/listing/:id
 // @desc    Update listing for user
 // @access  Private
-router.put('/:id', auth, (req, res) => {
+router.put('/:id', auth, parser.array('photos'), async (req, res) => {
+  if (req.files.length > 0) {
+    req.body.photos = await req.files.map(photo => {
+      return {
+        url: photo.url,
+        secureUrl: photo.secure_url,
+        originalName: photo.originalname
+      };
+    });
+  }
   let admin = false;
   User.findById(req.user.id)
     .then(user => {
@@ -95,6 +103,15 @@ router.put('/:id', auth, (req, res) => {
       Listing.findByIdAndUpdate(req.params.id, { $set: req.body }).then(
         listing => res.status(200).json(listing)
       );
+
+          // // Update listing
+          // Listing.findByIdAndUpdate(req.params.id, { $set: req.body }).then(
+          //   listing => {
+          //     Listing.findById(listing._id).then(listing =>
+          //       res.status(200).json(listing)
+          //     );
+          //   }
+          // );
 
       // return res.json(listing);
     })
