@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import IndexPage from '../Pages/IndexPage';
-import Index from '../Pages/IndexPage';
+import LoginPage from '../Pages/LoginPage';
 import { Route, Switch } from 'react-router-dom';
 import ProtectedRoute from '../hoc/ProtectedRoute';
 import { withStyles } from '@material-ui/core/styles';
@@ -18,7 +18,7 @@ class Layout extends Component {
     return (
       <div className={classes.root}>
         <Switch>
-          <Route path="/" component={Index} />
+          <Route path="/login" component={LoginPage} />
           <Route path="/" component={IndexPage} />
         </Switch>
       </div>
