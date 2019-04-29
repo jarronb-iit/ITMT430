@@ -40,18 +40,32 @@ const styles = theme => ({
   }
 });
 
-class SignupForm extends Component {
+class ListingForm extends Component {
   state = {
     step: 1,
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    phoneNumber: '',
-    bio: '',
-    roles: [],
-    buyerButtonColor: 'default',
-    sellerButtonColor: 'default'
+    address: {
+      street: '',
+      city: '',
+      state: '',
+      zipCode: ''
+    },
+    price: 0,
+    squareFootage: 0,
+    bedrooms: 0,
+    bathrooms: 0,
+    listingType: '',
+    dateAvailable: null,
+    amenities: {
+      wifi: false,
+      heating: false,
+      cooling: false,
+      washer: false,
+      indoorFireplace: false,
+      parkingType: [],
+      petsAllowed: [],
+      name: ''
+      /// TODO: photos
+    }
   };
 
   // Proceed to next step
@@ -75,6 +89,25 @@ class SignupForm extends Component {
     this.setState({ [input]: e.target.value });
   };
 
+  // Handle address change
+  handleAddressChange = input => e => {
+    this.setState({
+      address: {
+        ...this.state.address,
+        [input]: e.target.value
+      }
+    });
+  };
+
+  // Handle address change
+  handleArrayChanges = input => e => {
+    if (e.target.id === 'listingType') {
+      this.setState({
+        [input]: [e.target.value]
+      });
+    }
+  };
+
   toggleButton = input => e => {
     if (input === 'buyer') {
       this.setState({
@@ -91,26 +124,32 @@ class SignupForm extends Component {
     }
   };
 
-  submitUser = e => {
+  submitListing = e => {
     const {
-      bio,
-      firstName,
-      lastName,
-      email,
-      password,
-      phoneNumber,
-      roles
+      address,
+      price,
+      squareFootage,
+      bedrooms,
+      bathrooms,
+      listingType,
+      dateAvailable,
+      amenities,
+      name
     } = this.state;
-    const user = {
-      bio,
-      firstName,
-      lastName,
-      email,
-      password,
-      phoneNumber,
-      roles
+
+    const listing = {
+      address,
+      price,
+      squareFootage,
+      bedrooms,
+      bathrooms,
+      listingType,
+      dateAvailable,
+      amenities,
+      name
     };
-    this.props.createUser(user, this.props.history);
+
+    this.props.addListing(listing);
   };
 
   loginOnClick = () => this.props.history.push('/home');
@@ -119,25 +158,27 @@ class SignupForm extends Component {
     const { classes } = this.props;
     const { step } = this.state;
     const {
-      firstName,
-      lastName,
-      email,
-      password,
-      bio,
-      roles,
-      buyerButtonColor,
-      sellerButtonColor
+      address,
+      price,
+      squareFootage,
+      bedrooms,
+      bathrooms,
+      listingType,
+      dateAvailable,
+      amenities,
+      name
     } = this.state;
 
     const values = {
-      firstName,
-      lastName,
-      email,
-      password,
-      bio,
-      roles,
-      buyerButtonColor,
-      sellerButtonColor
+      address,
+      price,
+      squareFootage,
+      bedrooms,
+      bathrooms,
+      listingType,
+      dateAvailable,
+      amenities,
+      name
     };
     let renderedPage;
 
@@ -149,6 +190,7 @@ class SignupForm extends Component {
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}
+            handleArrayChanges={this.handleArrayChanges}
             values={values}
           />
         );
@@ -158,7 +200,7 @@ class SignupForm extends Component {
           <Form2
             nextStep={this.nextStep}
             prevStep={this.prevStep}
-            handleChange={this.handleChange}
+            handleChange={this.handleAddressChange}
             values={values}
           />
         );
@@ -181,7 +223,7 @@ class SignupForm extends Component {
             prevStep={this.prevStep}
             handleChange={this.handleChange}
             toggleButton={this.toggleButton}
-            submitUser={this.submitUser}
+            submitListing={this.submitListing}
             values={values}
           />
         );
@@ -213,11 +255,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    createUser: (user, history) => dispatch(actions.registerInit(user, history))
+    addListing: listing => dispatch(actions.addListingInit(listing))
   };
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withStyles(styles)(SignupForm));
+)(withStyles(styles)(ListingForm));
