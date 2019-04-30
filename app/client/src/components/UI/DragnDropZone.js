@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
+import ImagePreview from './ImagePreview';
 
 const styles = theme => ({
   root: {
@@ -15,8 +16,7 @@ function MyDropzone(props) {
 
   const onDrop = useCallback(acceptedFiles => {
     // Do something with the files
-    var formData = new FormData();
-    console.log(acceptedFiles);
+    const formData = new FormData();
     acceptedFiles.forEach(photo => {
       formData.append('photos', photo);
     });
@@ -34,18 +34,26 @@ function MyDropzone(props) {
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
+  let renderedComponent;
+  if (isDragActive) {
+    renderedComponent = (
+      <Typography variant="h6" color="primary" fontWeight={800}>
+        Drag 'n' drop some files here, or click to select files
+      </Typography>
+    );
+  } else if (values.photos) {
+    renderedComponent = <ImagePreview values={values} />;
+  } else {
+    renderedComponent = (
+      <Typography variant="h6" color="primary" fontWeight={800}>
+        Drop the files here ...
+      </Typography>
+    );
+  }
   return (
     <div className={classes.root} {...getRootProps()}>
       <input {...getInputProps()} />
-      {isDragActive ? (
-        <Typography variant="h6" color="primary" fontWeight={800}>
-          Drop the files here ...
-        </Typography>
-      ) : (
-        <Typography variant="h6" color="primary" fontWeight={800}>
-          Drag 'n' drop some files here, or click to select files
-        </Typography>
-      )}
+      {renderedComponent}
     </div>
   );
 }
