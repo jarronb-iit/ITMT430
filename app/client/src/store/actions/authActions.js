@@ -1,5 +1,4 @@
 import * as actionTypes from './actionTypes';
-import { select } from 'redux-saga/effects';
 
 // Check token and load user
 export const loadUserInit = () => {
@@ -28,10 +27,10 @@ export const loginSuccess = (token, user) => {
   };
 };
 
-export const registerInit = user => {
+export const registerInit = (user, history) => {
   return {
     type: actionTypes.REGISTER_INIT,
-    payload: { user: user }
+    payload: { user: user, history: history }
   };
 };
 

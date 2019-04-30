@@ -1,7 +1,6 @@
-import { put, select, call } from 'redux-saga/effects';
+import { put } from 'redux-saga/effects';
 import axiosInstance from '../../axiosConfig';
 import * as actions from '../actions';
-import * as actionsTypes from '../actions/actionTypes';
 import store from '../../store';
 
 export async function tokenConfig() {
