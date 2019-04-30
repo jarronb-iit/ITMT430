@@ -69,7 +69,7 @@ const styles = theme => ({
   }
 });
 
-const LoginPage = props => {
+const Form4 = props => {
   const { classes, values, handleChange } = props;
   const matches = useMediaQuery('(min-width:600px)');
 
@@ -86,12 +86,12 @@ const LoginPage = props => {
   return (
     <div className={classes.root}>
       <Typography className={classes.formHeader} variant="h6" color="primary">
-        Tell us more about the property:
+        Wanna share any pictures:
       </Typography>
       <Grid container className={classes.grid}>
         <Grid item xs={12} className={classes.dropZone}>
           <Paper>
-            <DropZone handleChange={handleChange} />
+            <DropZone handleChange={handleChange} values={values} />
           </Paper>
         </Grid>
 
@@ -138,4 +138,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withStyles(styles)(LoginPage));
+)(withStyles(styles)(Form4));
