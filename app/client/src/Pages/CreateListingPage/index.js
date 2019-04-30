@@ -43,7 +43,7 @@ const styles = theme => ({
 
 class ListingForm extends Component {
   state = {
-    step: 4,
+    step: 1,
     address: {
       street: '',
       city: '',
