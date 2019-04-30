@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions';
 import { withStyles } from '@material-ui/core/styles';
+import ImagePreview from '../../components/UI/ImagePreview';
 import {
   Typography,
   Grid,
@@ -62,7 +63,7 @@ const styles = theme => ({
 });
 
 const Confirm = props => {
-  const { classes } = props;
+  const { classes, values } = props;
 
   const {
     values: {
@@ -74,7 +75,8 @@ const Confirm = props => {
       listingType,
       dateAvailable,
       amenities,
-      name
+      name,
+      photos
     }
   } = props;
 
@@ -105,6 +107,13 @@ const Confirm = props => {
               <ListItemText
                 primary="Name of property:"
                 secondary={name || 'N/A'}
+              />
+            </ListItem>
+            <Divider />
+            <ListItem>
+              <ListItemText
+                primary="Photos:"
+                secondary={<ImagePreview values={values} /> || 'N/A'}
               />
             </ListItem>
             <Divider />
