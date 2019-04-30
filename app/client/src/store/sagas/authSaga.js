@@ -1,4 +1,4 @@
-import { put, select, call } from 'redux-saga/effects';
+import { put } from 'redux-saga/effects';
 import axiosInstance from '../../axiosConfig';
 import * as actions from '../actions';
 import * as actionsTypes from '../actions/actionTypes';
@@ -39,8 +39,6 @@ export function* loadUserSaga(action) {
 }
 
 export function* loginUserSaga(action) {
-  yield console.log(action);
-
   try {
     const tryPostRes = yield axiosInstance.post(
       '/api/auth',
@@ -63,6 +61,7 @@ export function* registerUserSaga(action) {
     );
     const { token, user } = yield tryPostRes.data;
     yield put(actions.registerSuccess(token, user));
+    yield action.payload.history.push('/home');
   } catch (error) {
     yield put({ type: actionsTypes.REGISTER_FAIL });
     yield put(actions.getErrors(error.response.data.errors));
@@ -83,8 +82,8 @@ export function* getUserSaga(action) {
 export function* updateUserSaga(action) {
   const config = yield tokenConfig();
   try {
-    let { id, updatedUser } = action.payload;
-    const tryPostRes = yield axiosInstance.put(
+    let { id } = action.payload;
+    yield axiosInstance.put(
       `/api/user/${id}`,
       action.payload.updatedUser,
       config
@@ -99,7 +98,7 @@ export function* deleteUserSaga(action) {
   let { id } = action.payload;
   try {
     let config = yield tokenConfig();
-    const response = yield axiosInstance.delete(`/api/user/${id}`, config);
+    yield axiosInstance.delete(`/api/user/${id}`, config);
 
     yield put(actions.deleteUserSuccess());
   } catch (error) {

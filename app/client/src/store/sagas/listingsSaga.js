@@ -1,7 +1,6 @@
-import { put, select, call } from 'redux-saga/effects';
+import { put } from 'redux-saga/effects';
 import axiosInstance from '../../axiosConfig';
 import * as actions from '../actions';
-import * as actionsTypes from '../actions/actionTypes';
 import store from '../../store';
 
 export async function tokenConfig() {
@@ -72,11 +71,7 @@ export function* updateListingSaga(action) {
   let { id, updatedListing } = action.payload;
 
   try {
-    const tryPostRes = yield axiosInstance.put(
-      `/api/listings/${id}`,
-      updatedListing,
-      config
-    );
+    yield axiosInstance.put(`/api/listings/${id}`, updatedListing, config);
     yield put(actions.updateListingSuccess());
   } catch (error) {
     yield put(actions.getErrors(error.response.data.errors));
@@ -88,10 +83,7 @@ export function* deleteListingSaga(action) {
   let { id } = action.payload;
 
   try {
-    const tryPostRes = yield axiosInstance.delete(
-      `/api/listings/${id}`,
-      config
-    );
+    yield axiosInstance.delete(`/api/listings/${id}`, config);
     yield put(actions.deleteListingSuccess());
   } catch (error) {
     yield put(actions.getErrors(error.response.data.errors));
