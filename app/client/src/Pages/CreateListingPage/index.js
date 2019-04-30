@@ -65,7 +65,8 @@ class ListingForm extends Component {
       parkingType: [],
       petsAllowed: [],
       name: '',
-      photos: []
+      photos: [],
+      previewImages: []
     }
   };
 
@@ -144,7 +145,8 @@ class ListingForm extends Component {
       listingType,
       dateAvailable,
       amenities,
-      name
+      name,
+      photos
     } = this.state;
 
     const listing = {
@@ -156,15 +158,14 @@ class ListingForm extends Component {
       listingType,
       dateAvailable,
       amenities,
-      name
+      name,
+      photos
     };
 
     this.props.addListing(listing);
   };
 
-  submitPhotos = () => {
-    
-  }
+  submitPhotos = () => {};
 
   loginOnClick = () => this.props.history.push('/home');
   backOnClick = () => this.props.history.push('/');
@@ -180,7 +181,9 @@ class ListingForm extends Component {
       listingType,
       dateAvailable,
       amenities,
-      name
+      name,
+      photos,
+      previewImages
     } = this.state;
 
     const values = {
@@ -192,7 +195,9 @@ class ListingForm extends Component {
       listingType,
       dateAvailable,
       amenities,
-      name
+      name,
+      photos,
+      previewImages
     };
     let renderedPage;
 
