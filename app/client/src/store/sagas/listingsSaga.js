@@ -39,14 +39,18 @@ export function* loadListingsSaga(action) {
 
 export function* addListingSaga(action) {
   const config = yield tokenConfig();
-
   try {
+    const { photos, ...listingData } = action.payload.listing;
+
     const tryPostRes = yield axiosInstance.post(
       '/api/listings',
-      action.payload.listing,
+      listingData,
       config
     );
     const listing = yield tryPostRes.data;
+    console.log(listing);
+    window.listing = listing;
+    // const listingId = listing._id
     yield put(actions.addListingSuccess(listing));
   } catch (error) {
     yield put(actions.getErrors(error.response.data.errors));
