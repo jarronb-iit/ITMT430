@@ -50,6 +50,10 @@ sudo npm install pm2 -g
 pm2 startup ubuntu
 sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup ubuntu -u vagrant --hp /home/vagrant
 
+# Installing Net Data which is a resource management tool for servers.
+bash <(curl -Ss https://my-netdata.io/kickstart.sh) --dont-wait
+
+
 # Installing Passport.js, middleware for authentication.
 npm install passport -g
 # Installing oauth for 3rd Party Sign ins. Will Utilize Google and Facebook
