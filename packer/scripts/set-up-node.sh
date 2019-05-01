@@ -58,3 +58,6 @@ npm install passport-oauth -g
 npm install passport-facebook -g
 # Installing Oauth for Google. Note, dev account needs to be created still
 npm install passport-google-oauth -g
+
+# Installing Net Data which is a resource management tool for servers.
+bash curl -Ss https://my-netdata.io/kickstart.sh --dont-wait

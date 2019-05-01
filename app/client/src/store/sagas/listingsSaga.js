@@ -1,7 +1,6 @@
-import { put, select, call } from 'redux-saga/effects';
+import { put } from 'redux-saga/effects';
 import axiosInstance from '../../axiosConfig';
 import * as actions from '../actions';
-import * as actionsTypes from '../actions/actionTypes';
 import store from '../../store';
 
 export async function tokenConfig() {
@@ -40,14 +39,18 @@ export function* loadListingsSaga(action) {
 
 export function* addListingSaga(action) {
   const config = yield tokenConfig();
-
   try {
+    const { photos, ...listingData } = action.payload.listing;
+
     const tryPostRes = yield axiosInstance.post(
       '/api/listings',
-      action.payload.listing,
+      listingData,
       config
     );
     const listing = yield tryPostRes.data;
+    console.log(listing);
+    window.listing = listing;
+    // const listingId = listing._id
     yield put(actions.addListingSuccess(listing));
   } catch (error) {
     yield put(actions.getErrors(error.response.data.errors));
@@ -72,11 +75,7 @@ export function* updateListingSaga(action) {
   let { id, updatedListing } = action.payload;
 
   try {
-    const tryPostRes = yield axiosInstance.put(
-      `/api/listings/${id}`,
-      updatedListing,
-      config
-    );
+    yield axiosInstance.put(`/api/listings/${id}`, updatedListing, config);
     yield put(actions.updateListingSuccess());
   } catch (error) {
     yield put(actions.getErrors(error.response.data.errors));
@@ -88,10 +87,7 @@ export function* deleteListingSaga(action) {
   let { id } = action.payload;
 
   try {
-    const tryPostRes = yield axiosInstance.delete(
-      `/api/listings/${id}`,
-      config
-    );
+    yield axiosInstance.delete(`/api/listings/${id}`, config);
     yield put(actions.deleteListingSuccess());
   } catch (error) {
     yield put(actions.getErrors(error.response.data.errors));
