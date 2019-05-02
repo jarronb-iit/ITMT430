@@ -22,40 +22,17 @@ For the this sprint, the goals that we have placed for ourselves is to connect t
 
 ## Completed goals
 
-<!-- Design primary artboards on adobe
-
-- The designs for the process of viewing potential properties has created and the artboards have been uploaded to GitHub
-  Design the primary CSS for all react components
-- The primary CSS file has been created and is currently on github. This CSS hold the styling for the template that we will use throughout the application.
-  Begin designing React Components
-- Currently we were able to design the following react components
-  ![Component1](../../images/sprint4/firstPage.PNG)
-  ![Component2](../../images/sprint4/loginpage.PNG)
-  ![Component3](../../images/sprint4/signup.PNG)
-  ![Component4](../../images/sprint4/aboutmepage.PNG)
-  - LoginButtons: which are displayed when the user opens the application
-  - Sign up form: which displays when the user selects sign up. Currently the application can switch between this component and the LoginButtons component.
-  - Log in Form: This component is used when the user wants to log in to their account
-  - About Me: This page deals with the about me component
-    We were able to continue building the servers
-- We were able to create a Redis server
-- Connect authenticated node app client to connect to Redis server
-  Design API’s for adding user to mongodb database
-  ![apiCalls](../../images/sprint4/apiCreated.PNG)
-- This is split into two parts Users and listings
-- The list of listings api goes as follows:
-  - Delete a listing
-  - Get a listing
-  - Get a user listing
-  - Post a listing
-  - Update a listing
-- The users list of apis goes as follows:
-  - Create a user account
-  - Delete user
-  - Get current user
-  - Login user
-  - Update user
-    Connect material ui to help create more responsive buttons and formatting -->
+- Create user
+- Log in as a new user
+- Develop the template for the admin page
+- Develop the template for the listing view
+- Rewrite way that react component are called using react browser router
+- Design API for admin page
+  Goals Left to complete:
+- Connect API to work for admin page
+- Connect API to listing view
+- Connect API to creating a new listing
+- Create Template for listing view
 
 ## Sprint 6 To-Do
 
