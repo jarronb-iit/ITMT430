@@ -30,7 +30,7 @@ const styles = {
 };
 
 function SwipeableTemporaryDrawer(props) {
-  const { classes, onOpen, onClose, history, isAdmin } = props;
+  const { classes, onOpen, onClose, history, isAdmin, isBuyer } = props;
   let { showDrawer } = props;
 
   const goToLink = text => e => {
@@ -79,12 +79,22 @@ function SwipeableTemporaryDrawer(props) {
   const fullList = (
     <div className={classes.fullList}>
       <List>
-        {['Home', 'Create Listing', 'Profile'].map((text, index) => (
+        {['Home', 'Profile'].map((text, index) => (
           <ListItem button key={text} onClick={goToLink(text)}>
             <ListItemIcon>{createIcon(text)}</ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
+        {!isBuyer && (
+          <ListItem
+            button
+            key={'Create Listing'}
+            onClick={goToLink('Create Listing')}
+          >
+            <ListItemIcon>{createIcon('Create Listing')}</ListItemIcon>
+            <ListItemText primary={'Create Listing'} />
+          </ListItem>
+        )}
       </List>
       <Divider />
       <List>
@@ -107,12 +117,12 @@ function SwipeableTemporaryDrawer(props) {
   return (
     <div>
       <SwipeableDrawer
-        anchor="bottom"
+        anchor='bottom'
         open={showDrawer}
         onClose={onClose}
         onOpen={onOpen}
       >
-        <div tabIndex={0} role="button" onClick={onClose} onKeyDown={onClose}>
+        <div tabIndex={0} role='button' onClick={onClose} onKeyDown={onClose}>
           {fullList}
         </div>
       </SwipeableDrawer>
