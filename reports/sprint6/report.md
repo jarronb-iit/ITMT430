@@ -52,15 +52,17 @@ Our focus was to ensure that we incorperated all of the 13 requirements while cr
 9. Our development enviroments are done by running the npm start dev from the server. The server is located in the app folder. Once this is running we are allowed to see the react application
 10. All our designs can be seen in the design files along with the video of the application
 11. Currently our flowcharts of the application are in the reports and in the images folder. These contain the current database relationships.
-    ![DB Schema](../../images/sprint3/ERD_roomie.JPG)
+    ![DB Schema](ERD_roomie.JPG)
 12. Our trello is currently accurate with the completed tasks.
-13. Currently we have not implemented our 14 test data since we need to first completely connect the api calls to the react components.
+13. Currently we have not implemented our 15 test data since we need to first completely connect the api calls to the react components.
 
 ## Trello Board
 
-<!-- ![Trello1](../../images/sprint4/TrelloBoard1.PNG)
-![Trello2](../../images/sprint4/TrelloBoard2.PNG)
-![Trello3](../../images/sprint4/TrelloBoard3.PNG) -->
+Include screenshots of Trello board.
+
+## Github issues
+
+Include screenshots of github issues.
 
 #### Team Members
 
@@ -71,7 +73,5 @@ Our focus was to ensure that we incorperated all of the 13 requirements while cr
 [Jarron Bailey](https://github.com/jarronb)
 
 [Erick Cabrera](https://github.com/ecabrera796)
-
-[Johnathan Garcia](https://github.com/)
 
 [Giancarlo Barillas](https://github.com/giancarlobarillas)
