@@ -14,7 +14,7 @@ class CustomToolbar extends React.Component {
   };
 
   render() {
-    const { classes, onDeleteClick, deleteWho } = this.props;
+    const { classes, buttonType } = this.props;
 
     return (
       <React.Fragment>
