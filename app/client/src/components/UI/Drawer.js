@@ -30,7 +30,7 @@ const styles = {
 };
 
 function SwipeableTemporaryDrawer(props) {
-  const { classes, onOpen, onClose, history, admin } = props;
+  const { classes, onOpen, onClose, history, isAdmin } = props;
   let { showDrawer } = props;
 
   const goToLink = text => e => {
@@ -88,7 +88,7 @@ function SwipeableTemporaryDrawer(props) {
       </List>
       <Divider />
       <List>
-        {true && (
+        {isAdmin && (
           <ListItem button key={'Admin'} onClick={goToLink('Admin')}>
             <ListItemIcon>{createIcon('Admin')}</ListItemIcon>
             <ListItemText primary={'Admin'} />
