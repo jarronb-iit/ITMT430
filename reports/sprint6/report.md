@@ -2,6 +2,10 @@
 
 ## Project Overview
 
+For our project, our intial scope was to create a full fledged real-estate/roommate application. Over the course of a few weeks, we soon realized that this was a larger scope for us to fulfill than we originally had time to deal with. As such, we focused primarily on working on what would be able to serve as a fully functioning mvp of the original idea.
+
+Our focus was to ensure that we incorperated all of the 13 requirements while creating something that could have potential use outside of the classroom. It was a long journey, but we have something that fulfills our basic requirements, that also helped the entire team to learn what it takes to develop an application. Additionally, we created the base of a project that has real world potential, should any of us pursue it further.
+
 ## Roles
 
 - Junior Developer - [Giancarlo Barillas](https://github.com/giancarlobarillas), [Johnathan Garcia](https://github.com/)
