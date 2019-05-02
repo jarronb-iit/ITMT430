@@ -52,7 +52,7 @@ function SwipeableTemporaryDrawer(props) {
         history.push('/admin');
         break;
       case 'Logout':
-        // history.push('/logout');
+        history.push('/logout');
         break;
       default:
         return;

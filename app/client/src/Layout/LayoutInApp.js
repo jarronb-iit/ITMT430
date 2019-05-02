@@ -53,6 +53,7 @@ class LayoutInApp extends Component {
       <div className={classes.root}>
         <AppBar
           toggleDrawer={this.toggleDrawer}
+          history={history}
           isAuthenticated={isAuthenticated}
           isAdmin={isAdmin}
         />

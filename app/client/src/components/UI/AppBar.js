@@ -37,8 +37,32 @@ class MenuAppBar extends React.Component {
     this.setState({ anchorEl: event.currentTarget });
   };
 
-  handleClose = () => {
+  handleClose = item => {
     this.setState({ anchorEl: null });
+
+    switch (item) {
+      case 'Home':
+        this.props.history.push('/home');
+        break;
+      case 'Create Listing':
+        this.props.history.push('/createListing');
+        break;
+      case 'Profile':
+        // this.props.history.push('/createListing');
+        // TODO: Redirect to profile/:id
+        break;
+      case 'Settings':
+        // this.props.history.push('/createListing');
+        break;
+      case 'Admin':
+        this.props.history.push('/admin');
+        break;
+      case 'Logout':
+        this.props.history.push('/logout');
+        break;
+      default:
+        return;
+    }
   };
 
   render() {
@@ -85,9 +109,15 @@ class MenuAppBar extends React.Component {
                 open={open}
                 onClose={this.handleClose}
               >
-                <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                <MenuItem onClick={this.handleClose}>My account</MenuItem>
-                <MenuItem onClick={this.handleClose}>Logout</MenuItem>
+                <MenuItem onClick={() => this.handleClose('Profile')}>
+                  Profile
+                </MenuItem>
+                <MenuItem onClick={() => this.handleClose('My account')}>
+                  My account
+                </MenuItem>
+                <MenuItem onClick={() => this.handleClose('Logout')}>
+                  Logout
+                </MenuItem>
               </Menu>
             </div>
           </Toolbar>

@@ -5,6 +5,7 @@ import SignupPage from '../Pages/SignupPage';
 import CreateListingPage from '../Pages/CreateListingPage';
 import AdminPage from '../Pages/AdminPage';
 import HomePage from '../Pages/HomePage';
+import LogoutPage from '../Pages/LogoutPage';
 import { Route, Switch, Redirect } from 'react-router-dom';
 // import ProtectedRoute from '../hoc/ProtectedRoute';
 import { withStyles } from '@material-ui/core/styles';
@@ -27,6 +28,7 @@ class Layout extends Component {
           <Route path="/createListing" component={CreateListingPage} />
           <Route path="/admin" component={AdminPage} />
           <Route path="/home" component={HomePage} />
+          <Route path="/logout" component={LogoutPage} />
           <Route path="/" exact component={IndexPage} />
           <Route path="/" component={() => <Redirect to="/" />} />
         </Switch>
