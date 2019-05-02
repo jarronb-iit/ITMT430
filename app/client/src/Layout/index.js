@@ -18,18 +18,44 @@ const styles = theme => ({
 
 class Layout extends Component {
   render() {
-    const { classes } = this.props;
-
+    const { classes, auth } = this.props;
+    const { isAuthenticated } = auth;
     return (
       <div className={classes.root}>
         <Switch>
+          <Route
+            path="/"
+            exact
+            component={props =>
+              isAuthenticated ? (
+                <Redirect to="/home" />
+              ) : (
+                <IndexPage {...props} />
+              )
+            }
+          />
           <Route path="/login" component={LoginPage} />
           <Route path="/signup" component={SignupPage} />
-          <ProtectedRoute path="/createListing" component={CreateListingPage} />
-          <ProtectedRoute path="/admin" component={AdminPage} />
-          <ProtectedRoute path="/home" component={HomePage} />
-          <ProtectedRoute path="/logout" component={LogoutPage} />
-          <Route path="/" exact component={IndexPage} />
+          <ProtectedRoute
+            path="/createListing"
+            component={CreateListingPage}
+            isAuthenticated={isAuthenticated}
+          />
+          <ProtectedRoute
+            path="/admin"
+            component={AdminPage}
+            isAuthenticated={isAuthenticated}
+          />
+          <ProtectedRoute
+            path="/home"
+            component={HomePage}
+            isAuthenticated={isAuthenticated}
+          />
+          <ProtectedRoute
+            path="/logout"
+            component={LogoutPage}
+            isAuthenticated={isAuthenticated}
+          />
           <Route path="/" component={() => <Redirect to="/" />} />
         </Switch>
       </div>
