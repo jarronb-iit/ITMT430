@@ -24,7 +24,6 @@ Our focus was to ensure that we incorperated all of the 13 requirements while cr
 - Complete Admin page.
 - Redesign homepage and connect all pages to homepage.
 - Install resource monitoring tool.
-- Ensure all calls are routed properly to HTTPS
 - Create navigation menu for homepage.
 
 ## Completed goals
