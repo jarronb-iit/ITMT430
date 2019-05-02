@@ -41,7 +41,6 @@ We were unable to finish the admin page this sprint. We attempted to utilize a s
 - Complete Admin page.
 - Redesign homepage and connect all pages to homepage.
 - Install resource monitoring tool.
-- Ensure all calls are routed properly to HTTPS
 
 ## Sprint 5 Rubric Info
 
