@@ -28,52 +28,16 @@ Our focus was to ensure that we incorperated all of the 13 requirements while cr
 
 ## Completed goals
 
-<!-- Design primary artboards on adobe
-
-- The designs for the process of viewing potential properties has created and the artboards have been uploaded to GitHub
-  Design the primary CSS for all react components
-- The primary CSS file has been created and is currently on github. This CSS hold the styling for the template that we will use throughout the application.
-  Begin designing React Components
-- Currently we were able to design the following react components
-  ![Component1](../../images/sprint4/firstPage.PNG)
-  ![Component2](../../images/sprint4/loginpage.PNG)
-  ![Component3](../../images/sprint4/signup.PNG)
-  ![Component4](../../images/sprint4/aboutmepage.PNG)
-  - LoginButtons: which are displayed when the user opens the application
-  - Sign up form: which displays when the user selects sign up. Currently the application can switch between this component and the LoginButtons component.
-  - Log in Form: This component is used when the user wants to log in to their account
-  - About Me: This page deals with the about me component
-    We were able to continue building the servers
-- We were able to create a Redis server
-- Connect authenticated node app client to connect to Redis server
-  Design API’s for adding user to mongodb database
-  ![apiCalls](../../images/sprint4/apiCreated.PNG)
-- This is split into two parts Users and listings
-- The list of listings api goes as follows:
-  - Delete a listing
-  - Get a listing
-  - Get a user listing
-  - Post a listing
-  - Update a listing
-- The users list of apis goes as follows:
-  - Create a user account
-  - Delete user
-  - Get current user
-  - Login user
-  - Update user
-    Connect material ui to help create more responsive buttons and formatting -->
-
-## Final To-Do
-
-<!-- For the upcoming spring we will try to complete the following:
-
-- Connect all react components to their proper buttons and functions
-- Connect forms to post to the api and create a user
-- Create React component for the listings that a user can see
-- Create React component for the Leasing Agents if they are selling a property
-- Experiment with saving images onto mongodb
-
-For the following sprint the goals that we have placed for ourselves is to connect the api calls to the React components. This will help us make the application interact with the mongodb database. We will also need to test the database for injections and ensure that the api call are secure. -->
+- Connect API to listing view
+  - Users are now able to view listings that have been created.
+- Connect API to create a new listing.
+  - Users are now able to create new listings for the platform.
+- Create Template for listing view.
+  - Users are able to complete a basic template in order to upload listings.
+- Image Preview
+  - Users are able to preview images they upload to see how it looks before uploading listings.
+- Install resource monitoring tool
+  - [NetData](https://github.com/netdata/netdata) has been utilized to handle resource monitoring. It allows for real time granular monitoring of a servers resources. It collects as much data as possible automatically in real time to allow for accurate diagnosis.
 
 ## Sprint 6 Rubric Info
 
