@@ -14,9 +14,17 @@ Our focus was to ensure that we incorperated all of the 13 requirements while cr
 - Project Manager - [Antoine Foggs](https://github.com/AFoggs)
 - IT Operations - [Theo Economos](https://github.com/teconomo)
 
-## Sprint 5 Goals
+## Sprint 6 Goals
 
-<!-- The goal of this sprint was to create a foundation for building and maintaining React components. We want to finalize all key wireframes for this sprint and how they should look like so that we have a template to build off of. The goals from the class were to create a user and go through the process of 1 key functionally of the application -->
+- Connect API to work for admin page
+- Connect API to listing view
+- Connect API to creating a new listing
+- Create Template for listing view
+- Insert Test data
+- Complete Admin page.
+- Redesign homepage and connect all pages to homepage.
+- Install resource monitoring tool.
+- Ensure all calls are routed properly to HTTPS
 
 ## Completed goals
 
