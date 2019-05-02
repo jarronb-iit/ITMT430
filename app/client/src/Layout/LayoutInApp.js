@@ -40,12 +40,20 @@ class LayoutInApp extends Component {
     const { showDrawer } = this.state;
     const { isAuthenticated } = auth;
     let isAdmin;
+    let isBuyer;
 
     if (auth.user) {
       auth.user.roles.find(role => role === 'admin')
         ? (isAdmin = true)
         : (isAdmin = false);
       console.log(isAdmin);
+    }
+
+    if (auth.user) {
+      auth.user.roles.find(role => role === 'buyer')
+        ? (isBuyer = true)
+        : (isBuyer = false);
+      console.log(isBuyer);
     }
 
     return (
@@ -55,6 +63,7 @@ class LayoutInApp extends Component {
           history={history}
           isAuthenticated={isAuthenticated}
           isAdmin={isAdmin}
+          isBuyer={isBuyer}
         />
         <Drawer
           history={history}
@@ -63,6 +72,7 @@ class LayoutInApp extends Component {
           onClose={this.onDrawerClose}
           isAuthenticated={isAuthenticated}
           isAdmin={isAdmin}
+          isBuyer={isBuyer}
         />
         {children}
       </div>
