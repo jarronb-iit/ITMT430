@@ -66,6 +66,7 @@ Vagrant.configure("2") do |config|
   # config.vm.provision "shell", inline: <<-SHELL
   #   apt-get update
   #   apt-get install -y apache2
+  #   bash <(curl -Ss https://my-netdata.io/kickstart.sh) --dont-wait
   # SHELL
 end
 
