@@ -3,11 +3,14 @@ import LayoutInApp from '../../Layout/LayoutInApp';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions';
 import UsersDataTable from './UsersDataTable';
+import ListingsDataTable from './ListingsDataTable';
 import {
   withStyles,
   createMuiTheme,
   MuiThemeProvider
 } from '@material-ui/core/styles';
+
+import { Button } from '@material-ui/core';
 
 const styles = theme => ({
   root: {
@@ -15,11 +18,17 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center'
+  },
+  button: {
+    margin: '10px'
   }
 });
 
 class ReactAdmin extends Component {
-  state = {};
+  state = {
+    showUsers: true,
+    showListings: false
+  };
 
   getMuiTheme = () =>
     createMuiTheme({
@@ -34,22 +43,6 @@ class ReactAdmin extends Component {
           paper: {
             boxShadow: 'none'
           }
-        },
-        MUIDataTableBodyCell: {
-          root: {
-            // backgroundColor: '#FF0000'
-          },
-          responsiveStacked: {
-            '@media screen and (min-width: 100px)': {
-              border: 'solid 2px rgba(0, 0, 0, 0.15)'
-            }
-          }
-        },
-        MUIDataTableFilterList: {
-          '& + div': {
-            overflow: 'scroll',
-            position: 'static'
-          }
         }
       }
     });
@@ -59,7 +52,19 @@ class ReactAdmin extends Component {
     this.props.getListings();
   }
 
-  static getDerivedStateFromProps(props, state) {}
+  onToggleData = dataSet => e => {
+    if (dataSet === 'users') {
+      this.setState({
+        showUsers: true,
+        showListings: false
+      });
+    } else {
+      this.setState({
+        showUsers: false,
+        showListings: true
+      });
+    }
+  };
 
   transformUsersData = users => {
     return users.map(user => {
@@ -72,18 +77,46 @@ class ReactAdmin extends Component {
   };
 
   render() {
-    let { history, users, listings } = this.props;
+    let { history, users, listings, classes } = this.props;
+    let { showUsers, showListings } = this.state;
     let data;
+    let toggleButton;
+    let renderedComponent;
 
-    if (users) {
-      // users = this.transformUsersData(users);
+    if (showUsers) {
       data = users;
+      renderedComponent = <UsersDataTable data={data} />;
+      toggleButton = (
+        <Button
+          variant="contained"
+          color="secondary"
+          className={classes.button}
+          onClick={this.onToggleData('listings')}
+        >
+          Switch to Listings
+        </Button>
+      );
+    } else {
+      data = listings;
+      renderedComponent = <ListingsDataTable data={data} />;
+      toggleButton = (
+        <Button
+          variant="contained"
+          color="secondary"
+          className={classes.button}
+          onClick={this.onToggleData('users')}
+        >
+          Switch to Users
+        </Button>
+      );
     }
+    console.log(showUsers);
 
     return (
       <LayoutInApp history={history}>
+        {toggleButton}
         <MuiThemeProvider theme={this.getMuiTheme()}>
-          <UsersDataTable data={data} />
+          {renderedComponent}
         </MuiThemeProvider>
       </LayoutInApp>
     );

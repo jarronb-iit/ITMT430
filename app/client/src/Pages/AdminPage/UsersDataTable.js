@@ -71,7 +71,6 @@ const columns = [
 ];
 
 const options = {
-  responsive: 'stacked',
   customToolbar: () => {
     return <CustomToolbar />;
   }
