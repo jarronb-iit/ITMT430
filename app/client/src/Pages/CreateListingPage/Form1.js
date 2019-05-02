@@ -69,7 +69,7 @@ const styles = theme => ({
 });
 
 const Form2 = props => {
-  const { classes, values, handleChange, handleArrayChanges } = props;
+  const { classes, values, handleChange, handleArrayChanges, history } = props;
 
   const nextPage = e => {
     e.preventDefault();
@@ -78,7 +78,7 @@ const Form2 = props => {
 
   const goBack = e => {
     e.preventDefault();
-    props.prevStep();
+    history.goBack();
   };
 
   return (

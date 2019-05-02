@@ -1,38 +1,74 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   AppBar,
   Toolbar,
   IconButton,
   Typography,
-  Link
+  Menu,
+  MenuItem
 } from '@material-ui/core/';
+
 import { withStyles } from '@material-ui/core/styles';
-import { Menu as MenuIcon } from '@material-ui/icons';
-import { Link as RouterLink } from 'react-router-dom';
+import { Menu as MenuIcon, AccountCircle } from '@material-ui/icons';
 
 const styles = theme => ({
   root: {
-    width: '100%'
-  },
-  grow3: {
-    flexGrow: 5
+    flexGrow: 1
   },
   grow: {
     flexGrow: 1
   },
-  link: {
-    color: '#fff'
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20
   }
 });
 
-const HomeLink = props => <RouterLink to="/home" {...props} />;
-const MyLink = props => <RouterLink to="/open-collective" {...props} />;
-const MyLLink = props => <RouterLink to="/open-collective" {...props} />;
+class MenuAppBar extends React.Component {
+  state = {
+    auth: true,
+    anchorEl: null
+  };
+  handleChange = event => {
+    this.setState({ auth: event.target.checked });
+  };
 
-class PrimarySearchAppBar extends React.Component {
+  handleMenu = event => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
+
+  handleClose = item => {
+    this.setState({ anchorEl: null });
+
+    switch (item) {
+      case 'Home':
+        this.props.history.push('/home');
+        break;
+      case 'Create Listing':
+        this.props.history.push('/createListing');
+        break;
+      case 'Profile':
+        // this.props.history.push('/createListing');
+        // TODO: Redirect to profile/:id
+        break;
+      case 'Settings':
+        // this.props.history.push('/createListing');
+        break;
+      case 'Admin':
+        this.props.history.push('/admin');
+        break;
+      case 'Logout':
+        this.props.history.push('/logout');
+        break;
+      default:
+        return;
+    }
+  };
+
   render() {
-    const classes = this.props.classes;
+    const { classes, toggleDrawer } = this.props;
+    let { anchorEl } = this.state;
+    const open = Boolean(anchorEl);
 
     return (
       <div className={classes.root}>
@@ -42,31 +78,48 @@ class PrimarySearchAppBar extends React.Component {
               className={classes.menuButton}
               color="inherit"
               aria-label="Menu"
+              onClick={toggleDrawer}
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" color="inherit" className={classes.grow3}>
+            <Typography variant="h6" color="inherit" className={classes.grow}>
               Roomie
             </Typography>
 
-            <Link
-              component={HomeLink}
-              className={[this.props.classes.link, classes.grow].join(' ')}
-            >
-              Home
-            </Link>
-            <Link
-              component={MyLink}
-              className={[this.props.classes.link, classes.grow].join(' ')}
-            >
-              Link
-            </Link>
-            <Link
-              component={MyLink}
-              className={[this.props.classes.link, classes.grow].join(' ')}
-            >
-              Link
-            </Link>
+            <div>
+              <IconButton
+                aria-owns={open ? 'menu-appbar' : undefined}
+                aria-haspopup="true"
+                onClick={this.handleMenu}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right'
+                }}
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right'
+                }}
+                open={open}
+                onClose={this.handleClose}
+              >
+                <MenuItem onClick={() => this.handleClose('Profile')}>
+                  Profile
+                </MenuItem>
+                <MenuItem onClick={() => this.handleClose('My account')}>
+                  My account
+                </MenuItem>
+                <MenuItem onClick={() => this.handleClose('Logout')}>
+                  Logout
+                </MenuItem>
+              </Menu>
+            </div>
           </Toolbar>
         </AppBar>
       </div>
@@ -74,8 +127,8 @@ class PrimarySearchAppBar extends React.Component {
   }
 }
 
-PrimarySearchAppBar.propTypes = {
+MenuAppBar.propTypes = {
   // classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(PrimarySearchAppBar);
+export default withStyles(styles)(MenuAppBar);
