@@ -39,7 +39,6 @@ class LayoutInApp extends Component {
     const { classes, children, history, auth } = this.props;
     const { showDrawer } = this.state;
     const { isAuthenticated } = auth;
-    let user;
     let isAdmin;
 
     if (auth.user) {
