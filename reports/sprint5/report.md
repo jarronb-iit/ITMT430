@@ -8,10 +8,17 @@
 - Project Manager - [Johnathan Garcia](https://github.com/)
 - IT Operations - [Jarron Bailey](https://github.com/jarronb)
 
+## Sprint 5 Goals
 
-## Sprint 4 Goals
+The goals for sprint 5 were as follows:
 
-<!-- The goal of this sprint was to create a foundation for building and maintaining React components. We want to finalize all key wireframes for this sprint and how they should look like so that we have a template to build off of. The goals from the class were to create a user and go through the process of 1 key functionally of the application -->
+- Connect all react components to their proper buttons and functions
+- Connect forms to post to the api and create a user
+- Create React component for the listings that a user can see
+- Create React component for the Leasing Agents if they are selling a property
+- Experiment with saving images onto mongodb
+
+For the this sprint, the goals that we have placed for ourselves is to connect the api calls to the React components. This will help us make the application interact with the mongodb database. We will also need to test the database for injections and ensure that the api call are secure.
 
 ## Completed goals
 
