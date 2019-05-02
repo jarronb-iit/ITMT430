@@ -8,7 +8,7 @@ Our focus was to ensure that we incorperated all of the 13 requirements while cr
 
 ## Roles
 
-- Junior Developer - [Giancarlo Barillas](https://github.com/giancarlobarillas), [Johnathan Garcia](https://github.com/)
+- Junior Developer - [Giancarlo Barillas](https://github.com/giancarlobarillas)
 - Lead Developer - [Erick Cabrera](https://github.com/ecabrera796)
 - UI/UX - [Jarron Bailey](https://github.com/jarronb)
 - Project Manager - [Antoine Foggs](https://github.com/AFoggs)
