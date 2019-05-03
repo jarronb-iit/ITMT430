@@ -21,6 +21,7 @@ const styles = theme => ({
     backgroundPosition: 'center center',
     backgroundRepeat: 'repeat',
     backgroundSize: 'cover',
+    backgroundAttachment: 'fixed',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

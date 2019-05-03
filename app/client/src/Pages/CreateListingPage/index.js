@@ -22,6 +22,7 @@ const styles = theme => ({
     backgroundPosition: 'center center',
     backgroundRepeat: 'repeat',
     backgroundSize: 'cover',
+    backgroundAttachment: 'fixed',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -162,7 +163,7 @@ class ListingForm extends Component {
       photos
     };
 
-    this.props.addListing(listing);
+    this.props.addListing(listing, this.props.history);
   };
 
   submitPhotos = () => {};
@@ -286,7 +287,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addListing: listing => dispatch(actions.addListingInit(listing))
+    addListing: (listing, history) =>
+      dispatch(actions.addListingInit(listing, history))
   };
 };
 
