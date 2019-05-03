@@ -70,14 +70,19 @@ const columns = [
   }
 ];
 
-const options = {
-  customToolbar: () => {
-    return <CustomToolbar />;
-  }
-};
-
 export default function UsersDataTable(props) {
-  const { data } = props;
+  const { data, onDeleteData, deleteButtonType } = props;
+
+  const options = {
+    customToolbar: () => {
+      return (
+        <CustomToolbar
+          onDeleteData={onDeleteData}
+          deleteButtonType={deleteButtonType}
+        />
+      );
+    }
+  };
 
   return (
     <MUIDataTable
