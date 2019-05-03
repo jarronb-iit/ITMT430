@@ -15,11 +15,13 @@ class App extends Component {
   }
 
   render() {
-    const { auth } = this.props;
+    const { auth, errors, clearErrors } = this.props;
     let renderedComp = '';
 
     if (auth.done) {
-      renderedComp = <Layout auth={auth} />;
+      renderedComp = (
+        <Layout auth={auth} errors={errors} clearErrors={clearErrors} />
+      );
     }
 
     return (
@@ -33,13 +35,15 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    auth: state.auth
+    auth: state.auth,
+    errors: state.errors.errors
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    loadUser: () => dispatch(actions.loadUserInit())
+    loadUser: () => dispatch(actions.loadUserInit()),
+    clearErrors: () => dispatch(actions.clearErrors())
   };
 };
 
