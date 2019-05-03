@@ -20,14 +20,19 @@ Our focus was to ensure that we incorperated all of the 13 requirements while cr
 - Connect API to listing view
 - Connect API to creating a new listing
 - Create Template for listing view
-- Fully complete our what our home listing view will look like
+- Fully complete out what our home listing view will look like
 - Fix out our Photo Upload API for listings
 - Insert Test data
-- Complete Admin page.
+- Complete Admin page to contain both User listings as well as Property Listings
+- Admin functionality to be able to select, modify and delete listings.
 - Redesign homepage and connect all pages to homepage.
+- Utilize Material UI to give an enhanced look to our overall structure design
+- Fix the listing Creation module to also include file dropzone
 - Install resource monitoring tool.
 - Create navigation menu for homepage.
+- Add pop ups for errors to notify the users
 - Test out a global entity for our title font
+
 
 ## Completed goals
 
@@ -35,13 +40,18 @@ Our focus was to ensure that we incorperated all of the 13 requirements while cr
   - Users are now able to view listings that have been created.
 - Connect API to create a new listing.
   - Users are now able to create new listings for the platform.
+  - File Dropzone component has been added in as well to be able to add in photos for the listing or schematics
 - Create Template for listing view.
   - Users are able to complete a basic template in order to upload listings.
+- Fully complete out our Admin Page.
+  - Admin can see both Users and Properties and select, modify and delete. 
 - Image Preview
   - Users are able to preview images they upload to see how it looks before uploading listings.
 - Install resource monitoring tool
   - [NetData](https://github.com/netdata/netdata) has been utilized to handle resource monitoring. It allows for real time granular monitoring of a servers resources. It collects as much data as possible automatically in real time to allow for accurate diagnosis.
-- We couldn't utilize the font we had hoped for as it required payment for 		personal or commercial license. So we instead fell back on our old one. 
+- We couldn't utilize the font we had hoped for as it required payment for personal or commercial license. So we instead fell back on our old one. 
+- Pop ups were added for better accessability and UX for the user
+- 
 
 ## Sprint 6 Rubric Info
 
@@ -112,6 +122,18 @@ Screenshots of all completion for Sprint 6:
 
 - Issue #12
 	![issue 12](../../images/sprint6/issue12.JPG)	
+
+- Issue #13
+	![issue 13](../../images/sprint6/issue13.JPG)
+
+- Issue #14
+	![issue 14](../../images/sprint6/issue14.JPG)
+
+- Issue #15
+	![issue 15](../../images/sprint6/issue15.JPG)
+
+- Issue #16
+	![issue 16](../../images/sprint6/issue16.JPG)
 
 
 #### Team Members
