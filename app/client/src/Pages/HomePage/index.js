@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import LayoutInApp from '../../Layout/LayoutInApp';
+import ListingView from '../ListingView/ListingView';
 
 const styles = theme => ({
   root: {
@@ -19,7 +20,10 @@ class HomePage extends Component {
 
     return (
       <LayoutInApp history={history}>
-        <div>hey</div>
+        <ListingView />
+        <ListingView />
+        <ListingView />
+        <ListingView />
       </LayoutInApp>
     );
   }
