@@ -61,4 +61,5 @@ npm install passport-google-oauth -g
 
 # Installing Net Data which is a resource management tool for servers.
 cd ~
-bash <(curl -Ss https://my-netdata.io/kickstart.sh) --dont-wait
+wget https://my-netdata.io/kickstart.sh 
+bash kickstart.sh --dont-wait

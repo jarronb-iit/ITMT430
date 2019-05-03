@@ -90,13 +90,6 @@ const columns = [
   }
 ];
 
-const options = {
-  responsive: 'stacked',
-  customToolbar: () => {
-    return <CustomToolbar />;
-  }
-};
-
 const transformData = data => {
   return data.map(listing => {
     const {
@@ -133,8 +126,20 @@ const transformData = data => {
 };
 
 export default function ListingsDataTable(props) {
-  let { data } = props;
+  let { data, onDeleteData, deleteButtonType } = props;
   data = transformData(data);
+  const options = {
+    responsive: 'stacked',
+    customToolbar: () => {
+      return (
+        <CustomToolbar
+          onDeleteData={onDeleteData}
+          deleteButtonType={deleteButtonType}
+        />
+      );
+    }
+  };
+
   return (
     <MUIDataTable
       title="Listings Data Table"

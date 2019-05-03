@@ -2,17 +2,17 @@
 
 ## Project Overview
 
-For our project, our intial scope was to create a full fledged real-estate/roommate application. Over the course of a few weeks, we soon realized that this was a larger scope for us to fulfill than we originally had time to deal with. As such, we focused primarily on working on what would be able to serve as a fully functioning mvp of the original idea.
+For our project, our intial scope was to create not only a fully working property listing platform, but also a roommate connection framework. After realizing how much of an addition the roommate functionality was, we instead scrapped it and focused on building out the framework for a clean and modern platform where users can be considered buyers or sellers and can view out listings. Sellers would be considered landlords, agents or property managers. Buyers would be considered anyone else. As stated, this would be a two sided market where based on the user attribute, the specific login would be conveyed. Listings would be integrated through our usage of a node JS express API server.
 
 Our focus was to ensure that we incorperated all of the 13 requirements while creating something that could have potential use outside of the classroom. It was a long journey, but we have something that fulfills our basic requirements, that also helped the entire team to learn what it takes to develop an application. Additionally, we created the base of a project that has real world potential, should any of us pursue it further.
 
 ## Roles
 
 - Junior Developer - [Giancarlo Barillas](https://github.com/giancarlobarillas)
-- Lead Developer - [Erick Cabrera](https://github.com/ecabrera796)
+- IT Ops - [Erick Cabrera](https://github.com/ecabrera796)
 - UI/UX - [Jarron Bailey](https://github.com/jarronb)
 - Project Manager - [Antoine Foggs](https://github.com/AFoggs)
-- IT Operations - [Theo Economos](https://github.com/teconomo)
+- Junior Developer - [Theo Economos](https://github.com/teconomo)
 
 ## Sprint 6 Goals
 
@@ -20,11 +20,14 @@ Our focus was to ensure that we incorperated all of the 13 requirements while cr
 - Connect API to listing view
 - Connect API to creating a new listing
 - Create Template for listing view
+- Fully complete our what our home listing view will look like
+- Fix out our Photo Upload API for listings
 - Insert Test data
 - Complete Admin page.
 - Redesign homepage and connect all pages to homepage.
 - Install resource monitoring tool.
 - Create navigation menu for homepage.
+- Test out a global entity for our title font
 
 ## Completed goals
 
@@ -38,6 +41,7 @@ Our focus was to ensure that we incorperated all of the 13 requirements while cr
   - Users are able to preview images they upload to see how it looks before uploading listings.
 - Install resource monitoring tool
   - [NetData](https://github.com/netdata/netdata) has been utilized to handle resource monitoring. It allows for real time granular monitoring of a servers resources. It collects as much data as possible automatically in real time to allow for accurate diagnosis.
+- We couldn't utilize the font we had hoped for as it required payment for 		personal or commercial license. So we instead fell back on our old one. 
 
 ## Sprint 6 Rubric Info
 
@@ -62,7 +66,26 @@ Include screenshots of Trello board.
 
 ## Github issues
 
-Include screenshots of github issues.
+- Full list of issues in chronological order:
+
+- Issue #1
+	![issue 1](../../images/sprint6/issue1.JPG)
+
+- Issue #2
+	![issue 2](../../images/sprint6/issue2.JPG)
+
+- Issue #3
+	![issue 3](../../images/sprint6/issue3.JPG)
+
+- Issue #4
+	![issue 4](../../images/sprint6/issue4.JPG)
+
+- Issue #5
+	![issue 5](../../images/sprint6/issue5.JPG)
+
+- Issue #6
+	![issue 6](../../images/sprint6/issue6.JPG)
+
 
 #### Team Members
 

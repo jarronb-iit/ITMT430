@@ -16,10 +16,10 @@ export const getListingsSuccess = listings => {
 };
 
 // Add listing
-export const addListingInit = listing => {
+export const addListingInit = (listing, history) => {
   return {
     type: actionTypes.ADD_LISTING_INIT,
-    payload: { listing: listing }
+    payload: { listing: listing, history: history }
   };
 };
 

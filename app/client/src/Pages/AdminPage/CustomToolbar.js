@@ -14,14 +14,21 @@ class CustomToolbar extends React.Component {
   };
 
   render() {
-    const { classes, buttonType } = this.props;
+    const { classes, deleteButtonType, onDeleteData } = this.props;
+    console.log(deleteButtonType);
+
+    if (deleteButtonType === 'users') {
+      console.log('user me ');
+    } else if (deleteButtonType === 'listings') {
+      console.log(' liasings me');
+    }
 
     return (
       <React.Fragment>
         <Tooltip title={'Delete All'}>
           <IconButton
             className={classes.iconButton}
-            // onClick={onDeleteClick(deleteWho)}
+            onClick={onDeleteData(deleteButtonType)}
           >
             <DeleteIcon />
           </IconButton>
