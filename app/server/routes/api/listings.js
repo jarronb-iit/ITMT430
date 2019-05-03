@@ -53,7 +53,11 @@ router.post('/', auth, (req, res) => {
         .catch(err => {
           if (err.errors) {
             const errors = errorsFormatter(err);
-            res.status(409).json({ errors: errors });
+            errors.type = 'listing';
+
+            res.status(409).json({
+              errors: [{ message: 'Listing fields must be completed' }]
+            });
           } else {
             console.log(err);
           }
