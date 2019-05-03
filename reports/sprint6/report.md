@@ -66,7 +66,26 @@ Include screenshots of Trello board.
 
 ## Github issues
 
-Include screenshots of github issues.
+- Full list of issues in chronological order:
+
+- Issue #1
+	![issue 1](../../images/sprint6/issue1.JPG)
+
+- Issue #2
+	![issue 2](../../images/sprint6/issue2.JPG)
+
+- Issue #3
+	![issue 3](../../images/sprint6/issue3.JPG)
+
+- Issue #4
+	![issue 4](../../images/sprint6/issue4.JPG)
+
+- Issue #5
+	![issue 5](../../images/sprint6/issue5.JPG)
+
+- Issue #6
+	![issue 6](../../images/sprint6/issue6.JPG)
+
 
 #### Team Members
 
