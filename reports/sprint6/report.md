@@ -62,7 +62,16 @@ Our focus was to ensure that we incorperated all of the 13 requirements while cr
 
 ## Trello Board
 
-Include screenshots of Trello board.
+Screenshots of all completion for Sprint 6:
+
+- Trello 1/3
+	![Trello 1](../../images/sprint6/trello1.JPG)
+
+- Trello 2/3
+	![Trello 2](../../images/sprint6/trello2.JPG)
+
+- Trello 3/3
+	![Trello 3](../../images/sprint6/trello3.JPG)	
 
 ## Github issues
 
@@ -104,7 +113,7 @@ Include screenshots of Trello board.
 - Issue #12
 	![issue 12](../../images/sprint6/issue12.JPG)	
 
-		
+
 #### Team Members
 
 [Antoine Foggs](https://github.com/AFoggs)
