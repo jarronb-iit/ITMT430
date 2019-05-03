@@ -88,7 +88,6 @@ class ListingView extends Component {
                 <GridListTile key={photo.url}>
                   <img src={photo.url} alt={photo.originalName} />
                   <GridListTileBar
-                    title={photo.originalName}
                     classes={{
                       root: classes.titleBar,
                       title: classes.title
