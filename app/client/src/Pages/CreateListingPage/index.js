@@ -31,7 +31,7 @@ const styles = theme => ({
   },
   brandName: {
     display: 'block',
-    marginTop: '5vh',
+    marginTop: '15vh',
     marginBottom: '5vh',
     width: '100%',
     fontSize: '25vw',
