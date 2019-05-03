@@ -9,6 +9,7 @@ import LogoutPage from '../Pages/LogoutPage';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import ProtectedRoute from '../hoc/ProtectedRoute';
 import { withStyles } from '@material-ui/core/styles';
+import Snackbar from '../components/UI/Snackbar/Snackbar';
 
 const styles = theme => ({
   root: {
@@ -17,11 +18,47 @@ const styles = theme => ({
 });
 
 class Layout extends Component {
+  state = {
+    showSnackbar: false
+  };
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps.errors.length > 1);
+
+    if (nextProps.errors.length > 0) {
+      this.setState({
+        showSnackbar: true
+      });
+    }
+  }
+
+  onSnackbarOpen = () => {
+    this.setState({ showSnackbar: true });
+    setTimeout(this.onSnackbarClose, 6000);
+  };
+
+  onSnackbarClose = () => {
+    this.setState({ showSnackbar: false });
+    this.props.clearErrors();
+  };
+
   render() {
-    const { classes, auth } = this.props;
+    const { classes, auth, errors } = this.props;
+    const { showSnackbar } = this.state;
     const { isAuthenticated } = auth;
+
+    let snackbarConfig = {
+      onSnackBarClose: this.onSnackbarClose,
+      onSnackBarOpen: this.onSnackbarOpen,
+      showSnackbar: showSnackbar
+    };
+
+    if (errors.length > 0) {
+      snackbarConfig.message = errors[0].message;
+    }
+
     return (
       <div className={classes.root}>
+        {auth.done && <Snackbar snackbarConfig={snackbarConfig} />}
         <Switch>
           <Route
             path="/"
