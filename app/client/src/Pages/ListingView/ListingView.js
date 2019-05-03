@@ -26,8 +26,7 @@ import { FormatAlignLeft, Autorenew } from '@material-ui/icons';
 const styles = theme => ({
   card: {
     //maxWidth: 600,
-    alignItems: 'center',
-    textAlign: 'center'
+    alignItems: 'center'
   },
   root: {
     display: 'flex',
@@ -47,8 +46,12 @@ const styles = theme => ({
   titleBar: {
     background:
       'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)'
+  },
+  center: {
+    textAlign: 'center'
   }
 });
+
 
 class ListingView extends Component {
   state = { expanded: false };
@@ -64,12 +67,22 @@ class ListingView extends Component {
 
   render() {
     const { classes, data } = this.props;
-
     console.log(data.photos);
+    function genereateAmenties(data){
+        let amenatiesInfo="";
+        if(data.amenities.cooling){
+            amenatiesInfo="This aparment has in-unit cooling. "
+        }
+        else if(data.amenities)
+    }
 
     return (
       <Card className={classes.card}>
-        <CardHeader title={data.name} subheader={data.dateListed} />
+        <CardHeader
+          className={classes.center}
+          title={data.name}
+          subheader={data.dateListed}
+        />
         <CardContent>
           <div className={classes.root}>
             <GridList className={classes.gridList} cols={2.5}>
@@ -87,7 +100,7 @@ class ListingView extends Component {
               ))}
             </GridList>
           </div>
-          <Grid container spacing={24}>
+          <Grid container spacing={24} className={classes.center}>
             <Grid item xs={6}>
               <Typography color='primary' variant='h6' component='p'>
                 {data.address.street}
