@@ -128,11 +128,20 @@ class ListingView extends Component {
             <ExpandMoreIcon />
           </IconButton>
         </CardActions>
-        <Collapse in={this.state.expanded} timeout='auto' unmountOnExit>
+        <Collapse
+          in={this.state.expanded}
+          className={classes.center}
+          timeout='auto'
+          unmountOnExit
+        >
           <CardContent>
-            <Typography component='p'>Bathrooms: {data.bathrooms}</Typography>
-            <Typography component='p'>Bedrooms: {data.bedrooms}</Typography>
-            <Typography component='p'>
+            <Typography color='primary' variant='h6' component='p'>
+              Bathrooms: {data.bathrooms}
+            </Typography>
+            <Typography color='primary' variant='h6' component='p'>
+              Bedrooms: {data.bedrooms}
+            </Typography>
+            <Typography color='primary' variant='h6' component='p'>
               Property Type: {data.listingType}
             </Typography>
           </CardContent>
