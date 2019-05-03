@@ -9,6 +9,7 @@ import Form2 from './Form2';
 import Form3 from './Form3';
 import Form4 from './Form4';
 import Confirm from './Confirm';
+import LayoutInApp from '../../Layout/LayoutInApp';
 
 const styles = theme => ({
   root: {
@@ -265,17 +266,19 @@ class ListingForm extends Component {
     }
 
     return (
-      <div className={classes.root}>
-        <Typography
-          className={classes.brandName}
-          variant="h1"
-          color="primary"
-          fontWeight={800}
-        >
-          Roomie
-        </Typography>
-        {renderedPage}
-      </div>
+      <LayoutInApp history={this.props.history}>
+        <div className={classes.root}>
+          <Typography
+            className={classes.brandName}
+            variant='h1'
+            color='primary'
+            fontWeight={800}
+          >
+            Roomie<small>&trade;</small>
+          </Typography>
+          {renderedPage}
+        </div>
+      </LayoutInApp>
     );
   }
 }
