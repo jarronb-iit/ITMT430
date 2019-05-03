@@ -84,21 +84,21 @@ const LoginPage = props => {
 
   return (
     <div className={classes.root}>
-      <Typography className={classes.formHeader} variant="h6" color="primary">
+      <Typography className={classes.formHeader} variant='h6' color='primary'>
         Tell us more about the property:
       </Typography>
       <Grid container className={classes.grid}>
         <Grid item xs={12}>
           <TextField
-            id="bedrooms"
-            label="Bedrooms"
-            placeholder="Ex. 5"
+            id='bedrooms'
+            label='Bedrooms'
+            placeholder='Ex. 5'
             className={classes.textField}
-            margin="normal"
-            variant="filled"
+            margin='normal'
+            variant='filled'
             onChange={handleChange('bedrooms')}
             defaultValue={values.bedrooms}
-            type="number"
+            type='number'
             InputProps={{
               className: classes.input,
               classes: {
@@ -110,15 +110,15 @@ const LoginPage = props => {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            id="bathrooms"
-            label="Bathrooms"
-            placeholder="Ex. 7"
+            id='bathrooms'
+            label='Bathrooms'
+            placeholder='Ex. 7'
             className={classes.textField}
-            margin="normal"
-            variant="filled"
+            margin='normal'
+            variant='filled'
             onChange={handleChange('bathrooms')}
             defaultValue={values.bathrooms}
-            type="number"
+            type='number'
             InputProps={{
               className: classes.input,
               classes: {
@@ -130,15 +130,15 @@ const LoginPage = props => {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            id="squareFootage"
-            label="Square footage"
-            placeholder="Ex. 7000"
+            id='squareFootage'
+            label='Square footage'
+            placeholder='Ex. 7000'
             className={classes.textField}
-            margin="normal"
-            variant="filled"
+            margin='normal'
+            variant='filled'
             onChange={handleChange('squareFootage')}
             defaultValue={values.squareFootage}
-            type="number"
+            type='number'
             InputProps={{
               className: classes.input,
               classes: {
@@ -150,13 +150,13 @@ const LoginPage = props => {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            id="price"
-            label="Price"
+            id='price'
+            label='Price'
             placeholder={matches ? 'Ex. 4700' : ''}
             className={classes.textField}
-            margin="normal"
-            variant="filled"
-            type="number"
+            margin='normal'
+            variant='filled'
+            type='number'
             onChange={handleChange('price')}
             defaultValue={values.price}
             InputProps={{
@@ -170,13 +170,12 @@ const LoginPage = props => {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            id="dateAvailable"
-            label={matches ? '' : 'Date available'}
-            placeholder="05/03/2019"
+            id='dateAvailable'
+            // label={'Date Available'}
             className={classes.textField}
-            margin="normal"
-            variant="filled"
-            type="date"
+            margin='normal'
+            variant='filled'
+            type='date'
             onChange={handleChange('dateAvailable')}
             defaultValue={values.dateAvailable}
             InputProps={{
@@ -190,8 +189,8 @@ const LoginPage = props => {
         <Grid container className={classes.buttonGrid}>
           <Grid item xs={4}>
             <Button
-              variant="contained"
-              color="secondary"
+              variant='contained'
+              color='secondary'
               className={classes.button}
               onClick={goBack}
             >
@@ -200,8 +199,8 @@ const LoginPage = props => {
           </Grid>
           <Grid item xs={4}>
             <Button
-              variant="contained"
-              color="primary"
+              variant='contained'
+              color='primary'
               className={classes.button}
               onClick={nextPage}
             >

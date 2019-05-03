@@ -116,10 +116,6 @@ app.use('/api/user', user);
 app.use('/api/auth', auth);
 app.use('/api/admin', admin);
 
-app.get('/', (req, res) => {
-  res.json({ msg: 'Bye world' });
-});
-
 // Server Static Assets if in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
