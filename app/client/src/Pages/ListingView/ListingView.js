@@ -26,7 +26,8 @@ import { FormatAlignLeft, Autorenew } from '@material-ui/icons';
 const styles = theme => ({
   card: {
     //maxWidth: 600,
-    alignItems: 'center'
+    alignItems: 'center',
+    textAlign: 'center'
   },
   root: {
     display: 'flex',
@@ -48,24 +49,6 @@ const styles = theme => ({
       'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)'
   }
 });
-
-const tileData = [
-  {
-    img: 'https://source.unsplash.com/random',
-    title: 'First image',
-    author: 'Bobby'
-  },
-  {
-    img: 'https://source.unsplash.com/random',
-    title: 'second image',
-    author: 'Lilly'
-  },
-  {
-    img: 'https://source.unsplash.com/random',
-    title: 'second image',
-    author: 'Lary'
-  }
-];
 
 class ListingView extends Component {
   state = { expanded: false };
@@ -90,11 +73,11 @@ class ListingView extends Component {
         <CardContent>
           <div className={classes.root}>
             <GridList className={classes.gridList} cols={2.5}>
-              {tileData.map(tile => (
-                <GridListTile key={tile.img}>
-                  <img src={tile.img} alt={tile.title} />
+              {data.photos.map(photo => (
+                <GridListTile key={photo.url}>
+                  <img src={photo.url} alt={photo.originalName} />
                   <GridListTileBar
-                    title={tile.title}
+                    title={photo.originalName}
                     classes={{
                       root: classes.titleBar,
                       title: classes.title
@@ -106,14 +89,20 @@ class ListingView extends Component {
           </div>
           <Grid container spacing={24}>
             <Grid item xs={6}>
-              <Typography component='p'>{data.address.street}</Typography>
-              <Typography component='p'>
+              <Typography color='primary' variant='h6' component='p'>
+                {data.address.street}
+              </Typography>
+              <Typography color='primary' variant='h6' component='p'>
                 {data.address.city} {data.address.state}, {data.address.zipCode}
               </Typography>
             </Grid>
             <Grid item xs={6}>
-              <Typography component='p'>${data.price}</Typography>
-              <Typography component='p'>{data.squareFootage} sf</Typography>
+              <Typography color='primary' variant='h6' component='p'>
+                ${data.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+              </Typography>
+              <Typography color='primary' variant='h6' component='p'>
+                {data.squareFootage} SF
+              </Typography>
             </Grid>
           </Grid>
         </CardContent>
