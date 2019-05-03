@@ -64,7 +64,7 @@ mongoose
 
 // Test Users
 const User = require('./models/User');
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'production') {
   for (let i = 0; i <= 15; i++) {
     let user;
 
