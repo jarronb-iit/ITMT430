@@ -79,7 +79,7 @@ class ListingView extends Component {
         <CardHeader
           className={classes.center}
           title={data.name}
-          subheader={data.dateListed}
+          subheader={data.dateListed.substring(0, 10)}
         />
         <CardContent>
           <div className={classes.root}>
@@ -88,7 +88,6 @@ class ListingView extends Component {
                 <GridListTile key={photo.url}>
                   <img src={photo.url} alt={photo.originalName} />
                   <GridListTileBar
-                    title={photo.originalName}
                     classes={{
                       root: classes.titleBar,
                       title: classes.title
@@ -112,7 +111,7 @@ class ListingView extends Component {
                 ${data.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
               </Typography>
               <Typography color='primary' variant='h6' component='p'>
-                {data.squareFootage} SF
+                {data.squareFootage} Sqft.
               </Typography>
             </Grid>
           </Grid>
@@ -136,14 +135,6 @@ class ListingView extends Component {
             <Typography component='p'>
               Property Type: {data.listingType}
             </Typography>
-            <Typography component='p'>
-              Amenties: Cooling, heating, indoor fireplace
-            </Typography>
-            <Typography component='p'>
-              This apartment has a Garage and a Street
-            </Typography>
-            <Typography component='p'>Pets are allowed</Typography>
-            <Typography component='p'>Inhouse washer and dryer</Typography>
           </CardContent>
         </Collapse>
       </Card>
