@@ -86,7 +86,25 @@ Include screenshots of Trello board.
 - Issue #6
 	![issue 6](../../images/sprint6/issue6.JPG)
 
+- Issue #7
+	![issue 7](../../images/sprint6/issue7.JPG)
 
+- Issue #8
+	![issue 8](../../images/sprint6/issue8.JPG)
+
+- Issue #9
+	![issue 9](../../images/sprint6/issue9.JPG)
+
+- Issue #10
+	![issue 10](../../images/sprint6/issue10.JPG)
+
+- Issue #11
+	![issue 11](../../images/sprint6/issue11.JPG)
+
+- Issue #12
+	![issue 12](../../images/sprint6/issue12.JPG)	
+
+		
 #### Team Members
 
 [Antoine Foggs](https://github.com/AFoggs)
