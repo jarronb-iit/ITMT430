@@ -103,8 +103,8 @@ The Mongo Atlas account allowed for the Node app development environment to acce
 - JWT is used track user authentication and permission
 - [Bcryptjs](https://www.npmjs.com/package/bcryptjs) is used to hash & salt user sensitive information like passwords transmitted through HTTP
 
-      	- **_JWT_** was used for user authentication because they're public/private key pairs. This makes is perfect for authenticating users, and permissions to access routes. From **_https://jwt.io/_**:
-      		**Authorization**: This is the most common scenario for using JWT. Once the user is logged in, each subsequent request will include the JWT, allowing the user to access routes, services, and resources that are permitted with that token. Single Sign On is a feature that widely uses JWT nowadays, because of its small overhead and its ability to be easily used across different domains.
+  - **_JWT_** was used for user authentication because they're public/private key pairs. This makes is perfect for authenticating users, and permissions to access routes. From **_https://jwt.io/_**:
+    **Authorization**: This is the most common scenario for using JWT. Once the user is logged in, each subsequent request will include the JWT, allowing the user to access routes, services, and resources that are permitted with that token. Single Sign On is a feature that widely uses JWT nowadays, because of its small overhead and its ability to be easily used across different domains.
 
 ### 5. Database makes use of master/slave replication (~ITMD 421, ITMD 411)
 
