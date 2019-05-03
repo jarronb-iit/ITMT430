@@ -80,11 +80,13 @@ class ListingView extends Component {
   }
 
   render() {
-    const { classes } = this.props;
-    console.log(this.props.list);
+    const { classes, data } = this.props;
+
+    console.log(data.photos);
+
     return (
       <Card className={classes.card}>
-        <CardHeader title='South State Village' subheader='5/2/2019' />
+        <CardHeader title={data.name} subheader={data.dateListed} />
         <CardContent>
           <div className={classes.root}>
             <GridList className={classes.gridList} cols={2.5}>
@@ -104,12 +106,14 @@ class ListingView extends Component {
           </div>
           <Grid container spacing={24}>
             <Grid item xs={6}>
-              <Typography component='p'>3303 South State Street</Typography>
-              <Typography component='p'>Chicago, illinois 60616</Typography>
+              <Typography component='p'>{data.address.street}</Typography>
+              <Typography component='p'>
+                {data.address.city} {data.address.state}, {data.address.zipCode}
+              </Typography>
             </Grid>
             <Grid item xs={6}>
-              <Typography component='p'>$1,300</Typography>
-              <Typography component='p'>2,000 sqrt</Typography>
+              <Typography component='p'>${data.price}</Typography>
+              <Typography component='p'>{data.squareFootage} sf</Typography>
             </Grid>
           </Grid>
         </CardContent>
@@ -127,9 +131,11 @@ class ListingView extends Component {
         </CardActions>
         <Collapse in={this.state.expanded} timeout='auto' unmountOnExit>
           <CardContent>
-            <Typography component='p'>Bathrooms: 1</Typography>
-            <Typography component='p'>Bedrooms: 2</Typography>
-            <Typography component='p'>Property Type: Condo</Typography>
+            <Typography component='p'>Bathrooms: {data.bathrooms}</Typography>
+            <Typography component='p'>Bedrooms: {data.bedrooms}</Typography>
+            <Typography component='p'>
+              Property Type: {data.listingType}
+            </Typography>
             <Typography component='p'>
               Amenties: Cooling, heating, indoor fireplace
             </Typography>
