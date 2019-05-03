@@ -83,18 +83,18 @@ const Form2 = props => {
 
   return (
     <div className={classes.root}>
-      <Typography className={classes.formHeader} variant="h6" color="primary">
+      <Typography className={classes.formHeader} variant='h6' color='primary'>
         Lets start with some general details:
       </Typography>
       <Grid container className={classes.grid}>
         <Grid item xs={12}>
           <TextField
-            id="name"
-            label="Name (optional)"
-            placeholder="Chicago Greatest Loop Condie"
+            id='name'
+            label='Name'
+            placeholder='Chicago Greatest Loop Condo'
             className={classes.textField}
-            margin="normal"
-            variant="filled"
+            margin='normal'
+            variant='filled'
             onChange={handleChange('name')}
             defaultValue={values.name}
             InputProps={{
@@ -105,12 +105,12 @@ const Form2 = props => {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            id="listingType"
-            label="Type of listing"
-            placeholder="Ex. Condo"
+            id='listingType'
+            label='Type of listing'
+            placeholder='Ex. Condo'
             className={classes.textField}
-            margin="normal"
-            variant="filled"
+            margin='normal'
+            variant='filled'
             onChange={handleArrayChanges('listingType')}
             defaultValue={values.listingType}
             InputProps={{
@@ -124,8 +124,8 @@ const Form2 = props => {
         <Grid container className={classes.buttonGrid}>
           <Grid item xs={4}>
             <Button
-              variant="contained"
-              color="secondary"
+              variant='contained'
+              color='secondary'
               className={classes.button}
               onClick={goBack}
             >
@@ -134,8 +134,8 @@ const Form2 = props => {
           </Grid>
           <Grid item xs={4}>
             <Button
-              variant="contained"
-              color="primary"
+              variant='contained'
+              color='primary'
               className={classes.button}
               onClick={nextPage}
             >
