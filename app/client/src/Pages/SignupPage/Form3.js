@@ -38,6 +38,7 @@ const styles = theme => ({
   },
   buttonGrid: {
     marginTop: '15vh',
+    marginBottom: '10vh',
     width: '100%',
     justifyContent: 'space-between'
   },

@@ -76,16 +76,33 @@ class ReactAdmin extends Component {
     console.log(rowsDeleted);
   };
 
+  onDeleteData = dataSet => e => {
+    if (dataSet === 'users') {
+      this.props.deleteUsers();
+    } else if (dataSet === 'listings') {
+      this.props.deleteListings();
+    }
+  };
+
   render() {
     let { history, users, listings, classes } = this.props;
     let { showUsers, showListings } = this.state;
     let data;
     let toggleButton;
+    let deleteButtonType;
     let renderedComponent;
 
     if (showUsers) {
       data = users;
-      renderedComponent = <UsersDataTable data={data} />;
+      deleteButtonType = 'users';
+      renderedComponent = (
+        <UsersDataTable
+          data={data}
+          deleteButtonType={deleteButtonType}
+          showUsers={this.state.showUsers}
+          onDeleteData={this.onDeleteData}
+        />
+      );
       toggleButton = (
         <Button
           variant="contained"
@@ -98,7 +115,15 @@ class ReactAdmin extends Component {
       );
     } else {
       data = listings;
-      renderedComponent = <ListingsDataTable data={data} />;
+      deleteButtonType = 'listings';
+      renderedComponent = (
+        <ListingsDataTable
+          data={data}
+          deleteButtonType={deleteButtonType}
+          showListings={this.state.showListings}
+          onDeleteData={this.onDeleteData}
+        />
+      );
       toggleButton = (
         <Button
           variant="contained"
@@ -133,7 +158,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getUsers: () => dispatch(actions.getUsersInit()),
-    getListings: () => dispatch(actions.getListingsInit())
+    getListings: () => dispatch(actions.getListingsInit()),
+    deleteListings: () => dispatch(actions.deleteListingsInit()),
+    deleteUsers: () => dispatch(actions.deleteUsersInit())
   };
 };
 

@@ -18,18 +18,20 @@ const styles = theme => ({
 
 const ImagePreview = props => {
   const { values, classes } = props;
+  let images;
 
-  const images = values.photos.map((image, index) => {
-    return (
-      <img
-        key={index}
-        src={URL.createObjectURL(image)}
-        alt={'Upload preview' + index}
-        className={classes.image}
-      />
-    );
-  });
-
+  if (values.photos) {
+    images = values.photos.map((image, index) => {
+      return (
+        <img
+          key={index}
+          src={URL.createObjectURL(image)}
+          alt={'Upload preview' + index}
+          className={classes.image}
+        />
+      );
+    });
+  }
   return <div>{images}</div>;
 };
 

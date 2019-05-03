@@ -41,17 +41,21 @@ export function* addListingSaga(action) {
   const config = yield tokenConfig();
   try {
     const { photos, ...listingData } = action.payload.listing;
+    const { history } = action.payload;
 
     const tryPostRes = yield axiosInstance.post(
       '/api/listings',
       listingData,
       config
     );
-    const listing = yield tryPostRes.data;
-    console.log(listing);
-    window.listing = listing;
+    let listing = yield tryPostRes.data;
     // const listingId = listing._id
+
+    if (photos) {
+      listing = yield uploadPhotos(listing._id, photos, config);
+    }
     yield put(actions.addListingSuccess(listing));
+    yield history.push('/home');
   } catch (error) {
     yield put(actions.getErrors(error.response.data.errors));
   }
@@ -92,4 +96,22 @@ export function* deleteListingSaga(action) {
   } catch (error) {
     yield put(actions.getErrors(error.response.data.errors));
   }
+}
+
+async function uploadPhotos(id, photos, config) {
+  config.headers['Content-Type'] = 'multipart/form-data';
+  const formData = new FormData();
+  console.log(photos);
+
+  photos.forEach(photo => {
+    formData.append('photos', photo);
+  });
+
+  const tryPostRes = await axiosInstance.put(
+    `/api/listings/${id}`,
+    formData,
+    config
+  );
+  const listing = await tryPostRes.data;
+  return listing;
 }
