@@ -38,7 +38,7 @@ const styles = theme => ({
   buttonGrid: {
     width: '100%',
     justifyContent: 'space-between',
-    marginBottom: '10vh',
+    marginBottom: '5vh',
     marginTop: '5vh'
   },
   textField: {
@@ -81,18 +81,18 @@ const LoginPage = props => {
 
   return (
     <div className={classes.root}>
-      <Typography className={classes.formHeader} variant="h6" color="primary">
+      <Typography className={classes.formHeader} variant='h6' color='primary'>
         Lets start some general account details:
       </Typography>
       <Grid container className={classes.grid}>
         <Grid item xs={12}>
           <TextField
-            id="firstName"
-            label="First name"
-            placeholder="First name"
+            id='firstName'
+            label='First name'
+            placeholder='First name'
             className={classes.textField}
-            margin="normal"
-            variant="filled"
+            margin='normal'
+            variant='filled'
             onChange={handleChange('firstName')}
             defaultValue={values.firstName}
             InputProps={{
@@ -103,12 +103,12 @@ const LoginPage = props => {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            id="lastName"
-            label="Last name"
-            placeholder="Last name"
+            id='lastName'
+            label='Last name'
+            placeholder='Last name'
             className={classes.textField}
-            margin="normal"
-            variant="filled"
+            margin='normal'
+            variant='filled'
             onChange={handleChange('lastName')}
             defaultValue={values.lastName}
             InputProps={{
@@ -119,12 +119,12 @@ const LoginPage = props => {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            id="email"
-            label="Email"
-            placeholder="Email address"
+            id='email'
+            label='Email'
+            placeholder='Email address'
             className={classes.textField}
-            margin="normal"
-            variant="filled"
+            margin='normal'
+            variant='filled'
             onChange={handleChange('email')}
             defaultValue={values.email}
             InputProps={{
@@ -136,12 +136,12 @@ const LoginPage = props => {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            id="password"
-            label="Password"
-            placeholder="Password"
+            id='password'
+            label='Password'
+            placeholder='Password'
             className={classes.textField}
-            margin="normal"
-            variant="filled"
+            margin='normal'
+            variant='filled'
             onChange={handleChange('password')}
             defaultValue={values.password}
             InputProps={{
@@ -153,12 +153,12 @@ const LoginPage = props => {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            id="phoneNumber"
-            label="Phone number"
-            placeholder="Phone number"
+            id='phoneNumber'
+            label='Phone number'
+            placeholder='Phone number'
             className={classes.textField}
-            margin="normal"
-            variant="filled"
+            margin='normal'
+            variant='filled'
             onChange={handleChange('phoneNumber')}
             defaultValue={values.phoneNumber}
             InputProps={{
@@ -173,8 +173,8 @@ const LoginPage = props => {
         <Grid container className={classes.buttonGrid}>
           <Grid item xs={4}>
             <Button
-              variant="contained"
-              color="secondary"
+              variant='contained'
+              color='secondary'
               className={classes.button}
               onClick={goBack}
             >
@@ -183,8 +183,8 @@ const LoginPage = props => {
           </Grid>
           <Grid item xs={4}>
             <Button
-              variant="contained"
-              color="primary"
+              variant='contained'
+              color='primary'
               className={classes.button}
               onClick={nextPage}
             >

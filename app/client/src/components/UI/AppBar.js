@@ -72,31 +72,31 @@ class MenuAppBar extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar position='static'>
           <Toolbar>
             <IconButton
               className={classes.menuButton}
-              color="inherit"
-              aria-label="Menu"
+              color='inherit'
+              aria-label='Menu'
               onClick={toggleDrawer}
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" color="inherit" className={classes.grow}>
-              Roomie
+            <Typography variant='h6' color='inherit' className={classes.grow}>
+              Roomie<small>&trade;</small>
             </Typography>
 
             <div>
               <IconButton
                 aria-owns={open ? 'menu-appbar' : undefined}
-                aria-haspopup="true"
+                aria-haspopup='true'
                 onClick={this.handleMenu}
-                color="inherit"
+                color='inherit'
               >
                 <AccountCircle />
               </IconButton>
               <Menu
-                id="menu-appbar"
+                id='menu-appbar'
                 anchorEl={anchorEl}
                 anchorOrigin={{
                   vertical: 'top',

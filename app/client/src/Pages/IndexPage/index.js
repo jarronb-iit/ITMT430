@@ -16,6 +16,7 @@ const styles = theme => ({
     backgroundPosition: 'center center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    backgroundAttachment: 'fixed',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center'
@@ -52,17 +53,17 @@ const IndexPage = props => {
     <div className={classes.root}>
       <Typography
         className={classes.brandName}
-        variant="h1"
-        color="primary"
+        variant='h1'
+        color='primary'
         fontWeight={800}
       >
-        Roomie
+        Roomie<small>&trade;</small>
       </Typography>
       <Grid container className={classes.grid}>
         <Grid item xs={12}>
           <Button
-            variant="contained"
-            color="primary"
+            variant='contained'
+            color='primary'
             className={classes.button}
             onClick={loginOnClick}
           >
@@ -71,8 +72,8 @@ const IndexPage = props => {
         </Grid>
         <Grid item xs={12}>
           <Button
-            variant="contained"
-            color="secondary"
+            variant='contained'
+            color='secondary'
             className={classes.button}
             onClick={signupOnClick}
           >

@@ -64,9 +64,9 @@ function SwipeableTemporaryDrawer(props) {
         return <HomeIcon />;
       case 'Create Listing':
         return <AddListingIcon />;
-      case 'Profile':
+      case 'Profile (Coming soon!)':
         return <ProfileIcon />;
-      case 'Settings':
+      case 'Settings (Coming soon!)':
         return <SettingsIcon />;
       case 'Admin':
         return <AdminIcon />;
@@ -79,7 +79,7 @@ function SwipeableTemporaryDrawer(props) {
   const fullList = (
     <div className={classes.fullList}>
       <List>
-        {['Home', 'Profile'].map((text, index) => (
+        {['Home', 'Profile (Coming soon!)'].map((text, index) => (
           <ListItem button key={text} onClick={goToLink(text)}>
             <ListItemIcon>{createIcon(text)}</ListItemIcon>
             <ListItemText primary={text} />
@@ -104,7 +104,7 @@ function SwipeableTemporaryDrawer(props) {
             <ListItemText primary={'Admin'} />
           </ListItem>
         )}
-        {['Settings', 'Logout'].map((text, index) => (
+        {['Settings (Coming soon!)', 'Logout'].map((text, index) => (
           <ListItem button key={text} onClick={goToLink(text)}>
             <ListItemIcon>{createIcon(text)}</ListItemIcon>
             <ListItemText primary={text} />

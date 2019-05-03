@@ -195,11 +195,11 @@ class SignupForm extends Component {
       <div className={classes.root}>
         <Typography
           className={classes.brandName}
-          variant="h1"
-          color="primary"
+          variant='h1'
+          color='primary'
           fontWeight={800}
         >
-          Roomie
+          Roomie<small>&trade;</small>
         </Typography>
         {renderedPage}
       </div>

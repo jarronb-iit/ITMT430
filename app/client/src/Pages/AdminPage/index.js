@@ -105,8 +105,8 @@ class ReactAdmin extends Component {
       );
       toggleButton = (
         <Button
-          variant="contained"
-          color="secondary"
+          variant='contained'
+          color='secondary'
           className={classes.button}
           onClick={this.onToggleData('listings')}
         >
@@ -126,8 +126,8 @@ class ReactAdmin extends Component {
       );
       toggleButton = (
         <Button
-          variant="contained"
-          color="secondary"
+          variant='contained'
+          color='secondary'
           className={classes.button}
           onClick={this.onToggleData('users')}
         >
