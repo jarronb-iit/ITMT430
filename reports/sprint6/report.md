@@ -49,8 +49,9 @@ Our focus was to ensure that we incorperated all of the 13 requirements while cr
 - Install resource monitoring tool
   - [NetData](https://github.com/netdata/netdata) has been utilized to handle resource monitoring. It allows for real time granular monitoring of a servers resources. It collects as much data as possible automatically in real time to allow for accurate diagnosis.
 - We couldn't utilize the font we had hoped for as it required payment for personal or commercial license. So we instead fell back on our old one.
-- Pop ups were added for better accessability and UX for the user
--
+- Snackbars were added for better accessability and UX for the user
+- Admin Page can sort users, search through users, download csv, turn off and on columns
+- Cloudinary Storage API is used for image upload
 
 ## Sprint 6 Rubric Info
 
@@ -86,7 +87,8 @@ The language used throughout the entire developement of the project has been Jav
 ### 3. Use of Data Store/Storage(ITMD 421, ITMD 411, ITMO 456)
 
 - Production database: MongoDB local setup for production
-- Development database: MongoDB Atlas cloud setup to cut development startup time
+- Development database: MongoDB Atlas cloud setup to cut development startup time'
+- Media is stored in [Cloudinary](https://cloudinary.com/)
 
 The Mongo Atlas account allowed for the Node app development environment to access a database in the cloud instead of having to start a VM to access the database. This created a easier development environment that didn't consist of starting VMs, since MongoDB in the cloud functions the same way as MongoDB on a locally server. For the Node application, its as easy as switching the MongoDB connection string depending the Node environment.
 
@@ -96,15 +98,19 @@ The Mongo Atlas account allowed for the Node app development environment to acce
 
 - Redis connection: Commit [8b8140e8cb961364d55d4fed5ed1bbb8bcc725c1](https://github.com/illinoistech-itm/2019-team-09f/commit/8b8140e8cb961364d55d4fed5ed1bbb8bcc725c1)
 
+- Cloudinary Config: Commit [1197cccea857af85022f4fe1cf37963034fcad3b](https://github.com/illinoistech-itm/2019-team-09f/commit/1197cccea857af85022f4fe1cf37963034fcad3b)
+
 - Variables JSON file **_on Feb 27th, 2019_**: [Link to file](https://github.com/jarronb/2019-team-09f/blob/c621d86b4079f3789dc0d8505ee5cdb467740858/packer/vanilla-install/variables.json)
+
+- Cloudinary Service **_on Feb 27th, 2019_**: [Link to file](https://github.com/illinoistech-itm/2019-team-09f/blob/73170460e15d3b16f0978732912da16e3e3e6e25/app/server/services/cloudinary.service.js)
 
 ### 4. Data encrypted at rest(ITMS 448)
 
 - JWT is used track user authentication and permission
 - [Bcryptjs](https://www.npmjs.com/package/bcryptjs) is used to hash & salt user sensitive information like passwords transmitted through HTTP
 
-      	- **_JWT_** was used for user authentication because they're public/private key pairs. This makes is perfect for authenticating users, and permissions to access routes. From **_https://jwt.io/_**:
-      		**Authorization**: This is the most common scenario for using JWT. Once the user is logged in, each subsequent request will include the JWT, allowing the user to access routes, services, and resources that are permitted with that token. Single Sign On is a feature that widely uses JWT nowadays, because of its small overhead and its ability to be easily used across different domains.
+  - **_JWT_** was used for user authentication because they're public/private key pairs. This makes is perfect for authenticating users, and permissions to access routes. From **_https://jwt.io/_**:
+    **Authorization**: This is the most common scenario for using JWT. Once the user is logged in, each subsequent request will include the JWT, allowing the user to access routes, services, and resources that are permitted with that token. Single Sign On is a feature that widely uses JWT nowadays, because of its small overhead and its ability to be easily used across different domains.
 
 ### 5. Database makes use of master/slave replication (~ITMD 421, ITMD 411)
 
