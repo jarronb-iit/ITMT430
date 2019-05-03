@@ -65,6 +65,8 @@ After the project builds, it is time to run. Switch to the directory containing 
 cd app/server
 ```
 
+Comment out lines 44-63(all the redis connection) in the app/server/server.js
+
 If on a Windows, device use the following commands:
 
 ```
