@@ -79,7 +79,7 @@ class ListingView extends Component {
         <CardHeader
           className={classes.center}
           title={data.name}
-          subheader={data.dateListed}
+          subheader={data.dateListed.substring(0, 10)}
         />
         <CardContent>
           <div className={classes.root}>
