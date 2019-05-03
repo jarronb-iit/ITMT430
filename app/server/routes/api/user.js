@@ -14,35 +14,97 @@ router.get('/test', (req, res) => {
     msg: 'User works'
   });
 });
+// @route   GET api/user/:id
+// @desc    GET user
+// @access  Private
+router.get('/:id', auth, (req, res) => {
+  User.findById(req.params.id)
+    .then(user => {
+      if (!user) throw error;
+      user = user._doc;
+      delete user.password;
+
+      res.status(200).json({ user });
+    })
+    .catch(error => {
+      return res.status(404).json({
+        errors: [{ message: "User don't exist" }]
+      });
+    });
+});
 
 // @route   PUT api/user/:id
 // @desc    Update user
 // @access  Private
 router.put('/:id', auth, (req, res) => {
-  // Check User param id versus user logged in
-  if (req.user.id != req.params.id) {
-    return res.status(401).json({
-      errors: [{ message: 'Not authorized' }]
-    });
-  }
+  let admin = false;
 
-  User.findByIdAndUpdate(req.params.id, { $set: req.body }).then(user =>
-    res.status(200).json(user)
-  );
+  User.findById(req.params.id)
+    .then(user => {
+      if (!user) {
+        throw error;
+      }
+      let { roles } = req.user;
+      let role = roles.find(role => role === 'admin');
+      if (role === 'admin') {
+        return (admin = true);
+      } else {
+        return (admin = false);
+      }
+    })
+    .then(admin => {
+      // Check User param id versus user logged in
+
+      if (req.user.id != req.params.id && !admin) {
+        return res.status(401).json({
+          errors: [{ message: 'Not authorized' }]
+        });
+      }
+
+      User.findByIdAndUpdate(req.params.id, { $set: req.body }).then(user => {
+        res.status(200).json(user);
+      });
+    })
+    .catch(error => {
+      return res.status(404).json({
+        errors: [{ message: "User don't exist" }]
+      });
+    });
 });
 
 // @route   DELETE api/user/:id
 // @desc    Delete user
 // @access  Private
 router.delete('/:id', auth, (req, res) => {
-  // Check User param id versus user logged in
-  if (req.user.id != req.params.id) {
-    return res.status(401).json({
-      errors: [{ message: 'Not authorized' }]
-    });
-  }
+  let admin = false;
 
-  User.findByIdAndRemove(req.user.id).then(user => res.status(200).json(user));
+  User.findById(req.user.id)
+    .then(user => {
+      let { roles } = user;
+      let role = roles.find(role => role === 'admin');
+      if (role === 'admin') {
+        return (admin = true);
+      } else {
+        return (admin = false);
+      }
+    })
+    .then(admin => {
+      // Check User param id versus user logged in
+      if (req.user.id != req.params.id && !admin) {
+        return res.status(401).json({
+          errors: [{ message: 'Not authorized' }]
+        });
+      }
+
+      User.findByIdAndRemove(req.params.id).then(user =>
+        res.status(200).json(user)
+      );
+    })
+    .catch(error => {
+      return res.status(404).json({
+        errors: [{ message: "User don't exist" }]
+      });
+    });
 });
 
 // @route   GET api/user/listings
