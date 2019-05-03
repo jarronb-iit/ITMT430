@@ -52,7 +52,6 @@ const styles = theme => ({
   }
 });
 
-
 class ListingView extends Component {
   state = { expanded: false };
 
@@ -68,12 +67,11 @@ class ListingView extends Component {
   render() {
     const { classes, data } = this.props;
     console.log(data.photos);
-    function genereateAmenties(data){
-        let amenatiesInfo="";
-        if(data.amenities.cooling){
-            amenatiesInfo="This aparment has in-unit cooling. "
-        }
-        else if(data.amenities)
+    function genereateAmenties(data) {
+      let amenatiesInfo = '';
+      if (data.amenities.cooling) {
+        amenatiesInfo = 'This aparment has in-unit cooling. ';
+      }
     }
 
     return (
