@@ -96,10 +96,14 @@ if (process.env.NODE_ENV === 'production') {
           throw error;
         }
         user.password = hash;
+      });
+    });
 
+    User.find({ email: user.email }).then(foundUser => {
+      if (foundUser.length === 0) {
         // Save New User with Hashed Password
         user.save();
-      });
+      }
     });
   }
 }
