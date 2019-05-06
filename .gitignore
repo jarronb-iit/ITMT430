@@ -7,3 +7,5 @@ packer/vms/node-application-server/repo
 packer/vms/node-application-server/id_rsa_github_deploy_key.pub
 packer/vms/node-application-server/id_private_repo_deploy_key.pub
 packer/vms/node-application-server/id_private_repo_deploy_key
+build
+client/build/asset-manifest.json
