@@ -19,7 +19,7 @@ const admin = require('./routes/api/admin');
 // Load Keys
 const keys = require('./config/keys');
 
-let webServerPort = keys.webServerPort || 5000;
+let webServerPort = keys.webServerPort || process.env.PORT || 5000;
 let webAddress = keys.webAddress;
 
 // Body-Parser Middleware
