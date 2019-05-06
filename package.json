@@ -2,7 +2,10 @@
   "name": "Roomie",
   "version": "1.0.0",
   "description": "Private team repo for ITMT 430",
-  "main": "index.js",
+  "main": "server.js",
+  "engines": {
+    "node": "11.8.x"
+  },
   "scripts": {
     "npm-install-linux": "sudo npm config set bin-links false; sudo npm install",
     "npm-install-windows": "npm install && (cd ./client && npm install)",
@@ -11,12 +14,12 @@
     "dev-server": "set NODE_ENV=development&& npx nodemon server.js",
     "dev-server-linux": "NODE_ENV=development exec npx nodemon server.js",
     "client": "npm start --prefix client",
-    "build": "npm run-script build --prefix client",
+    "client-build": "npm run-script build --prefix client",
     "dev": "concurrently \"npm run dev-server\" \"npm run client\"",
     "dev-linux": "concurrently \"npm run dev-server-linux\" \"npm run client\"",
     "setup-dev": "npm run npm-install-windows && npm run dev",
     "setup-dev-linux": "sudo npm run npm-install-linux; sudo npm run dev-server",
-    "postbuild-script": "npm run build --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd client && npm install && npm run build",
     "apidoc-build": "npx apidoc -i routes/api/ -o ./docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -6,7 +6,6 @@ const express = require('express'),
   app = express(),
   server = http.createServer(app);
 const redis = require('redis');
-const cors = require('cors');
 const bcrypt = require('bcryptjs');
 
 // Load routes files
@@ -26,10 +25,6 @@ let webAddress = keys.webAddress;
 // Body-Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-if (process.env.NODE_ENV == 'development') {
-  app.use(cors());
-}
 
 // MongoDB connection
 mongoose
