@@ -1,16 +1,10 @@
 module.exports = {
-  mongoURI: process.env['database-production-connection'],
-  nginxIP: process.env['nginx-web-server-ip'],
-  webAddress: process.env['node-app-ip'],
-  webServerPort: process.env['nginx-server-port'],
-  mongodbIP: process.env['database-ip'],
-  jwtSecret: process.env['jwt-secret'],
-  redisPassword: process.env['redis-server-password'],
-  redisIp: process.env['redis-server-ip'],
-  redisPort: process.env['redis-server-port'],
-  cloudinaryCloudName: process.env['cloudinary-cloud-name'],
-  cloudinaryApiKey: process.env['cloudinary-api-key'],
-  cloudinaryApiSecret: process.env['cloudinary-api-secret']
+  mongoURI: process.env.MONGO_URI,
+  webAddress: process.env.WEB_ADDRESS,
+  jwtSecret: process.env.JWS_SECRET,
+  cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
+  cloudinaryApiKey: process.env.CLOUDINARY_API_KEY,
+  cloudinaryApiSecret: process.env.CLOUDINARY_API_SECRET
 };
 
 console.log('NODE_ENV = Production');
