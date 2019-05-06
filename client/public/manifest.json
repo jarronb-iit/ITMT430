@@ -11,6 +11,11 @@
       "src": "./home-512",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "./home-192",
+      "sizes": "192x192",
+      "type": "image/png"
     }
   ],
   "start_url": "./index.html",
