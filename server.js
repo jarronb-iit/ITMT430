@@ -1,10 +1,8 @@
 const mongoose = require('mongoose');
 const path = require('path');
 const bodyParser = require('body-parser');
-const express = require('express'),
-  http = require('http'),
-  app = express(),
-  server = http.createServer(app);
+const express = require('express');
+const app = express();
 const redis = require('redis');
 const bcrypt = require('bcryptjs');
 
@@ -19,7 +17,7 @@ const admin = require('./routes/api/admin');
 // Load Keys
 const keys = require('./config/keys');
 
-let webServerPort = keys.webServerPort || 5000;
+let webServerPort = keys.webServerPort || process.env.PORT || 5000;
 let webAddress = keys.webAddress;
 
 // Body-Parser Middleware
@@ -54,8 +52,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-server.listen(webServerPort, webAddress, () => {
-  console.log(
-    '[EXPRESS]: Server running at: ' + webAddress + ':' + webServerPort
-  );
+app.listen(webServerPort, () => {
+  console.log('[EXPRESS]: Server running at: ' + ':' + webServerPort);
 });
