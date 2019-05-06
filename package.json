@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "npm-install-linux": "sudo npm config set bin-links false; sudo npm install",
-    "npm-install-windows": "npm install && (cd client && npm install)",
+    "npm-install-windows": "npm install && (cd ./client && npm install)",
     "start": "node server.js",
     "production-server": "NODE_ENV=production exec pm2 start server.js",
     "dev-server": "set NODE_ENV=development&& npx nodemon server.js",
